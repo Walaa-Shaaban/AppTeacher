@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+
+    <color name="redHigh">#F74D7B</color>
+    <color name="redHighDelete">#FF0000</color>
+    <color name="white">#fff</color>
+    <color name="foshi">#7500C3</color>
+    <color name="blueZinko">#6565FA</color>
+    <color name="blueSea">#1EDAD4</color>
+    <color name="black">#000</color>
+    <color name="orange">#FF921D</color>
+    <color name="green">#02B308</color>
+    <color name="blue_noisy_dark">#3A4A67</color>
+
+
+    <color name="gray">#F3F3F3</color>
+    <color name="textHeading">#000000</color>
+
+
+
+    <color name="roboto_calendar_background">#FFFFFF</color>
+    <color name="roboto_calendar_day_of_the_week_font">#161d20</color>
+    <color name="roboto_calendar_selected_day_font">#FFFFFF</color>
+    <color name="roboto_calendar_current_day_ring">#00a3d3</color>
+    <color name="roboto_calendar_day_of_the_month_font">#000000</color>
+    <color name="roboto_calendar_circle_1">#008000</color>  <!-- Small Circle -->
+    <color name="roboto_calendar_circle_2">#8B0000</color>  <!-- Small Circle -->
+    <color name="roboto_calendar_circle_3">#FFFF00</color>  <!-- Small Circle -->
+    <color name="roboto_calendar_circle_4">#ff9500</color>  <!-- Small Circle -->
+    <color name="roboto_calendar_circle_5">#969595</color>  <!-- Small Circle -->
+    <color name="roboto_calendar_month_arrow">#55c6da</color>
+    <color name="circle_blue_color">#108EFC</color>
+    <color name="circle_red_color">#F74D4D</color>
+    <color name="circle_green_color">#1EDA50</color>
+    <color name="circle_brown_color">#575757</color>
+    <color name="circle_orange_color">#F5C200</color>
+    <color name="circle_pink_color">#F500AB</color>
+
+
+</resources>

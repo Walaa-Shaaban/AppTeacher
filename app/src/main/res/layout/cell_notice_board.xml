@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/twenty_five_dp"
+    android:layout_marginTop="@dimen/twenty_five_dp"
+    android:layout_marginEnd="@dimen/twenty_five_dp"
+    android:elevation="@dimen/twenty_dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="@dimen/five_percent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/fifteen_dp"
+        android:padding="@dimen/ten_dp"
+        android:text="TextView"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toStartOf="@+id/actv_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_10" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/fifteen_dp"
+        android:fontFamily="@font/first_file"
+        android:padding="@dimen/ten_dp"
+        android:text="@string/font_awesome_delete_message"
+        android:textColor="@color/redHighDelete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_10" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/fifteen_dp"
+        android:fontFamily="@font/first_file"
+        android:padding="@dimen/ten_dp"
+        android:text="@string/font_awesome_edit_message"
+        android:textColor="@color/green"
+        app:layout_constraintEnd_toStartOf="@+id/actv_delete"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_10" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

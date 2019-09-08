@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidlineVertical50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidlineVertical45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/ninety_five_dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidlineVertical55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/five_percent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidlineHorizontal42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidlineHorizontal445"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidlineHorizontal10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_student_details"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal27"
+        app:layout_constraintEnd_toStartOf="@+id/guidlineVertical45"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guidlineHorizontal10">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/ten_dp"
+            android:weightSum="2"
+            android:id="@+id/details"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal27"
+            app:layout_constraintEnd_toStartOf="@+id/guidlineVertical50"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_horizontal_50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.50" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/font_awesome_textview_style"
+                android:background="@drawable/oval_solid"
+                android:text="@string/font_awesome_student_graduate"
+                app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/font_below_font_awesome"
+                android:text="@string/student_details"
+                android:textColor="@color/redHigh"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_50" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_class_timetable"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal27"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guidlineVertical55"
+        app:layout_constraintTop_toTopOf="@+id/guidlineHorizontal10">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/timetable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/ten_dp"
+            android:weightSum="2"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal27"
+            app:layout_constraintEnd_toStartOf="@+id/guidlineVertical50"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidlineHorizontalS50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.50" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/font_awesome_textview_style"
+                android:background="@drawable/oval_solid"
+                android:backgroundTint="@color/foshi"
+                android:text="@string/font_awesome_class_timetable"
+                app:layout_constraintBottom_toTopOf="@+id/guidlineHorizontalS50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/font_below_font_awesome"
+                android:text="@string/class_timetable"
+                android:textColor="@color/foshi"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidlineHorizontalS50" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidlineHorizontal54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.54" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidlineHorizontal57"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.57" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidlineHorizontal66"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidlineHorizontal69"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.69" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidlineHorizontal76"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidlineHorizontal54"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guidlineHorizontal445">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/exam"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_exam"
+                style="@style/font_awesome_textview_style_rectangle_cardview"
+                android:background="@drawable/rec_raduis"
+                android:backgroundTint="@color/orange"
+                android:text="@string/font_awesome_exam"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/font_below_font_awesome"
+                android:layout_marginStart="@dimen/twenty_dp"
+                android:text="@string/examination"
+                android:textAlignment="textStart"
+                android:textColor="@color/orange"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/actv_exam"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidlineHorizontal66"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guidlineHorizontal57">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/communication"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_communication"
+                style="@style/font_awesome_textview_style_rectangle_cardview"
+                android:background="@drawable/rec_raduis"
+                android:backgroundTint="@color/blueSea"
+                android:text="@string/font_awesome_megaphone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/font_below_font_awesome"
+                android:layout_marginStart="@dimen/twenty_dp"
+                android:text="@string/communication"
+                android:textAlignment="textStart"
+                android:textColor="@color/blueSea"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/actv_communication"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidlineHorizontal42"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal33">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/attendance"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextView"
+                style="@style/font_awesome_textview_style_rectangle_cardview"
+                android:background="@drawable/rec_raduis"
+                android:backgroundTint="@color/blueZinko"
+                android:text="@string/font_awesome_class_timetable"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/font_below_font_awesome"
+                android:layout_marginStart="@dimen/twenty_dp"
+                android:text="@string/attendance"
+                android:textAlignment="textStart"
+                android:textColor="@color/blueZinko"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/appCompatTextView"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidlineHorizontal76"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guidlineHorizontal69">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/our_news"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_news"
+                style="@style/font_awesome_textview_style_rectangle_cardview"
+                android:background="@drawable/rec_raduis"
+                android:backgroundTint="@color/white"
+                android:text="@string/font_awesome_news"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/font_below_font_awesome"
+                android:layout_marginStart="@dimen/twenty_dp"
+                android:text="@string/our_news"
+                android:textAlignment="textStart"
+                android:textColor="@color/blueZinko"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/actv_news"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.ActionMenuView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:backgroundTint="@color/redHigh"
+        android:background="@drawable/oval_solid"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

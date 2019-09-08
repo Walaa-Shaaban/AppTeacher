@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.selwan.schools365teacher">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.attendance.attendance_student.student_attendence.AttendeneceStudentActivity"></activity>
+        <activity android:name=".ui.attendance.attendance_student.recycler.AttendanceStudentRecActivity" />
+        <activity android:name=".ui.attendance.attendance_report.recyclerview.repor_info.ReportInfoActivity" />
+        <activity android:name=".ui.attendance.attendance_report.AttendanceReportActivity" />
+        <activity android:name=".ui.attendance.attendance_date.AttendanceDateActivity" />
+        <activity android:name=".ui.timetable.ttimetable_info.TimetableInfoActivity" />
+        <activity android:name=".ui.student_details.student_details_info.StudentDetailsInfoActivity" />
+        <activity android:name=".ui.student_details.recyclerview_student_details.RecyclerStudentDetailsActivity" />
+        <activity android:name=".ui.fab.add_homework.AddHomeworkActivity" />
+        <activity android:name=".ui.fab.add_exam.AddExamActivity" />
+        <activity android:name=".ui.news.NewsActivity" />
+        <activity android:name=".ui.communication.CommunicationActivity" />
+        <activity android:name=".ui.examination.ExaminationActivity" />
+        <activity android:name=".ui.attendance.AttendanceActivity" />
+        <activity android:name=".ui.timetable.TimetableActivity" />
+        <activity android:name=".ui.main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.student_details.StudentDetailsActivity" />
+    </application>
+
+</manifest>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue_noisy_dark">
+
+    <SearchView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/twenty_five_dp"
+        android:layout_marginTop="@dimen/twenty_dp"
+        android:layout_marginEnd="@dimen/twenty_five_dp"
+        android:layout_marginBottom="@dimen/twenty_dp"
+        android:background="@color/gray"></SearchView>
+</LinearLayout>
