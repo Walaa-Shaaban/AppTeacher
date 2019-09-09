@@ -1,4 +1,4 @@
-package com.selwan.schools365teacher.ui.attendance.attendance_report
+package com.selwan.schools365teacher.ui.attendance.report.rec
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,12 +11,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.ui.attendance.attendance_student.student_attendence.AttendanceStudentViewModel
 import kotlinx.android.synthetic.main.attendance_report_fragment.*
 
-class AttendanceReportFragment : Fragment() {
-
-
+class AttendanceReportRecFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -31,18 +28,18 @@ class AttendanceReportFragment : Fragment() {
 
         rec_attendance_report.layoutManager = LinearLayoutManager(this.context)
         getViewModel().getAllStudenAttendanceByReport.observe(this, Observer {
-            rec_attendance_report.adapter =
+            rec_attendance_report.adapter = AttendanceReportRecAdapter(this.context!!, it)
         })
 
     }
 
-    fun getViewModel(): AttendanceReportViewModel {
+    fun getViewModel(): AttendanceReportRecViewModel {
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return AttendanceReportViewModel() as T
+                return AttendanceReportRecViewModel() as T
             }
 
-        })[AttendanceReportViewModel::class.java]
+        })[AttendanceReportRecViewModel::class.java]
     }
 
 }

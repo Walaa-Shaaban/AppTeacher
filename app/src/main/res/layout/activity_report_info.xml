@@ -3,6 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.attendance.attendance_report.recyclerview.repor_info.ReportInfoActivity">
+    tools:context=".ui.attendance.report.rec.repor_info.ReportInfoActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

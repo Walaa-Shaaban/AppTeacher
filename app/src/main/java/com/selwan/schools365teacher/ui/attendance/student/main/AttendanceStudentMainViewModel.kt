@@ -1,16 +1,16 @@
-package com.selwan.schools365teacher.ui.attendance.attendance_student.student_attendence
+package com.selwan.schools365teacher.ui.attendance.student.main
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
 
-class AttendanceStudentViewModel : ViewModel() {
+class AttendanceStudentMainViewModel : ViewModel() {
 
     lateinit var compositeDisposable: CompositeDisposable
-    var attendenceStudentRepository: AttendenceStudentRepository
+    var attendenceStudentRepository: AttendenceStudentMainRepository
 
     init {
         compositeDisposable = CompositeDisposable()
-        attendenceStudentRepository = AttendenceStudentRepository()
+        attendenceStudentRepository = AttendenceStudentMainRepository()
     }
 
     val getAllClasses by lazy {

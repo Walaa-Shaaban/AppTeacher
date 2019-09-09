@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.attendance.attendance_report.recyclerview.repor_info.ReportInfoFragment">
+    tools:context=".ui.attendance.report.rec.repor_info.ReportInfoFragment">
 
     <TextView
         android:layout_width="match_parent"

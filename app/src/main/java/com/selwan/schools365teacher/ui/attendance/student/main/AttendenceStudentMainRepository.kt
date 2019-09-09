@@ -1,4 +1,4 @@
-package com.selwan.schools365teacher.ui.attendance.attendance_student.student_attendence
+package com.selwan.schools365teacher.ui.attendance.student.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,7 +11,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
 
-class AttendenceStudentRepository {
+class AttendenceStudentMainRepository {
 
     var classes: MutableLiveData<List<Classes>>
     var sections: MutableLiveData<List<Sections>>

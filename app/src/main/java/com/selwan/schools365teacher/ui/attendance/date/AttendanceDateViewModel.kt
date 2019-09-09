@@ -1,7 +1,6 @@
-package com.selwan.schools365teacher.ui.attendance.attendance_date
+package com.selwan.schools365teacher.ui.attendance.date
 
 import androidx.lifecycle.ViewModel
-import com.selwan.schools365teacher.ui.attendance.attendance_student.student_attendence.AttendanceStudentFragment
 import io.reactivex.disposables.CompositeDisposable
 
 class AttendanceDateViewModel : ViewModel() {

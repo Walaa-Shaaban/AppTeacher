@@ -1,4 +1,4 @@
-package com.selwan.schools365teacher.ui.attendance.attendance_student.adapter
+package com.selwan.schools365teacher.ui.attendance.student.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,9 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.model.attendance.Resultlist
-import com.selwan.schools365teacher.ui.attendance.attendance_student.adapter.AttendenceStudentAdapter.ViewHolder
+import com.selwan.schools365teacher.ui.attendance.student.adapter.AttendenceStudentRecAdapter.ViewHolder
 
-class AttendenceStudentAdapter (context : Context, studentAttends : List<Resultlist>): RecyclerView.Adapter<ViewHolder>() {
+class AttendenceStudentRecAdapter (context : Context, studentAttends : List<Resultlist>): RecyclerView.Adapter<ViewHolder>() {
 
     var context: Context
     var studentAttendence: List<Resultlist>

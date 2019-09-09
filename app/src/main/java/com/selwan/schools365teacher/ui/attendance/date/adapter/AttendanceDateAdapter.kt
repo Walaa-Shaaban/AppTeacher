@@ -1,7 +1,6 @@
-package com.selwan.schools365teacher.ui.attendance.attendance_date.adapter
+package com.selwan.schools365teacher.ui.attendance.date.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,14 +10,14 @@ import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.model.attendance.AttendanceByDate
 
 class AttendanceDateAdapter
-    (context : Context, listStudentAttendsByDate : AttendanceByDate): RecyclerView.Adapter<AttendanceDateAdapter.ViewHolder>() {
+    (context : Context, var studentAttendanceReport : AttendanceByDate): RecyclerView.Adapter<AttendanceDateAdapter.ViewHolder>() {
 
     var context: Context
-    var studentAttendenceByDate: AttendanceByDate
+    var getStudentAttendanceReport: AttendanceByDate
 
     init {
         this.context = context
-        this.studentAttendenceByDate = listStudentAttendsByDate
+        this.getStudentAttendanceReport = studentAttendanceReport
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,14 +27,14 @@ class AttendanceDateAdapter
     }
 
     override fun getItemCount(): Int {
-        return studentAttendenceByDate.resultlist.size
+        return 5
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        var studentDateAttendance = studentAttendenceByDate.resultlist.get(position)
-        holder.studentName.text = studentDateAttendance.firstname
-        holder.student_attendence_id.text = studentDateAttendance.attendenceTypeId.toString()
+       // var studentDateAttendance = get.resultlist.get(position)
+//        holder.studentName.text = studentDateAttendance.firstname
+//        holder.student_attendence_id.text = studentDateAttendance.attendenceTypeId.toString()
     }
 
     class ViewHolder : RecyclerView.ViewHolder {

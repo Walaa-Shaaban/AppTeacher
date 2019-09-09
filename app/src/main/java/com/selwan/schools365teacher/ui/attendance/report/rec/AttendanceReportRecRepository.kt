@@ -1,4 +1,4 @@
-package com.selwan.schools365teacher.ui.attendance.attendance_report
+package com.selwan.schools365teacher.ui.attendance.report.rec
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,7 +9,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
 
-class AttendanceReportRepository( var compositeDisposable: CompositeDisposable) {
+class AttendanceReportRecRepository( var compositeDisposable: CompositeDisposable) {
 
 
     var studentsReport = MutableLiveData<AttendanceReport>()

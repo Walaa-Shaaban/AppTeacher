@@ -1,16 +1,19 @@
-package com.selwan.schools365teacher.ui.attendance.attendance_report
+package com.selwan.schools365teacher.ui.attendance.report.rec
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
 
-class AttendanceReportViewModel : ViewModel() {
+class AttendanceReportRecViewModel : ViewModel() {
 
-    var attendanceReportRepository: AttendanceReportRepository
+    var attendanceReportRepository: AttendanceReportRecRepository
     var compositeDisposable: CompositeDisposable
 
     init {
         compositeDisposable = CompositeDisposable()
-        attendanceReportRepository = AttendanceReportRepository(compositeDisposable)
+        attendanceReportRepository =
+            AttendanceReportRecRepository(
+                compositeDisposable
+            )
     }
     //class_id. section_id, year, month class_id=1&section_id=1&year=2019&month=August
     val getAllStudenAttendanceByReport by lazy {

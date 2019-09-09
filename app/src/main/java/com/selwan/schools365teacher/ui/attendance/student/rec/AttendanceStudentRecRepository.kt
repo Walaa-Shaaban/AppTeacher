@@ -1,12 +1,9 @@
-package com.selwan.schools365teacher.ui.attendance.attendance_student.recycler
+package com.selwan.schools365teacher.ui.attendance.student.rec
 
 import androidx.lifecycle.MutableLiveData
 import com.selwan.schools365teacher.data.model.attendance.Attendencetypeslist
 import com.selwan.schools365teacher.data.model.attendance.Resultlist
-import com.selwan.schools365teacher.data.model.attendance.StudentAttendance
 import com.selwan.schools365teacher.data.utils.ApiUtils
-import com.selwan.schools365teacher.ui.attendance.AttendanceFragment
-import com.selwan.schools365teacher.ui.attendance.attendance_student.student_attendence.AttendanceStudentFragment
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
@@ -18,8 +15,8 @@ class AttendanceStudentRecRepository(var compositeDisposable: CompositeDisposabl
     var studentAttendance = MutableLiveData<List<Resultlist>>()
     var attendencetypeslist = MutableLiveData<Attendencetypeslist>()
 
-    //AttendanceStudentFragment.class_id!!,
-    //                AttendanceStudentFragment.section_id!!
+    //AttendanceStudentMainFragment.class_id!!,
+    //                AttendanceStudentMainFragment.section_id!!
     fun fetchStudentAttendance(): MutableLiveData<List<Resultlist>> {
         compositeDisposable.add(
             ApiUtils.apiService.getAllStudentAttendance(
@@ -41,8 +38,8 @@ class AttendanceStudentRecRepository(var compositeDisposable: CompositeDisposabl
     fun fetchAttendenceType(attendence_id: String): MutableLiveData<Attendencetypeslist> {
         compositeDisposable.add(
             ApiUtils.apiService.getAllAttendanceTypeList(
-                AttendanceStudentFragment.class_id!!,
-                AttendanceStudentFragment.section_id!!
+                AttendanceStudentMainFragment.class_id!!,
+                AttendanceStudentMainFragment.section_id!!
             )
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

@@ -1,11 +1,10 @@
-package com.selwan.schools365teacher.ui.attendance.attendance_date
+package com.selwan.schools365teacher.ui.attendance.date
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.selwan.schools365teacher.data.model.attendance.AttendanceByDate
 import com.selwan.schools365teacher.data.utils.ApiUtils
-import com.selwan.schools365teacher.ui.attendance.attendance_student.student_attendence.AttendanceStudentFragment
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer

@@ -45,7 +45,7 @@ interface ApiService {
     ): Single<AttendanceByDate>
 
 
-    @GET("")
+    @GET("attendanceReport")
     fun getAllReportByMonth(
         @Query("class_id") class_id: String,
         @Query("section_id") section_id: String,

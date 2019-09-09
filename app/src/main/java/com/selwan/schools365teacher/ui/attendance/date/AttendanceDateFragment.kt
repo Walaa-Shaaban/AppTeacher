@@ -1,4 +1,4 @@
-package com.selwan.schools365teacher.ui.attendance.attendance_date
+package com.selwan.schools365teacher.ui.attendance.date
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.ui.attendance.attendance_date.adapter.AttendanceDateAdapter
+import com.selwan.schools365teacher.ui.attendance.date.adapter.AttendanceDateAdapter
 import kotlinx.android.synthetic.main.attendance_date_fragment.*
 
 class AttendanceDateFragment : Fragment() {

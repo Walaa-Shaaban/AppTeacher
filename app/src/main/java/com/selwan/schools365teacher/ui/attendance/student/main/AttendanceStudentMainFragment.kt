@@ -1,4 +1,4 @@
-package com.selwan.schools365teacher.ui.attendance.attendance_student.student_attendence
+package com.selwan.schools365teacher.ui.attendance.student.main
 
 import android.content.Intent
 import androidx.lifecycle.ViewModelProviders
@@ -14,18 +14,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.ui.attendance.attendance_date.AttendanceDateActivity
-import com.selwan.schools365teacher.ui.attendance.attendance_date.AttendanceDateFragment
-import com.selwan.schools365teacher.ui.attendance.attendance_student.recycler.AttendanceStudentRecActivity
+import com.selwan.schools365teacher.ui.attendance.date.AttendanceDateActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
-import com.selwan.schools365teacher.ui.student_details.StudentsDetailsViewModel
-import com.selwan.schools365teacher.ui.student_details.recyclerview_student_details.RecyclerStudentDetailsActivity
 import kotlinx.android.synthetic.main.fragment_student_attendance.*
-import kotlinx.android.synthetic.main.students_details_fragment.*
 import kotlinx.android.synthetic.main.students_details_fragment.sp_class
 import kotlinx.android.synthetic.main.students_details_fragment.sp_section
 
-class AttendanceStudentFragment : Fragment() {
+class AttendanceStudentMainFragment : Fragment() {
 
     var classes = ArrayList<String>()
     var sections = ArrayList<String>()
@@ -135,13 +130,13 @@ class AttendanceStudentFragment : Fragment() {
 
 
 
-    fun getViewModel(): AttendanceStudentViewModel {
+    fun getViewModel(): AttendanceStudentMainViewModel {
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return AttendanceStudentViewModel() as T
+                return AttendanceStudentMainViewModel() as T
             }
 
-        })[AttendanceStudentViewModel::class.java]
+        })[AttendanceStudentMainViewModel::class.java]
     }
 
 }

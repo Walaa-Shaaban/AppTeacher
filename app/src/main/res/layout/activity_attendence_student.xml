@@ -4,6 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/frame_attendance_student"
-    tools:context=".ui.attendance.attendance_student.recycler.AttendanceStudentRecActivity">
+    tools:context=".ui.attendance.student.rec.AttendanceStudentRecActivity">
 
 </FrameLayout>

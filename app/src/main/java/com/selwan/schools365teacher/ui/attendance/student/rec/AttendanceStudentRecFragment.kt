@@ -1,4 +1,4 @@
-package com.selwan.schools365teacher.ui.attendance.attendance_student.recycler
+package com.selwan.schools365teacher.ui.attendance.student.rec
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -12,8 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.ui.attendance.attendance_student.adapter.AttendenceStudentAdapter
-import kotlinx.android.synthetic.main.activity_recycler_student_details.*
+import com.selwan.schools365teacher.ui.attendance.student.adapter.AttendenceStudentRecAdapter
 import kotlinx.android.synthetic.main.attendance_student_rec_fragment.*
 
 class AttendanceStudentRecFragment : Fragment() {
@@ -34,7 +33,7 @@ class AttendanceStudentRecFragment : Fragment() {
         rec_attendence.layoutManager = LinearLayoutManager(this.context)
 
         getViewModel().getStudentAttendance.observe(this, Observer {
-            rec_attendence.adapter = AttendenceStudentAdapter(this.context!!, it)
+            rec_attendence.adapter = AttendenceStudentRecAdapter(this.context!!, it)
         })
 
 

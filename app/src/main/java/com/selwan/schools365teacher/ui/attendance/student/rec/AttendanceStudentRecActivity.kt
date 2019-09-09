@@ -1,4 +1,4 @@
-package com.selwan.schools365teacher.ui.attendance.attendance_student.recycler
+package com.selwan.schools365teacher.ui.attendance.student.rec
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

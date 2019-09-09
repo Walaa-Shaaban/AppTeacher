@@ -1,9 +1,8 @@
-package com.selwan.schools365teacher.ui.attendance.attendance_date
+package com.selwan.schools365teacher.ui.attendance.date
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.ui.attendance.AttendanceFragment
 
 class AttendanceDateActivity : AppCompatActivity() {
 
