@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/twenty_dp">
+
+    <TextView
+        android:id="@+id/tv_class"
+        style="@style/standard_title"
+        android:text="@string/class_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/fl_class"
+        style="@style/frame_layout_style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_class">
+
+        <Spinner
+            android:id="@+id/sp_class"
+            style="@style/spinner_style_stroked" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_section"
+        style="@style/standard_title"
+        android:text="@string/section"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fl_class" />
+
+    <FrameLayout
+        android:id="@+id/fl_section"
+        style="@style/frame_layout_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_section">
+
+        <Spinner
+            android:id="@+id/sp_section"
+            style="@style/spinner_style_stroked" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_attendance"
+        style="@style/frame_layout_style"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="234dp" />
+
+
+    <Button
+        android:id="@+id/attendance_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="395dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
