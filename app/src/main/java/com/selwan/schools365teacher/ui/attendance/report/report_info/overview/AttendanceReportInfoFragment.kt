@@ -30,11 +30,8 @@ class AttendanceReportInfoFragment(var student_id: String) : Fragment() {
             var str: StringBuilder = java.lang.StringBuilder()
             for (monthAttendance in it.monthAttendance) {
 
-
-                var value = monthAttendance.get(student_id)
-
-
-                if (monthAttendance.get(student_id)!!.equals(student_id)) {
+                //add data in xml ...
+                if (monthAttendance.containsKey(student_id)) {
                     str.append("\n absent")
                     str.append(monthAttendance.getValue(student_id).absent)
                     str.append("\n Half day")
