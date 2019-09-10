@@ -32,5 +32,4 @@ class AttendanceReportInfoRepository(var compositeDisposable: CompositeDisposabl
                 ))
         return studentReportInfo
     }
-
 }
