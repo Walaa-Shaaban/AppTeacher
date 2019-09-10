@@ -20,7 +20,6 @@ class AttendanceReportInfoRepository(var compositeDisposable: CompositeDisposabl
         month: String
     )
             : LiveData<AttendanceReport> {
-
         compositeDisposable.add(
             ApiUtils.apiService.getAllReportByMonth(class_id, section_id, year, month)
                 .subscribeOn(Schedulers.io())
