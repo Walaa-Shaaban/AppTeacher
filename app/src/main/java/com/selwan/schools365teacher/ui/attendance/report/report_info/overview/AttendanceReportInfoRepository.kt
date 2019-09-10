@@ -30,7 +30,6 @@ class AttendanceReportInfoRepository(var compositeDisposable: CompositeDisposabl
                         studentReportInfo.value = it
                     }
                 ))
-
         return studentReportInfo
     }
 
