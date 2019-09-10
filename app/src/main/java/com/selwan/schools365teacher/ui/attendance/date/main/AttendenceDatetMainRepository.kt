@@ -1,17 +1,16 @@
-package com.selwan.schools365teacher.ui.attendance.student.main
+package com.selwan.schools365teacher.ui.attendance.date.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.selwan.schools365teacher.data.model.student_details.Classes
 import com.selwan.schools365teacher.data.model.student_details.Sections
 import com.selwan.schools365teacher.data.utils.ApiUtils
-import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
 
-class AttendenceStudentMainRepository {
+class AttendenceDateMainRepository {
 
     var classes: MutableLiveData<List<Classes>>
     var sections: MutableLiveData<List<Sections>>
@@ -40,7 +39,7 @@ class AttendenceStudentMainRepository {
     ): LiveData<List<Sections>> {
 
         compositeDisposable.add(
-            ApiUtils.apiService.getSections(class_id = StudentsDetailsFragment.class_id!!)
+            ApiUtils.apiService.getSections(class_id = AttendanceDateMainFragment.class_id!!)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(

@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.selwan.schools365teacher.R
+import com.selwan.schools365teacher.ui.attendance.date.main.AttendeneceDateMainActivity
 import com.selwan.schools365teacher.ui.attendance.report.main.AttendanceReportMainActivity
-import com.selwan.schools365teacher.ui.attendance.student.main.AttendeneceStudentActivity
+import com.selwan.schools365teacher.ui.attendance.student.main.AttendanceStudentMainActivity
 import kotlinx.android.synthetic.main.fragment_attendance.*
 
 class AttendanceFragment : Fragment() {
@@ -26,10 +27,10 @@ class AttendanceFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         student_attendance.setOnClickListener({
-            startActivity(Intent(this.context, AttendeneceStudentActivity::class.java))
+            startActivity(Intent(this.context, AttendanceStudentMainActivity::class.java))
         })
         date_attendance.setOnClickListener({
-            startActivity(Intent(this.context, AttendeneceStudentActivity::class.java))
+            startActivity(Intent(this.context, AttendeneceDateMainActivity::class.java))
         })
         report_attendance.setOnClickListener({
             startActivity(Intent(this.context, AttendanceReportMainActivity::class.java))

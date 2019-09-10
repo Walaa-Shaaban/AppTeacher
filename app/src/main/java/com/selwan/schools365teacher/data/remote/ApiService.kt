@@ -1,6 +1,9 @@
 package com.selwan.schools365teacher.data.remote
 
-import com.selwan.schools365teacher.data.model.attendance.*
+import com.selwan.schools365teacher.data.model.attendance.AttendanceByDate
+import com.selwan.schools365teacher.data.model.attendance.AttendanceReport
+import com.selwan.schools365teacher.data.model.attendance.Attendencetypeslist
+import com.selwan.schools365teacher.data.model.attendance.StudentAttendance
 import com.selwan.schools365teacher.data.model.student_details.Classes
 import com.selwan.schools365teacher.data.model.student_details.Sections
 import com.selwan.schools365teacher.data.model.student_details.StudentDetails
@@ -29,7 +32,7 @@ interface ApiService {
     fun getAllStudentAttendance(
         @Query("class_id") class_id: String,
         @Query("section_id") section_id: String
-    ) : Single<List<Resultlist>>
+    ): Single<StudentAttendance>
 
     @GET("studentAttendance")
     fun getAllAttendanceTypeList(

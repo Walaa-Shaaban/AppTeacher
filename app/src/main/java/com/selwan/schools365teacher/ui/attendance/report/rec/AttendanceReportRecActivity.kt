@@ -11,7 +11,12 @@ class AttendanceReportRecActivity : AppCompatActivity() {
         setContentView(R.layout.activity_attendance_report)
 
         supportFragmentManager.beginTransaction().replace(R.id.frame_attendance_report,
-            AttendanceReportRecFragment()
+            AttendanceReportRecFragment(
+                intent.getStringExtra("class_id"),
+                intent.getStringExtra("section_id"),
+                intent.getStringExtra("year"),
+                intent.getStringExtra("month")
+            )
         )
             .commitAllowingStateLoss()
     }

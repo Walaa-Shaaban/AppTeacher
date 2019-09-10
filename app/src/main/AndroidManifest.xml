@@ -11,12 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.selwan.schools365teacher.ui.attendance.report.report_info.overview.AttendanaceReportInfoActivity"></activity>
+        <activity android:name=".ui.attendance.student.main.AttendanceStudentMainActivity"></activity>
+        <activity android:name=".ui.attendance.report.report_info.overview.AttendanaceReportInfoActivity" />
         <activity android:name=".ui.attendance.report.main.AttendanceReportMainActivity" />
-        <activity android:name=".ui.attendance.student.main.AttendeneceStudentActivity" />
+        <activity android:name=".ui.attendance.date.main.AttendeneceDateMainActivity" />
         <activity android:name=".ui.attendance.student.rec.AttendanceStudentRecActivity" />
         <activity android:name=".ui.attendance.report.rec.AttendanceReportRecActivity" />
-        <activity android:name=".ui.attendance.date.AttendanceDateActivity" />
+        <activity android:name=".ui.attendance.date.rec.AttendanceDateRecActivity" />
         <activity android:name=".ui.timetable.ttimetable_info.TimetableInfoActivity" />
         <activity android:name=".ui.student_details.student_details_info.StudentDetailsInfoActivity" />
         <activity android:name=".ui.student_details.recyclerview_student_details.RecyclerStudentDetailsActivity" />

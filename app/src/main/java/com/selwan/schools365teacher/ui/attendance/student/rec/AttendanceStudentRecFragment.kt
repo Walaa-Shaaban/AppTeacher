@@ -1,23 +1,20 @@
 package com.selwan.schools365teacher.ui.attendance.student.rec
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.ui.attendance.student.adapter.AttendenceStudentRecAdapter
+import com.selwan.schools365teacher.ui.attendance.student.rec.adapter.AttendenceStudentRecAdapter
 import kotlinx.android.synthetic.main.attendance_student_rec_fragment.*
 
 class AttendanceStudentRecFragment : Fragment() {
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

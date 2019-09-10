@@ -27,6 +27,8 @@ class AttendanceReportMainFragment : Fragment() {
         fun newInstance() = StudentsDetailsFragment()
         var class_id: String? = null
         var section_id: String? = null
+        var year: String? = null
+        var month: String? = null
 
     }
 
@@ -41,9 +43,22 @@ class AttendanceReportMainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         getClasses()
-        search.setOnClickListener({
-            startActivity(Intent(this.context, AttendanceReportRecActivity::class.java))
-        })
+
+        search.setOnClickListener {
+
+            val intent = Intent(this.context, AttendanceReportRecActivity::class.java)
+            /*
+            intent.putExtra("class_id", class_id!!)
+            intent.putExtra("section_id", section_id!!)
+             intent.putExtra("section_id", year!!)
+              intent.putExtra("section_id", month!!)
+             */
+            intent.putExtra("class_id", "1")
+            intent.putExtra("section_id", "1")
+            intent.putExtra("year", "2019")
+            intent.putExtra("month", "August")
+            startActivity(intent)
+        }
 
 
     }
@@ -117,6 +132,10 @@ class AttendanceReportMainFragment : Fragment() {
 
     }
 
+    //get Year $ month
+    fun getYearAndMonthFromCalender() {
+
+    }
 
     fun getViewModel(): AttendanceReportMainViewModel {
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory {

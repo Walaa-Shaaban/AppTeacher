@@ -1,33 +1,32 @@
-package com.selwan.schools365teacher.ui.attendance.student.main
+package com.selwan.schools365teacher.ui.attendance.date.main
 
 import android.content.Intent
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-
+import androidx.lifecycle.ViewModelProviders
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.ui.attendance.date.AttendanceDateActivity
+import com.selwan.schools365teacher.ui.attendance.date.rec.AttendanceDateRecActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 import kotlinx.android.synthetic.main.fragment_student_attendance.*
 import kotlinx.android.synthetic.main.students_details_fragment.sp_class
 import kotlinx.android.synthetic.main.students_details_fragment.sp_section
 
-class AttendanceStudentMainFragment : Fragment() {
+class AttendanceDateMainFragment : Fragment() {
 
     var classes = ArrayList<String>()
     var sections = ArrayList<String>()
 
     companion object {
         fun newInstance() = StudentsDetailsFragment()
-        var class_id: String? = null
+        var class_id: String? = "1"
         var section_id: String? = null
         var date : String? = null
 
@@ -49,7 +48,15 @@ class AttendanceStudentMainFragment : Fragment() {
 
 
         attendance_search.setOnClickListener {
-            val intent = Intent(this.activity, AttendanceDateActivity::class.java)
+            /*
+            intent.putExtra("class_id", class_id)
+            intent.putExtra("section_id", section_id)
+            intent.putExtra("date", date)
+             */
+            val intent = Intent(this.activity, AttendanceDateRecActivity::class.java)
+            intent.putExtra("class_id", "1")
+            intent.putExtra("section_id", "1")
+            intent.putExtra("date", "09/8/2019")
             startActivity(intent)
         }
 
@@ -129,14 +136,13 @@ class AttendanceStudentMainFragment : Fragment() {
     }
 
 
-
-    fun getViewModel(): AttendanceStudentMainViewModel {
+    fun getViewModel(): AttendanceDateMainViewModel {
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return AttendanceStudentMainViewModel() as T
+                return AttendanceDateMainViewModel() as T
             }
 
-        })[AttendanceStudentMainViewModel::class.java]
+        })[AttendanceDateMainViewModel::class.java]
     }
 
 }

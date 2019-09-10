@@ -1,4 +1,4 @@
-package com.selwan.schools365teacher.ui.attendance.date
+package com.selwan.schools365teacher.ui.attendance.date.rec
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +14,8 @@ import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.ui.attendance.date.adapter.AttendanceDateAdapter
 import kotlinx.android.synthetic.main.attendance_date_fragment.*
 
-class AttendanceDateFragment : Fragment() {
+class AttendanceDateRecFragment(var class_id: String, var section_id: String, var date: String) :
+    Fragment() {
 
 
     override fun onCreateView(
@@ -36,12 +37,12 @@ class AttendanceDateFragment : Fragment() {
     }
 
 
-    fun getViewModel(): AttendanceDateViewModel {
+    fun getViewModel(): AttendanceDateRecViewModel {
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return AttendanceDateViewModel() as T
+                return AttendanceDateRecViewModel(class_id, section_id, date) as T
             }
-        })[AttendanceDateViewModel::class.java]
+        })[AttendanceDateRecViewModel::class.java]
     }
 
 }

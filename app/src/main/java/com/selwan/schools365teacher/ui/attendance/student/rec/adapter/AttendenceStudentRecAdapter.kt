@@ -1,4 +1,4 @@
-package com.selwan.schools365teacher.ui.attendance.student.adapter
+package com.selwan.schools365teacher.ui.attendance.student.rec.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.data.model.attendance.Resultlist
-import com.selwan.schools365teacher.ui.attendance.student.adapter.AttendenceStudentRecAdapter.ViewHolder
+import com.selwan.schools365teacher.data.model.attendance.StudentAttendance
+import com.selwan.schools365teacher.ui.attendance.student.rec.adapter.AttendenceStudentRecAdapter.ViewHolder
 
-class AttendenceStudentRecAdapter (context : Context, studentAttends : List<Resultlist>): RecyclerView.Adapter<ViewHolder>() {
+class AttendenceStudentRecAdapter(context: Context, studentAttends: StudentAttendance) :
+    RecyclerView.Adapter<ViewHolder>() {
 
     var context: Context
-    var studentAttendence: List<Resultlist>
+    var studentAttendence: StudentAttendance
 
     init {
         this.context = context
@@ -27,13 +28,14 @@ class AttendenceStudentRecAdapter (context : Context, studentAttends : List<Resu
     }
 
     override fun getItemCount(): Int {
-        return studentAttendence.size
+        return studentAttendence.resultlist.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.studentName.text = studentAttendence.get(position).firstname
-        holder.student_attendence_id.text = studentAttendence.get(position).attendenceTypeId.toString()
+        holder.studentName.text = studentAttendence.resultlist.get(position).firstname
+        holder.student_attendence_id.text =
+            studentAttendence.resultlist.get(position).attendenceTypeId.toString()
     }
 
     class ViewHolder : RecyclerView.ViewHolder {

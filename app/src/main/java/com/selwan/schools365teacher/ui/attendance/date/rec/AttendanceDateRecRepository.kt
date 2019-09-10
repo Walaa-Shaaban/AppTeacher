@@ -1,6 +1,6 @@
-package com.selwan.schools365teacher.ui.attendance.date
+package com.selwan.schools365teacher.ui.attendance.date.rec
 
-import android.util.Log
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.selwan.schools365teacher.data.model.attendance.AttendanceByDate
@@ -10,7 +10,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
 
-class AttendanceDateRepository(var compositeDisposable: CompositeDisposable) {
+class AttendanceDateRecRepository(var compositeDisposable: CompositeDisposable) {
 
     var getAllStudentAttendanceByDate : MutableLiveData<AttendanceByDate>
 
@@ -27,7 +27,6 @@ class AttendanceDateRepository(var compositeDisposable: CompositeDisposable) {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     Consumer {
-                        Log.e("~~~~", "")
                         getAllStudentAttendanceByDate.value = it
                     }
                 ))

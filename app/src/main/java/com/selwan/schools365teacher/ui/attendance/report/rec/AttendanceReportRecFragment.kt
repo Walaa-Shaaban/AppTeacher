@@ -13,7 +13,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.selwan.schools365teacher.R
 import kotlinx.android.synthetic.main.attendance_report_fragment.*
 
-class AttendanceReportRecFragment : Fragment() {
+class AttendanceReportRecFragment(
+    var class_id: String,
+    var section_id: String,
+    var year: String,
+    var month: String
+) : Fragment() {
 
 
     override fun onCreateView(
@@ -36,7 +41,12 @@ class AttendanceReportRecFragment : Fragment() {
     fun getViewModel(): AttendanceReportRecViewModel {
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return AttendanceReportRecViewModel() as T
+                return AttendanceReportRecViewModel(
+                    class_id = class_id,
+                    section_id = section_id,
+                    year = year,
+                    month = month
+                ) as T
             }
 
         })[AttendanceReportRecViewModel::class.java]

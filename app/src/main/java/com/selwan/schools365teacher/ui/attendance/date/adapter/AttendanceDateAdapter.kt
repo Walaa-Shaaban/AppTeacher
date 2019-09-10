@@ -1,5 +1,6 @@
 package com.selwan.schools365teacher.ui.attendance.date.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.model.attendance.AttendanceByDate
+import com.selwan.schools365teacher.data.utils.AttendanceState
 
 class AttendanceDateAdapter
     (context : Context, var studentAttendanceReport : AttendanceByDate): RecyclerView.Adapter<AttendanceDateAdapter.ViewHolder>() {
@@ -27,14 +29,25 @@ class AttendanceDateAdapter
     }
 
     override fun getItemCount(): Int {
-        return 5
+        return getStudentAttendanceReport.resultlist.size
     }
 
+    @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-       // var studentDateAttendance = get.resultlist.get(position)
-//        holder.studentName.text = studentDateAttendance.firstname
-//        holder.student_attendence_id.text = studentDateAttendance.attendenceTypeId.toString()
+        //Add item in xml ...
+        var studentDateAttendance = getStudentAttendanceReport.resultlist.get(position)
+        holder.studentName.text = studentDateAttendance.firstname
+        var get_attendance_id = studentDateAttendance.attendenceTypeId!!.toString()
+        holder.student_attendence_id.text =
+            AttendanceState.StateAttendance(get_attendance_id).get(1)
+                .toString()
+        holder.student_attendence_id.setTextColor(
+            Integer.valueOf(
+                AttendanceState.StateAttendance(get_attendance_id).get(0)
+                    .toString()
+            )
+        )
     }
 
     class ViewHolder : RecyclerView.ViewHolder {

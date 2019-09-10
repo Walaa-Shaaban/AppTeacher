@@ -21,12 +21,6 @@ class AttendanceStudentRecViewModel : ViewModel() {
         attendanceStudentRepository.fetchStudentAttendance()
     }
 
-    /*
-    val getTypeAttendence by lazy {
-        attendanceStudentRepository.fetchAttendenceType(attendence_id)
-    }
-     */
-
     override fun onCleared() {
         super.onCleared()
         compositeDisposable.dispose()
