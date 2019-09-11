@@ -11,7 +11,7 @@ import com.selwan.schools365teacher.ui.attendance.AttendanceActivity
 import com.selwan.schools365teacher.ui.communication.CommunicationActivity
 import com.selwan.schools365teacher.ui.news.NewsActivity
 import com.selwan.schools365teacher.ui.student_details.StudentDetailsActivity
-import com.selwan.schools365teacher.ui.timetable.TimetableActivity
+import com.selwan.schools365teacher.ui.timetable.main.TimetableMainActivity
 import kotlinx.android.synthetic.main.fragment_main_screen.*
 
 class MainFragment : Fragment() {
@@ -36,13 +36,13 @@ class MainFragment : Fragment() {
             it.context.startActivity(Intent(this.context, StudentDetailsActivity::class.java))
         }
         timetable.setOnClickListener {
-            it.context.startActivity(Intent(this.context, TimetableActivity::class.java))
+            it.context.startActivity(Intent(this.context, TimetableMainActivity::class.java))
         }
         attendance.setOnClickListener {
             it.context.startActivity(Intent(this.context, AttendanceActivity::class.java))
         }
         exam.setOnClickListener {
-            it.context.startActivity(Intent(this.context, TimetableActivity::class.java))
+            it.context.startActivity(Intent(this.context, TimetableMainActivity::class.java))
         }
         communication.setOnClickListener {
             it.context.startActivity(Intent(this.context, CommunicationActivity::class.java))

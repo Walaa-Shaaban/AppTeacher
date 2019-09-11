@@ -26,4 +26,8 @@ class AttendanceReportMainViewModel : ViewModel() {
         attendanceReportMainRepository.fetchAllYear()
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        compositeDisposable.dispose()
+    }
 }

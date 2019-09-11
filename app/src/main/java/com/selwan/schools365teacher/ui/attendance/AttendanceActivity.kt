@@ -3,7 +3,6 @@ package com.selwan.schools365teacher.ui.attendance
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 
 class AttendanceActivity : AppCompatActivity() {
 

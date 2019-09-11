@@ -7,6 +7,7 @@ import com.selwan.schools365teacher.data.model.attendance.StudentAttendance
 import com.selwan.schools365teacher.data.model.student_details.Classes
 import com.selwan.schools365teacher.data.model.student_details.Sections
 import com.selwan.schools365teacher.data.model.student_details.StudentDetails
+import com.selwan.schools365teacher.data.model.timetable.Timetable
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -57,4 +58,9 @@ interface ApiService {
     ): Single<AttendanceReport>
 
 
+    @GET("getClassTimeTable")
+    fun getTimetable(
+        @Query("class_id") class_id: String,
+        @Query("section_id") section_id: String
+    ): Single<Timetable>
 }
