@@ -9,7 +9,7 @@
     <item name="five_percent" format="float" type="dimen">0.05</item>
     <item name="ninety_five_dp" format="float" type="dimen">0.95</item>
     <item name="ten_percent" format="float" type="dimen">0.1</item>
-    <item name="eighty_five_dp" type="dimen" format="float">0.85</item>
+    <item name="eighty_five_dp" format="float" type="dimen">0.85</item>
 
 
     <dimen name="sixteen_dp">16dp</dimen>
@@ -28,5 +28,7 @@
     <dimen name="roboto_calendar_ring_size">18dp</dimen>
     <dimen name="roboto_calendar_day_of_week_font">16sp</dimen>
     <dimen name="roboto_calendar_day_of_the_month_font">16sp</dimen>
+    <dimen name="appbar_padding">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
 
 </resources>

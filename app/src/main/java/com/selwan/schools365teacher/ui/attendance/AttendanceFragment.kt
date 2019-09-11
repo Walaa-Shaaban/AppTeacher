@@ -37,5 +37,4 @@ class AttendanceFragment : Fragment() {
         })
 
     }
-
 }

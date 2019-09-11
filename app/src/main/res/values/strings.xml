@@ -73,4 +73,12 @@
     <!--  by Walaa-->
     <string name="pref_file" translatable="false">pref_file</string>
     <string name="pref_class_section" translatable="false">class_section</string>
+    <string name="title_activity_timetable_tabsday">TimetableTabsdayActivity</string>
+    <string name="tab_sunday" translatable="false">Sunday</string>
+    <string name="tab_monday" translatable="false">Monday</string>
+    <string name="tab_tuesday" translatable="false">Tuesday</string>
+    <string name="tab_wednesday" translatable="false">Wednesday</string>
+    <string name="tab_thursday" translatable="false">Thursday</string>
+    <string name="tab_friday" translatable="false">Friday</string>
+    <string name="tab_saturday" translatable="false">Saturday</string>
 </resources>
