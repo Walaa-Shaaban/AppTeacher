@@ -35,8 +35,9 @@ class TimetableTabsdayAdapter : RecyclerView.Adapter<TimetableTabsdayAdapter.Vie
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
 
+
         holder.subject.text = timetable.result_array.get(position).name
-        holder.room_no.text = timetable.result_array.get(position).items.Monday.room_no
+        holder.room_no.text = timetable.result_array.get(position).items.Friday.room_no
         holder.end.text = timetable.result_array.get(position).items.Monday.end_time
         holder.start.text = timetable.result_array.get(position).items.Monday.start_time
 

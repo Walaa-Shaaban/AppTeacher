@@ -4,6 +4,8 @@ import com.selwan.schools365teacher.data.model.attendance.AttendanceByDate
 import com.selwan.schools365teacher.data.model.attendance.AttendanceReport
 import com.selwan.schools365teacher.data.model.attendance.Attendencetypeslist
 import com.selwan.schools365teacher.data.model.attendance.StudentAttendance
+import com.selwan.schools365teacher.data.model.communication.NoticBoard
+import com.selwan.schools365teacher.data.model.homework.AllHomework
 import com.selwan.schools365teacher.data.model.student_details.Classes
 import com.selwan.schools365teacher.data.model.student_details.Sections
 import com.selwan.schools365teacher.data.model.student_details.StudentDetails
@@ -63,4 +65,13 @@ interface ApiService {
         @Query("class_id") class_id: String,
         @Query("section_id") section_id: String
     ): Single<Timetable>
+
+    @GET("getHomeWork")
+    fun getAllHomework(
+    ): Single<AllHomework>
+
+    @GET("getNoticeBoard")
+    fun getNoticBoard(): Single<NoticBoard>
+
+
 }

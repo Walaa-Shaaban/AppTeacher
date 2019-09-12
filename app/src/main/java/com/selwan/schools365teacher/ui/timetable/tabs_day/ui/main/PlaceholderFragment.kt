@@ -16,13 +16,9 @@ import kotlinx.android.synthetic.main.fragment_timetable_tabsday.*
 
 class PlaceholderFragment : Fragment() {
 
-    private lateinit var pageViewModel: TimetableTabsViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        pageViewModel = ViewModelProviders.of(this).get(TimetableTabsViewModel::class.java).apply {
 
-        }
     }
 
     override fun onCreateView(
@@ -50,16 +46,4 @@ class PlaceholderFragment : Fragment() {
         })[TimetableTabsViewModel::class.java]
     }
 
-    companion object {
-        private const val ARG_SECTION_NUMBER = "section_number"
-
-        @JvmStatic
-        fun newInstance(sectionNumber: Int): PlaceholderFragment {
-            return PlaceholderFragment().apply {
-                arguments = Bundle().apply {
-                    putInt(ARG_SECTION_NUMBER, sectionNumber)
-                }
-            }
-        }
-    }
 }
