@@ -31,4 +31,5 @@ class TimetableTabsRepository(var compositeDisposable: CompositeDisposable) {
                 ))
         return getAllTimetable
     }
+
 }
