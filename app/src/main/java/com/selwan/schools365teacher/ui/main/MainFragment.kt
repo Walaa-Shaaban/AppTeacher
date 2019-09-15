@@ -15,6 +15,7 @@ import com.selwan.schools365teacher.ui.student_details.StudentDetailsActivity
 import com.selwan.schools365teacher.ui.timetable.main.TimetableMainActivity
 import kotlinx.android.synthetic.main.fragment_main_screen.*
 
+
 class MainFragment : Fragment() {
 
 
@@ -57,9 +58,12 @@ class MainFragment : Fragment() {
             it.context.startActivity(Intent(this.context, NewsActivity::class.java))
         }
 
+
+
         homework.setOnClickListener({
             it.context.startActivity(Intent(this.context, HomeworkMainActivity::class.java))
-        }
-        )
+        })
     }
-}
+
+    }
+
