@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Student attendance ?"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints" />
+
+            <!-- add RadioGroup which contain the many RadioButton-->
+            <RadioGroup
+                android:id="@+id/groupradio"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="50dp"
+                tools:ignore="MissingConstraints">
+
+                <!-- In RadioGroup create the 1 Radio Button-->
+                <!-- like this we will add some more Radio Button-->
+                <RadioButton
+                    android:id="@+id/radio_present"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Present"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_late"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Late"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_absent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Absent"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_halfday"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Half Day"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_holoday"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Half Day"
+                    android:textSize="20dp" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Note" />
+
+            <android.inputmethodservice.ExtractEditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"></android.inputmethodservice.ExtractEditText>
+            <!-- add button For Submit the Selected item-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="cancel"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints" />
+
+                <Button
+                    android:id="@+id/save"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Save"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

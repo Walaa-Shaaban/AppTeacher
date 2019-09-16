@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.selwan.schools365teacher.R
@@ -38,20 +39,15 @@ class AttendanceDateAdapter
         //Add item in xml ...
         var studentDateAttendance = getStudentAttendanceReport.resultlist.get(position)
         holder.studentName.text = studentDateAttendance.firstname
-        var get_attendance_id = studentDateAttendance.attendenceTypeId!!.toString()
+        var get_attendance_id = studentDateAttendance.attendenceTypeId.toString()
         holder.student_attendence_id.text =
             AttendanceState.StateAttendance(get_attendance_id).get(1)
                 .toString()
-        holder.student_attendence_id.setTextColor(
-            Integer.valueOf(
-                AttendanceState.StateAttendance(get_attendance_id).get(0)
-                    .toString()
-            )
-        )
+
     }
 
     class ViewHolder : RecyclerView.ViewHolder {
-        var student_attendence_id: TextView
+        var student_attendence_id: Button
         var studentName: TextView
 
         constructor(itemView: View) : super(itemView) {
@@ -61,3 +57,4 @@ class AttendanceDateAdapter
 
     }
 }
+

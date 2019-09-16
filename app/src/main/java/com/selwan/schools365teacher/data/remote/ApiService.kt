@@ -1,9 +1,6 @@
 package com.selwan.schools365teacher.data.remote
 
-import com.selwan.schools365teacher.data.model.attendance.AttendanceByDate
-import com.selwan.schools365teacher.data.model.attendance.AttendanceReport
-import com.selwan.schools365teacher.data.model.attendance.Attendencetypeslist
-import com.selwan.schools365teacher.data.model.attendance.StudentAttendance
+import com.selwan.schools365teacher.data.model.attendance.*
 import com.selwan.schools365teacher.data.model.communication.NoticBoard
 import com.selwan.schools365teacher.data.model.homework.AddNewHomework
 import com.selwan.schools365teacher.data.model.homework.HomeworkList
@@ -92,5 +89,14 @@ interface ApiService {
         @Query("section_id") section_id: String
     ): Single<List<Subject>>
 
+    @FormUrlEncoded
+    @POST("saveStudentAttendance")
+    fun attendanceSave(
+        @Field("class_id") class_id: String,
+        @Field("section_id") section_id: String,
+        @Field("date") date: String,
+        @Field("holiday") holiday: Boolean,
+        @Field("student_session") studentSession: List<StudentSession>
+    ): Single<AttendanceMsg>
 
 }
