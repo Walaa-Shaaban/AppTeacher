@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.homework.add_new.HomeworkAddNewActivity"></activity>
+        <activity
+            android:name=".ui.examination.ExaminationActivity"
+            android:label="@string/title_activity_examination"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ui.homework.add_new.HomeworkAddNewActivity" />
         <activity android:name=".ui.homework.main.HomeworkMainActivity" />
         <activity android:name=".ui.communication.add_new.CommunicationAddNewActivity" />
         <activity
@@ -31,7 +35,6 @@
         <activity android:name=".ui.fab.add_exam.AddExamActivity" />
         <activity android:name=".ui.news.NewsActivity" />
         <activity android:name=".ui.communication.main.CommunicationNoticBoardActivity" />
-        <activity android:name=".ui.examination.ExaminationActivity" />
         <activity android:name=".ui.attendance.AttendanceActivity" />
         <activity android:name=".ui.timetable.main.TimetableMainActivity" />
         <activity android:name=".ui.main.MainActivity">

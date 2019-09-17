@@ -14,6 +14,7 @@ import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.model.attendance.StudentAttendance
 import com.selwan.schools365teacher.data.model.attendance.StudentSession
 import com.selwan.schools365teacher.data.utils.ApiUtils
+import com.selwan.schools365teacher.ui.attendance.student.main.AttendanceStudentMainFragment
 import com.selwan.schools365teacher.ui.attendance.student.rec.adapter.AttendenceStudentRecAdapter.ViewHolder
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -51,10 +52,10 @@ class AttendenceStudentRecAdapter(context: Context, studentAttends: StudentAtten
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var radioGroup: RadioGroup
         var save: Button
-        var attendanceType_id: Int
+        var attendanceType_id: Int? = null
         holder.studentName.text = studentAttendence.resultlist.get(position).firstname
         holder.student_attendence_id.text =
-            studentAttendence.resultlist.get(position).attendenceTypeId.toString()
+            studentAttendence.resultlist.get(position).attendenceId.toString()
         holder.student_attendence_id.setOnClickListener {
             val dialogBuilder = AlertDialog.Builder(context)
             val inflater =
@@ -76,11 +77,19 @@ class AttendenceStudentRecAdapter(context: Context, studentAttends: StudentAtten
             save.setOnClickListener {
                 compositeDisposable.add(
                     ApiUtils.apiService.attendanceSave(
-                        "1",
-                        "1",
+                        AttendanceStudentMainFragment.class_id!!,
+                        AttendanceStudentMainFragment.section_id!!,
                         "28-12-1998",
                         false,
-                        arrayListOf(StudentSession(1, 2, listOf(1), "1", 86))
+                        arrayListOf(
+                            StudentSession(
+                                attendence_type_id = attendanceType_id!!,
+                                attendence_id = 2,
+                                remark = "1111",
+                                attendences_other_notes = listOf(1),
+                                student_session_id = 86
+                            )
+                        )
                     )
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())

@@ -2,6 +2,7 @@ package com.selwan.schools365teacher.data.remote
 
 import com.selwan.schools365teacher.data.model.attendance.*
 import com.selwan.schools365teacher.data.model.communication.NoticBoard
+import com.selwan.schools365teacher.data.model.exams.AllExamSchedule
 import com.selwan.schools365teacher.data.model.homework.AddNewHomework
 import com.selwan.schools365teacher.data.model.homework.HomeworkList
 import com.selwan.schools365teacher.data.model.homework.Subject
@@ -15,34 +16,34 @@ import retrofit2.http.*
 
 interface ApiService {
 
-    @GET("getStudentsDetails")
+    @GET("WebserviceTeacher/getStudentsDetails")
     fun getAllStudentInSection(
         @Query("class_id") class_id: String,
         @Query("section_id") section_id: String
     ): Single<List<StudentDetails>>
 
-    @GET("getClasses")
+    @GET("WebserviceTeacher/getClasses")
     fun getClasses(
     ): Single<List<Classes>>
 
-    @GET("getSections")
+    @GET("WebserviceTeacher/getSections")
     fun getSections(
         @Query("class_id") class_id: String
     ): Single<List<Sections>>
 
-    @GET("studentAttendance")
+    @GET("WebserviceTeacher/studentAttendance")
     fun getAllStudentAttendance(
         @Query("class_id") class_id: String,
         @Query("section_id") section_id: String
     ): Single<StudentAttendance>
 
-    @GET("studentAttendance")
+    @GET("WebserviceTeacher/studentAttendance")
     fun getAllAttendanceTypeList(
         @Query("class_id") class_id: String,
         @Query("section_id") section_id: String
     ) : Single<List<Attendencetypeslist>>
 
-    @GET("attendanceByDate")
+    @GET("WebserviceTeacher/attendanceByDate")
     fun getAllStudentAttendanceByDate(
         @Query("class_id") class_id: String,
         @Query("section_id") section_id: String,
@@ -50,7 +51,7 @@ interface ApiService {
     ): Single<AttendanceByDate>
 
 
-    @GET("attendanceReport")
+    @GET("WebserviceTeacher/attendanceReport")
     fun getAllReportByMonth(
         @Query("class_id") class_id: String,
         @Query("section_id") section_id: String,
@@ -59,19 +60,19 @@ interface ApiService {
     ): Single<AttendanceReport>
 
 
-    @GET("getClassTimeTable")
+    @GET("WebserviceTeacher/getClassTimeTable")
     fun getTimetable(
         @Query("class_id") class_id: String,
         @Query("section_id") section_id: String
     ): Single<Timetable>
 
 
-    @GET("getHomeWork")
+    @GET("WebserviceTeacher/getHomeWork")
     fun getHomeworkList(
     ): Single<HomeworkList>
 
     @FormUrlEncoded
-    @POST("addHomeWork")
+    @POST("WebserviceTeacher/addHomeWork")
     fun add_homework(
         @Field("class_id") class_id: String,
         @Field("section_id") section_id: String,
@@ -81,7 +82,7 @@ interface ApiService {
         @Field("description") description: String
     ): Single<AddNewHomework>
 
-    @GET("getNoticeBoard")
+    @GET("WebserviceTeacher/getNoticeBoard")
     fun getNoticBoard(): Single<NoticBoard>
 
     @GET("getSubjectsTeacher")
@@ -91,7 +92,7 @@ interface ApiService {
     ): Single<List<Subject>>
 
     @FormUrlEncoded
-    @POST("saveStudentAttendance")
+    @POST("WebserviceTeacher/saveStudentAttendance")
     fun attendanceSave(
         @Field("class_id") class_id: String,
         @Field("section_id") section_id: String,
@@ -100,7 +101,10 @@ interface ApiService {
         @Field("student_session") studentSession: List<StudentSession>
     ): Single<AttendanceMsg>
 
-    @GET("getNews")
+    @GET("Webservice/getNews")
     fun getNews()
             : Single<News>
+
+    @GET("")
+    fun getAllExams(): Single<AllExamSchedule>
 }

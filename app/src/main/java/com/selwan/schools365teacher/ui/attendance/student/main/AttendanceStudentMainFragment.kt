@@ -25,7 +25,7 @@ class AttendanceStudentMainFragment : Fragment() {
 
     companion object {
         fun newInstance() = StudentsDetailsFragment()
-        var class_id: String? = "1"
+        var class_id: String? = null
         var section_id: String? = null
 
     }
@@ -71,7 +71,7 @@ class AttendanceStudentMainFragment : Fragment() {
 
 
 
-            sp_class.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
+            sp_class.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,
@@ -87,7 +87,7 @@ class AttendanceStudentMainFragment : Fragment() {
                 override fun onNothingSelected(adapterView: AdapterView<*>) {
                     return
                 }
-            })
+            }
         })
     }
 
@@ -104,7 +104,7 @@ class AttendanceStudentMainFragment : Fragment() {
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
             sp_section.adapter = adapter
 
-            sp_section.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
+            sp_section.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,
@@ -119,7 +119,7 @@ class AttendanceStudentMainFragment : Fragment() {
                 override fun onNothingSelected(adapterView: AdapterView<*>) {
                     return
                 }
-            })
+            }
         })
 
     }
