@@ -17,6 +17,8 @@
     <string name="font_awesome_delete_message" translatable="false">&#xf2ed;</string>
 
 
+    <string name="hostelRoomNo">Room No</string>
+
     <string name="class_timetable">Class TimeTable</string>
     <string name="class_title">Class</string>
     <string name="student_details">Student Details</string>
