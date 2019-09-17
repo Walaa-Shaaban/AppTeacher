@@ -5,14 +5,15 @@ import com.selwan.schools365teacher.data.model.attendance.AttendanceReport
 import com.selwan.schools365teacher.data.model.attendance.Attendencetypeslist
 import com.selwan.schools365teacher.data.model.attendance.StudentAttendance
 import com.selwan.schools365teacher.data.model.communication.NoticBoard
-import com.selwan.schools365teacher.data.model.homework.AllHomework
+import com.selwan.schools365teacher.data.model.homework.AddNewHomework
+import com.selwan.schools365teacher.data.model.homework.HomeworkList
+import com.selwan.schools365teacher.data.model.homework.Subject
 import com.selwan.schools365teacher.data.model.student_details.Classes
 import com.selwan.schools365teacher.data.model.student_details.Sections
 import com.selwan.schools365teacher.data.model.student_details.StudentDetails
 import com.selwan.schools365teacher.data.model.timetable.Timetable
 import io.reactivex.Single
-import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -66,12 +67,30 @@ interface ApiService {
         @Query("section_id") section_id: String
     ): Single<Timetable>
 
+
     @GET("getHomeWork")
-    fun getAllHomework(
-    ): Single<AllHomework>
+    fun getHomeworkList(
+    ): Single<HomeworkList>
+
+    @FormUrlEncoded
+    @POST("addHomeWork")
+    fun add_homework(
+        @Field("class_id") class_id: String,
+        @Field("section_id") section_id: String,
+        @Field("subject_id") subject_id: String,
+        @Field("homework_date") homework_date: String,
+        @Field("submit_date") submit_date: String,
+        @Field("description") description: String
+    ): Single<AddNewHomework>
 
     @GET("getNoticeBoard")
     fun getNoticBoard(): Single<NoticBoard>
+
+    @GET("getSubjectsTeacher")
+    fun getSubject(
+        @Query("class_id") class_id: String,
+        @Query("section_id") section_id: String
+    ): Single<List<Subject>>
 
 
 }

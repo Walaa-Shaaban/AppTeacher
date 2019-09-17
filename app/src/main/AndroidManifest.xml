@@ -13,6 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.homework.add_new.HomeworkAddNewActivity"></activity>
         <activity android:name=".ui.homework.main.HomeworkMainActivity" />
+        <activity android:name=".ui.communication.add_new.CommunicationAddNewActivity" />
         <activity
             android:name=".ui.timetable.tabs_day.TimetableTabsdayActivity"
             android:label="@string/title_activity_timetable_tabsday"
