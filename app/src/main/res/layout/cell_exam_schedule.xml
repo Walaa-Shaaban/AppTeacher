@@ -137,7 +137,6 @@
                     android:layout_alignParentEnd="true"
                     android:orientation="vertical"
                     android:weightSum="2">
-
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
@@ -146,7 +145,6 @@
                         android:textColor="@color/textHeading"
                         android:textSize="@dimen/secondaryText"
                         android:textStyle="bold" />
-
                     <TextView
                         android:id="@+id/adapter_student_examSchedule_timeTV"
                         android:layout_width="match_parent"
@@ -159,8 +157,6 @@
 
             </RelativeLayout>
             <!--AUTHOR NAME AND SUBJECT NAME VIEW ENDS-->
-
-
         </LinearLayout>
 
     </RelativeLayout>
