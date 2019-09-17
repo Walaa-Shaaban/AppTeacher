@@ -97,6 +97,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <TextView
+                style="@style/standard_title"
+                android:text="Message"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fl_class" />
+
+            <EditText
+                android:id="@+id/msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
             <Button
                 android:id="@+id/add_new_homework"
                 android:layout_width="wrap_content"

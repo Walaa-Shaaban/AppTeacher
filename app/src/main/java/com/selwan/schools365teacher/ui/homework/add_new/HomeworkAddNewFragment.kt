@@ -1,5 +1,6 @@
 package com.selwan.schools365teacher.ui.homework.add_new
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,10 +14,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.selwan.schools365teacher.R
+import com.selwan.schools365teacher.ui.homework.main.HomeworkMainActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 import kotlinx.android.synthetic.main.homework_add_new_fragment.*
 
-class HomeworkAddNewFragment() : Fragment() {
+class HomeworkAddNewFragment : Fragment() {
 
     var classes = ArrayList<String>()
     var sections = ArrayList<String>()
@@ -46,12 +48,14 @@ class HomeworkAddNewFragment() : Fragment() {
 
         add_new_homework.setOnClickListener {
             getViewModel().addHomework(
-                class_id = class_id!!, section_id = section_id!!, subject_id = subject_id!!,
+                class_id = class_id!!, section_id = section_id!!, subject_id = "1",
                 homework_date = "13-12-2019",
                 submit_date = "14-12-2019",
-                message = "hiii123"
+                message = msg.text.toString()
             ).observe(this, Observer {
                 Toast.makeText(this.context, it.message, Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this.context, HomeworkMainActivity::class.java))
+
             })
         }
 

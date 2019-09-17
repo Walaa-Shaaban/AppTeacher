@@ -5,6 +5,7 @@ import com.selwan.schools365teacher.data.model.communication.NoticBoard
 import com.selwan.schools365teacher.data.model.homework.AddNewHomework
 import com.selwan.schools365teacher.data.model.homework.HomeworkList
 import com.selwan.schools365teacher.data.model.homework.Subject
+import com.selwan.schools365teacher.data.model.news.News
 import com.selwan.schools365teacher.data.model.student_details.Classes
 import com.selwan.schools365teacher.data.model.student_details.Sections
 import com.selwan.schools365teacher.data.model.student_details.StudentDetails
@@ -99,4 +100,7 @@ interface ApiService {
         @Field("student_session") studentSession: List<StudentSession>
     ): Single<AttendanceMsg>
 
+    @GET("getNews")
+    fun getNews()
+            : Single<News>
 }

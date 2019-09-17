@@ -354,7 +354,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 style="@style/font_below_font_awesome"
                 android:layout_marginStart="@dimen/twenty_dp"
-                android:text="@string/our_news"
+                android:text="Our News"
                 android:textAlignment="textStart"
                 android:textColor="@color/blueZinko"
                 app:layout_constraintBottom_toBottomOf="parent"

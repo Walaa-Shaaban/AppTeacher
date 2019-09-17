@@ -17,12 +17,12 @@ class HomeworkAddNewRepository(var compositeDisposable: CompositeDisposable) {
     var homeworks = MutableLiveData<AddNewHomework>()
     var classes: MutableLiveData<List<Classes>>
     var sections: MutableLiveData<List<Sections>>
-    var subject: MutableLiveData<List<Subject>>
+    var subject = MutableLiveData<List<Subject>>()
 
     init {
         classes = MutableLiveData()
         sections = MutableLiveData()
-        subject = MutableLiveData()
+
     }
 
 
@@ -86,14 +86,14 @@ class HomeworkAddNewRepository(var compositeDisposable: CompositeDisposable) {
     fun fetchSubject(
         compositeDisposable: CompositeDisposable
     ): LiveData<List<Subject>> {
-        compositeDisposable.add(
-            ApiUtils.apiService.getSubject(class_id = "1", section_id = "1")
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                    Consumer {
-                        subject.value = it
-                    }
-                ))
+//        compositeDisposable.add(
+//            ApiUtils.apiService.getSubject(class_id = HomeworkAddNewFragment.class_id!!, section_id = HomeworkAddNewFragment.section_id!!)
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(
+//                    Consumer {
+//                        subject.value = it
+//                    }
+//                ))
         return subject
     }
 }
