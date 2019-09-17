@@ -25,6 +25,7 @@ class ExaminationFragment : Fragment() {
         return inflater.inflate(R.layout.examination_fragment, container, false)
     }
 
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(ExaminationViewModel::class.java)
