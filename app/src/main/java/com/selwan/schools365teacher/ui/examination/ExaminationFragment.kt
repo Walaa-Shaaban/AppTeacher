@@ -30,6 +30,7 @@ class ExaminationFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(ExaminationViewModel::class.java)
         rec_exam.layoutManager = LinearLayoutManager(this.context)
 
+
         viewModel.fetchAllExams.observe(this, Observer {
             rec_exam.adapter = ExaminationAdapter(this.context!!, it)
         })
