@@ -155,7 +155,6 @@
                         android:textColor="@color/textHeading"
                         android:textSize="@dimen/secondaryText"
                         android:textStyle="bold" />
-
                 </LinearLayout>
 
             </RelativeLayout>
