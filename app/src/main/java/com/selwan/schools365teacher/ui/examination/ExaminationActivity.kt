@@ -12,7 +12,7 @@ class ExaminationActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction().replace(
             R.id.frame_examination,
-            ExaminationFragment()
+            ExaminationFragment("")
         )
             .commitAllowingStateLoss()
 

@@ -9,10 +9,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.ui.examination.adapter.ExaminationAdapter
+import com.selwan.schools365teacher.ui.examination.main_tabs.adapter.ExaminationAdapter
 import kotlinx.android.synthetic.main.examination_fragment.*
 
-class ExaminationFragment : Fragment() {
+class ExaminationFragment(var exam_id: String) : Fragment() {
 
 
 
@@ -33,7 +33,7 @@ class ExaminationFragment : Fragment() {
 
 
         viewModel.fetchAllExams.observe(this, Observer {
-            rec_exam.adapter = ExaminationAdapter(this.context!!, it)
+            rec_exam.adapter = ExaminationAdapter(this.context!!, it, exam_id)
         })
     }
 
