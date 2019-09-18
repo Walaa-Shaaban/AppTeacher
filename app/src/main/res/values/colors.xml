@@ -42,6 +42,8 @@
     <color name="circle_brown_color">#575757</color>
     <color name="circle_orange_color">#F5C200</color>
     <color name="circle_pink_color">#F500AB</color>
+    <color name="dark_blue">#3A4A67</color>
+    <color name="white_">#FFFFFF</color>
 
 
 </resources>

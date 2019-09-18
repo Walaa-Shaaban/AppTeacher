@@ -35,5 +35,11 @@
     <dimen name="roboto_calendar_day_of_the_month_font">16sp</dimen>
     <dimen name="appbar_padding">16dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="eighty_two">82dp</dimen>
+    <dimen name="six_hundred">600dp</dimen>
+    <dimen name="thirty_four">34dp</dimen>
+    <dimen name="fifty_five">55dp</dimen>
+    <dimen name="twenty_four">24dp</dimen>
+    <dimen name="hundred_ninety_seven">197dp</dimen>
 
 </resources>

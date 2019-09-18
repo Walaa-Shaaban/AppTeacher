@@ -42,7 +42,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         style="@style/textview_default"
-        android:text="@string/half_day"
+        android:text="@string/note"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_55"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
@@ -51,7 +51,7 @@
     <androidx.appcompat.widget.AppCompatEditText
         style="@style/edittext_default"
         android:lines="5"
-        android:text="@string/half_day"
+        android:text="@string/text"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_75"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
