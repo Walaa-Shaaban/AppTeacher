@@ -18,6 +18,8 @@
 
 
     <string name="hostelRoomNo">Room No</string>
+    <string name="name">Name </string>
+    <string name="apply">Apply </string>
 
     <string name="class_timetable">Class TimeTable</string>
     <string name="class_title">Class</string>
@@ -72,6 +74,9 @@
     <string name="late_title">Late</string>
     <string name="abscence">Absene</string>
     <string name="half_day">Half Day</string>
+    <string name="order_by_number">order by number</string>
+    <string name="Order_By_admission_number">Order By admission number</string>
+    <string name="Order_By_roll_Number">Order By roll Number</string>
     <string name="note">Note</string>
 
     <!--  by Walaa-->

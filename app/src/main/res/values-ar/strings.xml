@@ -10,7 +10,11 @@
     <string name="examination">Examination</string>
     <string name="class_title">صف</string>
     <string name="text">نص</string>
-
+    <string name="order_by_number">ترتيب حسب العدد</string>
+    <string name="Order_By_admission_number">ترتيب حسب رقم القبول</string>
+    <string name="Order_By_roll_Number">ترتيب حسب عدد الدوران</string>
+    <string name="name">الاسم </string>
+    <string name="apply">تطبيق </string>
     <string name="communication">Communication</string>
     <string name="section">Section</string>
     <string name="student_attendance">Student Attendance</string>
