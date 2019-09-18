@@ -14,7 +14,7 @@ class ExaminationRepository(var compositeDisposable: CompositeDisposable) {
     var allExams = MutableLiveData<AllExamSchedule>()
     fun fetchAllExams(): LiveData<AllExamSchedule> {
         compositeDisposable.add(
-            ApiUtils.apiService.getAllExams()
+            ApiUtils.apiService.getAllExams("1", "1")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(

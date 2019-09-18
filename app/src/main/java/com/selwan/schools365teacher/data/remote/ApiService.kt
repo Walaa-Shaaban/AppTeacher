@@ -105,6 +105,9 @@ interface ApiService {
     fun getNews()
             : Single<News>
 
-    @GET("")
-    fun getAllExams(): Single<AllExamSchedule>
+    @GET("WebserviceTeacher/getExamSchedule")
+    fun getAllExams(
+        @Query("class_id") class_id: String,
+        @Query("section_id") section_id: String
+    ): Single<AllExamSchedule>
 }
