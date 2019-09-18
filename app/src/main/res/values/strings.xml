@@ -72,6 +72,7 @@
     <string name="late_title">Late</string>
     <string name="abscence">Absene</string>
     <string name="half_day">Half Day</string>
+    <string name="note">Note</string>
 
     <!--  by Walaa-->
     <string name="pref_file" translatable="false">pref_file</string>
@@ -85,6 +86,8 @@
     <string name="tab_friday" translatable="false">Friday</string>
     <string name="tab_saturday" translatable="false">Saturday</string>
     <string name="title_activity_examination">ExaminationActivity</string>
+
     <string name="tab_text_1">Tab 1</string>
+    <string name="text">Text</string>
     <string name="tab_text_2">Tab 2</string>
 </resources>
