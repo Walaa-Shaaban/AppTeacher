@@ -34,4 +34,6 @@
     <string name="late_title">Late</string>
     <string name="abscence">Absene</string>
     <string name="half_day">Half Day</string>
+
+    <string name="hostelRoomNo">Room No</string>
 </resources>

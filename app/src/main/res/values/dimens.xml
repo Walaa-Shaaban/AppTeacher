@@ -12,6 +12,11 @@
     <item name="eighty_five_dp" format="float" type="dimen">0.85</item>
 
 
+    <dimen name="heading">18sp</dimen>
+    <dimen name="primaryText">15sp</dimen>
+    <dimen name="secondaryText">12sp</dimen>
+
+
     <dimen name="sixteen_dp">16dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
