@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     android:layout_margin="@dimen/twenty_dp">
 
-    <TextView
-        android:id="@+id/tv_class"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_class"
         style="@style/standard_title"
         android:text="@string/class_title"
+        android:textColor="#252525"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -18,58 +19,67 @@
         style="@style/frame_layout_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_class">
+        app:layout_constraintTop_toBottomOf="@+id/actv_class">
 
-        <Spinner
-            android:id="@+id/sp_class"
-            style="@style/spinner_style_stroked" />
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/acsp_class"
+            style="@style/spinner_style_stroked"
+            android:elevation="@dimen/five_dp"/>
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/tv_section"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_section"
         style="@style/standard_title"
         android:text="@string/section"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fl_class" />
+        app:layout_constraintTop_toBottomOf="@+id/fl_class"
+        android:textColor="#252525"
+        />
 
     <FrameLayout
         android:id="@+id/fl_section"
         style="@style/frame_layout_style"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_section">
+        app:layout_constraintTop_toBottomOf="@+id/actv_section">
 
-        <Spinner
-            android:id="@+id/sp_section"
-            style="@style/spinner_style_stroked" />
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/acsp_section"
+            style="@style/spinner_style_stroked"
+            android:elevation="@dimen/five_dp"/>
 
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/tv_title_attendance_date"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_title_attendance_date"
         style="@style/standard_title"
         android:text="@string/date_attendance"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fl_section" />
+        app:layout_constraintTop_toBottomOf="@+id/fl_section"
+        android:textColor="#252525"
+        />
 
     <FrameLayout
         android:id="@+id/fl_attendance"
         style="@style/frame_layout_style"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_attendance_date">
+        app:layout_constraintTop_toBottomOf="@+id/actv_title_attendance_date">
 
-        <EditText
-            android:id="@+id/attendance_date"
-            style="@style/spinner_style_stroked" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/acet_attendance_date"
+            style="@style/spinner_style_stroked"
+            android:elevation="@dimen/five_dp"/>
     </FrameLayout>
 
 
-    <Button
-        android:id="@+id/attendance_search"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/acb_attendance_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search"
+        android:text="@string/search"
         tools:layout_editor_absoluteX="139dp"
         tools:layout_editor_absoluteY="395dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:background="#3A4A67"
+        android:textColor="#FFFFFF"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

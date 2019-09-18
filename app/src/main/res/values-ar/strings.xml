@@ -3,6 +3,7 @@
     <string name="app_name">Schools365Teacher</string>
     <string name="class_timetable">Class TimeTable</string>
     <string name="student_details">Student Details</string>
+    <string name="search">بحث</string>
     <string name="our_news">اخبارنا</string>
     <string name="attendance">Attendance</string>
     <string name="examination">Examination</string>
