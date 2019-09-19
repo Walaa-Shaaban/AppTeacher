@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/acb_select_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sixteen"
+        android:layout_marginTop="@dimen/twenty_four"
+        android:layout_marginEnd="@dimen/sixteen"
+        android:text="@string/select_date"
+        android:textColor="#1e90ff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/acsp_select_roles"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fifty"
+        android:layout_marginStart="@dimen/sixteen"
+        android:layout_marginTop="@dimen/sixteen"
+        android:layout_marginEnd="@dimen/sixteen"
+        app:layout_constraintEnd_toEndOf="@+id/acb_select_date"
+        app:layout_constraintStart_toStartOf="@+id/acb_select_date"
+        app:layout_constraintTop_toBottomOf="@+id/acb_select_date" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/acet_title"
+        style="@style/edittext_default"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/twenty_four"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/title_"
+        app:layout_constraintEnd_toEndOf="@+id/acsp_select_roles"
+        app:layout_constraintStart_toStartOf="@+id/acsp_select_roles"
+        app:layout_constraintTop_toBottomOf="@+id/acsp_select_roles" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/acet_message"
+        style="@style/edittext_default"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/twenty_four"
+        android:ems="10"
+        android:inputType="textMultiLine|textPersonName"
+        android:lines="7"
+        android:text="@string/message_"
+        app:layout_constraintEnd_toEndOf="@+id/acet_title"
+        app:layout_constraintStart_toStartOf="@+id/acet_title"
+        app:layout_constraintTop_toBottomOf="@+id/acet_title" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/acb_send_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="123dp"
+        android:background="@drawable/btn_shape"
+        android:text="@string/send_message"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/acet_message"
+        app:layout_constraintStart_toStartOf="@+id/acet_message"
+        app:layout_constraintTop_toBottomOf="@+id/acet_message" />
+</androidx.constraintlayout.widget.ConstraintLayout>

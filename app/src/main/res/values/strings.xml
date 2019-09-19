@@ -19,8 +19,13 @@
 
     <string name="hostelRoomNo">Room No</string>
     <string name="name">Name </string>
+    <string name="continue_">Continue </string>
     <string name="apply">Apply </string>
-
+    <string name="notification">Notification </string>
+    <string name="title">New title </string>
+    <string name="title_">title </string>
+    <string name="message">New message </string>
+    <string name="Teacher">Teacher Test </string>
     <string name="class_timetable">Class TimeTable</string>
     <string name="class_title">Class</string>
     <string name="student_details">Student Details</string>
@@ -38,6 +43,7 @@
     <string name="marks_grade">Marks Grade</string>
     <string name="notice_board">Notice Board</string>
     <string name="send_message">Send Message</string>
+    <string name="select_date">Select Date</string>
     <string name="title_activity_master">MasterActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -47,6 +53,8 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
+    <string name="message_">Message</string>
+    <string name="content">Content</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Tools</string>
@@ -60,7 +68,6 @@
     <string name="dashboard">Dashboard</string>
     <string name="help">Help</string>
     <string name="about_me">about_me</string>
-    <string name="search">Search</string>
     <string name="settings">Settings</string>
     <string name="logout">Logout</string>
     <string name="event_title">Event Title</string>
@@ -74,10 +81,6 @@
     <string name="late_title">Late</string>
     <string name="abscence">Absene</string>
     <string name="half_day">Half Day</string>
-    <string name="order_by_number">order by number</string>
-    <string name="Order_By_admission_number">Order By admission number</string>
-    <string name="Order_By_roll_Number">Order By roll Number</string>
-    <string name="note">Note</string>
 
     <!--  by Walaa-->
     <string name="pref_file" translatable="false">pref_file</string>
@@ -90,10 +93,7 @@
     <string name="tab_thursday" translatable="false">Thursday</string>
     <string name="tab_friday" translatable="false">Friday</string>
     <string name="tab_saturday" translatable="false">Saturday</string>
-    <string name="title_activity_examination">ExaminationActivity</string>
-
-    <string name="tab_text_1">Tab 1</string>
-    <string name="one"> 1</string>
-    <string name="text">Text</string>
-    <string name="tab_text_2">Tab 2</string>
+    <!--    <string name="title_activity_examination">ExaminationActivity</string>-->
+    <!--    <string name="tab_text_1">Tab 1</string>-->
+    <!--    <string name="tab_text_2">Tab 2</string>-->
 </resources>
