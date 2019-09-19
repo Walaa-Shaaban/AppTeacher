@@ -19,6 +19,7 @@
 
     <string name="hostelRoomNo">Room No</string>
     <string name="name">Name </string>
+    <string name="continue_">Continue </string>
     <string name="apply">Apply </string>
     <string name="notification">Notification </string>
     <string name="title">New title </string>

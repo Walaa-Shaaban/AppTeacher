@@ -11,6 +11,7 @@
     <string name="title_">العنوان </string>
     <string name="message_">الرسالة</string>
     <string name="content">المحتوى</string>
+    <string name="continue_">استمرار</string>
     <string name="private_title">Private</string>
     <string name="public_title">Public</string>
     <string name="all_teacher_title">All Teacher</string>
