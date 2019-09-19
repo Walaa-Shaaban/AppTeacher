@@ -29,7 +29,9 @@ class ExaminationViewMarkActivity : AppCompatActivity() {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
                 return ExaminationViewMarkViewHolder(
                     context = applicationContext,
-                    class_id = "1", section_id = "1", exam_id = "1"
+                    class_id = intent.getStringExtra("class_id"),
+                    section_id = intent.getStringExtra("section_id"),
+                    exam_id = intent.getStringExtra("exam_id")
                 ) as T
             }
 

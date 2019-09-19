@@ -23,7 +23,7 @@ class AdapterViewMark(context: Context, viewmark: ViewMark) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_exam, parent, false)
+            .inflate(R.layout.item_view_mark, parent, false)
         return AdapterViewMark.ViewHolder(inflater)
     }
 
@@ -48,7 +48,7 @@ class AdapterViewMark(context: Context, viewmark: ViewMark) :
 
 
         constructor(itemView: View) : super(itemView) {
-            name = itemView.findViewById(R.id.txtName)
+            name = itemView.findViewById(R.id.txt_name_mark)
             mark_total_ = itemView.findViewById(R.id.txtmark)
 
         }

@@ -4,7 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.selwan.schools365teacher.data.model.exams.ExamScheduleAddNew
 import com.selwan.schools365teacher.data.model.exams.ResultAddNewExam
+import com.selwan.schools365teacher.data.model.homework.Subject
 import com.selwan.schools365teacher.data.utils.ApiUtils
+import com.selwan.schools365teacher.ui.examination.main.ExaminationMainFragment
+import com.selwan.schools365teacher.ui.homework.add_new.HomeworkAddNewFragment
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
@@ -13,6 +16,7 @@ import io.reactivex.schedulers.Schedulers
 class AddNewExamRepository(var compositeDisposable: CompositeDisposable) {
 
     var getDataAddNewExam = MutableLiveData<ResultAddNewExam>()
+    var getSubject = MutableLiveData<List<Subject>>()
 
     fun addNewExam(
         class_id: String,
@@ -35,5 +39,23 @@ class AddNewExamRepository(var compositeDisposable: CompositeDisposable) {
                     }
                 ))
         return getDataAddNewExam
+    }
+
+
+    fun fetchSubject(
+        compositeDisposable: CompositeDisposable
+    ): LiveData<List<Subject>> {
+        compositeDisposable.add(
+            ApiUtils.apiService.getSubject(
+                class_id = ExaminationMainFragment.class_id!!,
+                section_id = ExaminationMainFragment.section_id!!
+            )
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    Consumer {
+                        getSubject.value = it
+                    }
+                ))
+        return getSubject
     }
 }

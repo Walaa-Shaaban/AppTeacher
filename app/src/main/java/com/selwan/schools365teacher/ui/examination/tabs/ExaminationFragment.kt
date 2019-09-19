@@ -39,7 +39,9 @@ class ExaminationFragment(var exam_id: String) : Fragment() {
         })
 
         fab_add_new.setOnClickListener { view ->
-            startActivity(Intent(this.context, AddNewExamActivity::class.java))
+            var intent = Intent(this.context, AddNewExamActivity::class.java)
+            intent.putExtra("exam_id", exam_id)
+            startActivity(intent)
         }
     }
 

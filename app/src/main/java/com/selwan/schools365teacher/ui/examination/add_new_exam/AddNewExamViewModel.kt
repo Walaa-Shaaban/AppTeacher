@@ -28,4 +28,8 @@ class AddNewExamViewModel(
     val AddNewExam by lazy {
         addNewExamRepository.getDataAddNewExam
     }
+
+    val getSubject by lazy {
+        addNewExamRepository.fetchSubject(compositeDisposable)
+    }
 }

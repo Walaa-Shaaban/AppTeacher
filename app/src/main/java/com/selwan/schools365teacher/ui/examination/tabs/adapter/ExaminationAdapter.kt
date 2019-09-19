@@ -1,6 +1,7 @@
 package com.selwan.schools365teacher.ui.examination.tabs.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.model.exams.AllExamSchedule
+import com.selwan.schools365teacher.ui.examination.main.ExaminationMainFragment
+import com.selwan.schools365teacher.ui.examination.view_mark.ExaminationViewMarkActivity
 
 
 class ExaminationAdapter(context: Context, listExam: AllExamSchedule, var exam_id: String) :
@@ -39,7 +42,11 @@ class ExaminationAdapter(context: Context, listExam: AllExamSchedule, var exam_i
             holder.exam_date.text = listExam.examSchedule.get(position).date_of_exam
             holder.exam_room.text = listExam.examSchedule.get(position).room_no
             holder.viewMark.setOnClickListener {
-
+                var intent = Intent(this.context, ExaminationViewMarkActivity::class.java)
+                intent.putExtra("exam_id", listExam.examSchedule.get(position).exam_id)
+                intent.putExtra("class_id", ExaminationMainFragment.class_id)
+                intent.putExtra("section_id", ExaminationMainFragment.section_id)
+                this.context.startActivity(intent)
             }
         } else {
             holder.linear_exam_adapter.layoutParams = LinearLayout.LayoutParams(

@@ -12,7 +12,7 @@ class AddNewExamActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction().replace(
             R.id.frame_add_new_exam,
-            AddNewExamFragment()
+            AddNewExamFragment(intent.getStringExtra("exam_id"))
         )
             .commitAllowingStateLoss()
 

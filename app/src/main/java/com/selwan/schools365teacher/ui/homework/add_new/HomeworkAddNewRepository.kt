@@ -86,14 +86,17 @@ class HomeworkAddNewRepository(var compositeDisposable: CompositeDisposable) {
     fun fetchSubject(
         compositeDisposable: CompositeDisposable
     ): LiveData<List<Subject>> {
-//        compositeDisposable.add(
-//            ApiUtils.apiService.getSubject(class_id = HomeworkAddNewFragment.class_id!!, section_id = HomeworkAddNewFragment.section_id!!)
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(
-//                    Consumer {
-//                        subject.value = it
-//                    }
-//                ))
+        compositeDisposable.add(
+            ApiUtils.apiService.getSubject(
+                class_id = HomeworkAddNewFragment.class_id!!,
+                section_id = HomeworkAddNewFragment.section_id!!
+            )
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    Consumer {
+                        subject.value = it
+                    }
+                ))
         return subject
     }
 }
