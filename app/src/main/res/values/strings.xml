@@ -22,6 +22,7 @@
     <string name="apply">Apply </string>
     <string name="notification">Notification </string>
     <string name="title">New title </string>
+    <string name="title_">title </string>
     <string name="message">New message </string>
     <string name="Teacher">Teacher Test </string>
     <string name="class_timetable">Class TimeTable</string>
@@ -41,6 +42,7 @@
     <string name="marks_grade">Marks Grade</string>
     <string name="notice_board">Notice Board</string>
     <string name="send_message">Send Message</string>
+    <string name="select_date">Select Date</string>
     <string name="title_activity_master">MasterActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -50,6 +52,8 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
+    <string name="message_">Message</string>
+    <string name="content">Content</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Tools</string>

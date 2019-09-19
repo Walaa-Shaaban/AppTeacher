@@ -42,5 +42,8 @@
     <dimen name="twenty_four">24dp</dimen>
     <dimen name="hundred_ninety_seven">197dp</dimen>
     <dimen name="thirty">30sp</dimen>
+    <dimen name="sixteen">16dp</dimen>
+    <dimen name="twenty_four">24dp</dimen>
+    <dimen name="fifty">50dp</dimen>
 
 </resources>
