@@ -2,7 +2,9 @@ package com.selwan.schools365teacher.data.remote
 
 import com.selwan.schools365teacher.data.model.attendance.*
 import com.selwan.schools365teacher.data.model.communication.NoticBoard
+import com.selwan.schools365teacher.data.model.exams.AddNewExam
 import com.selwan.schools365teacher.data.model.exams.AllExamSchedule
+import com.selwan.schools365teacher.data.model.exams.ExamScheduleAddNew
 import com.selwan.schools365teacher.data.model.homework.AddNewHomework
 import com.selwan.schools365teacher.data.model.homework.HomeworkList
 import com.selwan.schools365teacher.data.model.homework.Subject
@@ -110,4 +112,13 @@ interface ApiService {
         @Query("class_id") class_id: String,
         @Query("section_id") section_id: String
     ): Single<AllExamSchedule>
+
+    @POST("WebserviceTeacher/assignExamSchedule")
+    fun addNewExam(
+        @Field("exam_id") exam_id: String,
+        @Field("class_id") class_id: String,
+        @Field("section_id") section_id: String,
+        @Field("examSchedule") examSchedule: List<ExamScheduleAddNew>
+    ): Single<AddNewExam>
+
 }

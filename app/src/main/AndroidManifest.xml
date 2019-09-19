@@ -11,10 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.examination.add_new_exam.AddNewExamActivity"></activity>
+        <activity android:name=".ui.examination.main_tabs.ExamTabsActivity" />
         <activity
             android:name=".ui.examination.ExaminationActivity"
             android:label="@string/title_activity_examination"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.homework.add_new.HomeworkAddNewActivity" />
         <activity android:name=".ui.homework.main.HomeworkMainActivity" />
         <activity android:name=".ui.communication.add_new.CommunicationAddNewActivity" />

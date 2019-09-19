@@ -1,7 +1,6 @@
-package com.selwan.schools365teacher.ui.examination.adapter
+package com.selwan.schools365teacher.ui.examination.main_tabs.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.model.exams.AllExamSchedule
 
-class ExaminationAdapter (context: Context, listExam: AllExamSchedule) : RecyclerView.Adapter<ExaminationAdapter.ViewHolder>(){
+class ExaminationAdapter(context: Context, listExam: AllExamSchedule, var exam_id: String) :
+    RecyclerView.Adapter<ExaminationAdapter.ViewHolder>() {
 
     var context: Context
     var listExam: AllExamSchedule
@@ -31,9 +31,11 @@ class ExaminationAdapter (context: Context, listExam: AllExamSchedule) : Recycle
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.exam_title.text = listExam.examSchedule.get(position).name
-        holder.exam_date.text = listExam.examSchedule.get(position).date_of_exam
-        holder.exam_room.text = listExam.examSchedule.get(position).room_no
+        if (listExam.examSchedule.get(position).exam_id.equals(exam_id)) {
+            holder.exam_title.text = listExam.examSchedule.get(position).subject_name
+            holder.exam_date.text = listExam.examSchedule.get(position).date_of_exam
+            holder.exam_room.text = listExam.examSchedule.get(position).room_no
+        }
 
 
     }

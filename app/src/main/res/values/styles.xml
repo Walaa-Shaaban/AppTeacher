@@ -8,6 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="bot_style" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@drawable/shap_bott</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">#ffffff</item>
+
+
+    </style>
+
 
     <!-- Using Font Awesome -->
     <style name="font_awesome_textview_style">
