@@ -3,6 +3,8 @@ package com.selwan.schools365teacher.ui.examination.tabs
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.selwan.schools365teacher.R
 import kotlinx.android.synthetic.main.activity_exam_tabs.*
@@ -14,8 +16,7 @@ class ExamTabsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exam_tabs)
 
-        viewModel = ViewModelProviders.of(this).get(ExaminationViewModel::class.java)
-        viewModel.fetchAllExams.observe(this, Observer {
+        getViewModel().fetchAllExams.observe(this, Observer {
             val examPagerAdapter = ExamPagerAdapter(
                 context = this, fm = supportFragmentManager,
                 allExams = it
@@ -24,5 +25,14 @@ class ExamTabsActivity : AppCompatActivity() {
             tabs_exam.setupWithViewPager(pager_exam)
         })
 
+    }
+
+    fun getViewModel(): ExaminationViewModel {
+        return ViewModelProviders.of(this, object : ViewModelProvider.Factory {
+            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+                return ExaminationViewModel(this@ExamTabsActivity) as T
+            }
+
+        })[ExaminationViewModel::class.java]
     }
 }

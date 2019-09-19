@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.ui.examination.tabs.ExaminationActivity
+import com.selwan.schools365teacher.ui.examination.tabs.ExamTabsActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 import kotlinx.android.synthetic.main.examination_main_fragment.*
 import kotlinx.android.synthetic.main.students_details_fragment.sp_class
@@ -46,7 +46,7 @@ class ExaminationMainFragment : Fragment() {
 
 
         next.setOnClickListener {
-            val intent = Intent(this.activity, ExaminationActivity::class.java)
+            val intent = Intent(this.activity, ExamTabsActivity::class.java)
             startActivity(intent)
         }
 

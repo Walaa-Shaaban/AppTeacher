@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.examination.main.ExaminationMainActivity"></activity>
+        <activity android:name=".ui.examination.view_mark.ExaminationViewMarkActivity"></activity>
+        <activity android:name=".ui.examination.main.ExaminationMainActivity" />
         <activity android:name=".ui.examination.add_new_exam.AddNewExamActivity" />
         <activity android:name=".ui.examination.tabs.ExamTabsActivity" />
         <activity

@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.selwan.schools365teacher.R
@@ -30,9 +32,9 @@ class ExaminationFragment(var exam_id: String) : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(ExaminationViewModel::class.java)
+
         rec_exam.layoutManager = LinearLayoutManager(this.context)
-        viewModel.fetchAllExams.observe(this, Observer {
+        getViewModel().fetchAllExams.observe(this, Observer {
             rec_exam.adapter = ExaminationAdapter(this.context!!, it, exam_id)
         })
 
@@ -40,5 +42,15 @@ class ExaminationFragment(var exam_id: String) : Fragment() {
             startActivity(Intent(this.context, AddNewExamActivity::class.java))
         }
     }
+
+    fun getViewModel(): ExaminationViewModel {
+        return ViewModelProviders.of(this, object : ViewModelProvider.Factory {
+            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+                return ExaminationViewModel(context!!) as T
+            }
+
+        })[ExaminationViewModel::class.java]
+    }
+
 
 }
