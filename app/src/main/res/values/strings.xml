@@ -20,7 +20,10 @@
     <string name="hostelRoomNo">Room No</string>
     <string name="name">Name </string>
     <string name="apply">Apply </string>
-
+    <string name="notification">Notification </string>
+    <string name="title">New title </string>
+    <string name="message">New message </string>
+    <string name="Teacher">Teacher Test </string>
     <string name="class_timetable">Class TimeTable</string>
     <string name="class_title">Class</string>
     <string name="student_details">Student Details</string>

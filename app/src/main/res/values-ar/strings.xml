@@ -16,6 +16,10 @@
     <string name="name">الاسم </string>
     <string name="apply">تطبيق </string>
     <string name="one"> 1</string>
+    <string name="notification">الاشعارات </string>
+    <string name="title">عنوان جديد </string>
+    <string name="message">رسالة جديدة </string>
+    <string name="Teacher">اختبار المعلم </string>
     <string name="communication">Communication</string>
     <string name="section">Section</string>
     <string name="student_attendance">Student Attendance</string>

@@ -44,6 +44,8 @@
     <color name="circle_pink_color">#F500AB</color>
     <color name="dark_blue">#3A4A67</color>
     <color name="white_">#FFFFFF</color>
+    <color name="lightBlue">#9E9E9E</color>
+    <color name="gray_">#1e90ff</color>
 
 
 </resources>
