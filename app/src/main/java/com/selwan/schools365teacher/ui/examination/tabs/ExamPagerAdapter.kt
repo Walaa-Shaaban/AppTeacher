@@ -1,4 +1,4 @@
-package com.selwan.schools365teacher.ui.examination.main_tabs
+package com.selwan.schools365teacher.ui.examination.tabs
 
 
 import android.content.Context
@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.selwan.schools365teacher.data.model.exams.AllExamSchedule
-import com.selwan.schools365teacher.ui.examination.ExaminationFragment
 
 class ExamPagerAdapter(
     private var context: Context,
@@ -23,7 +22,11 @@ class ExamPagerAdapter(
 
     override fun getItem(position: Int): Fragment {
 
-        return ExaminationFragment(getAllExams.exams.get(position).id)
+        return ExaminationFragment(
+            getAllExams.exams.get(
+                position
+            ).id
+        )
     }
 
     override fun getCount(): Int {

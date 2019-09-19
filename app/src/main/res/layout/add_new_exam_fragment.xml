@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.examination.add_new_exam.AddNewExamFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_subject"
+            style="@style/standard_title"
+            android:text="subject"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fl_class" />
+
+        <FrameLayout
+            android:id="@+id/fl_subject"
+            style="@style/frame_layout_style"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_section">
+
+            <Spinner
+                android:id="@+id/sp_subject"
+                style="@style/spinner_style_stroked" />
+
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/et_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="date"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/from"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="From"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="TO"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/room_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ROOM NO"
+            tools:ignore="MissingConstraints" />
+
+
+        <EditText
+            android:id="@+id/full_mark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full Mark"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/passing_mark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Passing Mark"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnAddExam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            android:text="Add Exam" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

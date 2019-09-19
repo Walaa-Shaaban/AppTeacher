@@ -1,4 +1,4 @@
-package com.selwan.schools365teacher.ui.examination
+package com.selwan.schools365teacher.ui.examination.tabs
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

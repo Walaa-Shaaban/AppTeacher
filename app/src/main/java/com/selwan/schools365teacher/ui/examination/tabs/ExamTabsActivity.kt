@@ -1,11 +1,10 @@
-package com.selwan.schools365teacher.ui.examination.main_tabs
+package com.selwan.schools365teacher.ui.examination.tabs
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.ui.examination.ExaminationViewModel
 import kotlinx.android.synthetic.main.activity_exam_tabs.*
 
 class ExamTabsActivity : AppCompatActivity() {

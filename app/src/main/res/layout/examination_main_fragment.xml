@@ -44,21 +44,12 @@
 
     </FrameLayout>
 
-    <FrameLayout
-        android:id="@+id/fl_attendance"
-        style="@style/frame_layout_style"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="234dp" />
-
-
     <Button
-        android:id="@+id/attendance_search"
+        android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search"
+        android:text="Continue"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="139dp"
-        tools:layout_editor_absoluteY="395dp" />
-
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="474dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

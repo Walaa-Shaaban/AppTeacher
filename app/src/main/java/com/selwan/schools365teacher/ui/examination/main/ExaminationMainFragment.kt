@@ -1,4 +1,4 @@
-package com.selwan.schools365teacher.ui.timetable.main
+package com.selwan.schools365teacher.ui.examination.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,29 +13,30 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.ui.attendance.student.main.AttendanceStudentMainViewModel
+import com.selwan.schools365teacher.ui.examination.tabs.ExaminationActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
-import com.selwan.schools365teacher.ui.timetable.tabs_day.TimetableTabsdayActivity
-import kotlinx.android.synthetic.main.fragment_class_timetable.*
+import kotlinx.android.synthetic.main.examination_main_fragment.*
+import kotlinx.android.synthetic.main.students_details_fragment.sp_class
+import kotlinx.android.synthetic.main.students_details_fragment.sp_section
 
-class TimetableMainFragment : Fragment() {
+class ExaminationMainFragment : Fragment() {
+
 
     var classes = ArrayList<String>()
     var sections = ArrayList<String>()
 
     companion object {
         fun newInstance() = StudentsDetailsFragment()
-        var class_id: String? = "1"
+        var class_id: String? = null
         var section_id: String? = null
 
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_class_timetable, container, false)
+        return inflater.inflate(R.layout.examination_main_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -43,17 +44,13 @@ class TimetableMainFragment : Fragment() {
 
         getClasses()
 
-        timetable_search.setOnClickListener {
-            /*
-            intent.putExtra("class_id", class_id)
-            intent.putExtra("section_id", section_id)
-            intent.putExtra("date", date)
-             */
-            val intent = Intent(this.activity, TimetableTabsdayActivity::class.java)
-            intent.putExtra("class_id", "1")
-            intent.putExtra("section_id", "1")
+
+        next.setOnClickListener {
+            val intent = Intent(this.activity, ExaminationActivity::class.java)
             startActivity(intent)
         }
+
+
     }
 
 
@@ -80,7 +77,7 @@ class TimetableMainFragment : Fragment() {
                     l: Long
                 ) {
                     adapterView.getItemAtPosition(position)
-                    StudentsDetailsFragment.class_id = it.get(position).class_id
+                    class_id = it.get(position).class_id
                     getSections()
 
                 }
@@ -113,7 +110,7 @@ class TimetableMainFragment : Fragment() {
                     l: Long
                 ) {
                     adapterView.getItemAtPosition(position)
-                    StudentsDetailsFragment.section_id = it.get(position).id
+                    section_id = it.get(position).id
 
                 }
 
@@ -126,14 +123,14 @@ class TimetableMainFragment : Fragment() {
     }
 
 
-    fun getViewModel(): AttendanceStudentMainViewModel {
+    //Send args using factory
+    fun getViewModel(): ExaminationMainViewModel {
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return AttendanceStudentMainViewModel() as T
+                return ExaminationMainViewModel() as T
             }
 
-        })[AttendanceStudentMainViewModel::class.java]
+        })[ExaminationMainViewModel::class.java]
     }
-
 
 }

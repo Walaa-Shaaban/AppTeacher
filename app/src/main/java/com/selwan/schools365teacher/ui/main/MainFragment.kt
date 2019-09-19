@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.ui.attendance.AttendanceActivity
 import com.selwan.schools365teacher.ui.communication.main.CommunicationNoticBoardActivity
-import com.selwan.schools365teacher.ui.examination.main_tabs.ExamTabsActivity
+import com.selwan.schools365teacher.ui.examination.main.ExaminationMainActivity
 import com.selwan.schools365teacher.ui.homework.main.HomeworkMainActivity
 import com.selwan.schools365teacher.ui.news.NewsActivity
 import com.selwan.schools365teacher.ui.student_details.StudentDetailsActivity
@@ -45,7 +45,7 @@ class MainFragment : Fragment() {
             it.context.startActivity(Intent(this.context, AttendanceActivity::class.java))
         }
         exam.setOnClickListener {
-            it.context.startActivity(Intent(this.context, ExamTabsActivity::class.java))
+            it.context.startActivity(Intent(this.context, ExaminationMainActivity::class.java))
         }
         communication.setOnClickListener {
             it.context.startActivity(

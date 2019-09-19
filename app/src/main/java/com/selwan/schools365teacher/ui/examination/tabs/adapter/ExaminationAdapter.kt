@@ -1,4 +1,4 @@
-package com.selwan.schools365teacher.ui.examination.main_tabs.adapter
+package com.selwan.schools365teacher.ui.examination.tabs.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

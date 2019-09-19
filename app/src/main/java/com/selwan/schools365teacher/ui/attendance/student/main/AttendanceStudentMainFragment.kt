@@ -16,7 +16,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.ui.attendance.student.rec.AttendanceStudentRecActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
-import kotlinx.android.synthetic.main.fragment_student_attendance.*
+import kotlinx.android.synthetic.main.attendance_student_main_fragment.*
 
 class AttendanceStudentMainFragment : Fragment() {
 

@@ -1,4 +1,4 @@
-package com.selwan.schools365teacher.ui.examination
+package com.selwan.schools365teacher.ui.examination.tabs
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
@@ -10,7 +10,10 @@ class ExaminationViewModel : ViewModel() {
 
     init {
         compositeDisposable = CompositeDisposable()
-        examinationRepository = ExaminationRepository(compositeDisposable)
+        examinationRepository =
+            ExaminationRepository(
+                compositeDisposable
+            )
         examinationRepository.fetchAllExams()
 
     }
