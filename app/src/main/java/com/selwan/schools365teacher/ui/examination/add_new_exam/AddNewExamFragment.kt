@@ -53,7 +53,7 @@ class AddNewExamFragment(var exam_id: String) : Fragment() {
                 )
             )
 
-            getViewModel().AddNewExam.observe(this, Observer {
+            getViewModel().addNewExamByTeacher().observe(this, Observer {
                 Snackbar.make(view!!, it.msg, Snackbar.LENGTH_LONG)
                     .show()
             })

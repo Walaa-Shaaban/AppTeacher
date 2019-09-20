@@ -88,7 +88,7 @@ interface ApiService {
     @GET("WebserviceTeacher/getNoticeBoard")
     fun getNoticBoard(): Single<NoticBoard>
 
-    @GET("getSubjectsTeacher")
+    @GET("WebserviceTeacher/getSubjectsTeacher")
     fun getSubject(
         @Query("class_id") class_id: String,
         @Query("section_id") section_id: String

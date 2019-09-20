@@ -1,5 +1,6 @@
 package com.selwan.schools365teacher.ui.examination.add_new_exam
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.selwan.schools365teacher.data.model.exams.ExamScheduleAddNew
@@ -47,9 +48,10 @@ class AddNewExamRepository(var compositeDisposable: CompositeDisposable) {
     ): LiveData<List<Subject>> {
         compositeDisposable.add(
             ApiUtils.apiService.getSubject(
-                class_id = ExaminationMainFragment.class_id!!,
-                section_id = ExaminationMainFragment.section_id!!
+                ExaminationMainFragment.class_id!!,
+                ExaminationMainFragment.section_id!!
             )
+                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     Consumer {
