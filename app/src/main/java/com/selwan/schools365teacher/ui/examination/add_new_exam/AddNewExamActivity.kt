@@ -15,8 +15,5 @@ class AddNewExamActivity : AppCompatActivity() {
             AddNewExamFragment(intent.getStringExtra("exam_id"))
         )
             .commitAllowingStateLoss()
-
-
     }
 }
-

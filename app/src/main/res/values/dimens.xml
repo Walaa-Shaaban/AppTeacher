@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <dimen name="ten_dp">10dp</dimen>
     <dimen name="fifteen_dp">15dp</dimen>
     <dimen name="twenty_dp">20dp</dimen>
@@ -40,11 +40,11 @@
     <dimen name="thirty_four">34dp</dimen>
     <dimen name="fifty_five">55dp</dimen>
     <dimen name="hundred_ninety_seven">197dp</dimen>
-    <dimen name="thirty">30sp</dimen>
+    <dimen name="thirty_dp">30sp</dimen>
     <dimen name="twenty_four">24dp</dimen>
-    <dimen name="fifty">50dp</dimen>
-    <dimen name="sixteen">16dp</dimen>
-    <dimen name="seventy">70dp</dimen>
-    <dimen name="thirty_two">32dp</dimen>
+    <dimen name="fifty_dp">50dp</dimen>
+    <dimen name="sixteen_do">16dp</dimen>
+    <dimen name="seventy_dp">70dp</dimen>
+    <dimen name="thirty_two_dp">32dp</dimen>
 
 </resources>
