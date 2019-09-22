@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_news_date2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sixteen_dp"
+        android:layout_marginTop="@dimen/one_hundred"
+        android:text="@string/class_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aciv_pic" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/aptv_news2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/thirty_two"
+        android:lines="5"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/actv_label_news2"
+        app:layout_constraintTop_toBottomOf="@+id/actv_label_news2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_label_news2"
+        style="@style/standard_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sixteen_dp"
+        android:layout_marginTop="@dimen/sixteen_dp"
+        android:text="@string/news"
+        android:textSize="@dimen/twenty_four"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actv_news_date2" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aciv_pic"
+        android:layout_width="@dimen/one_hundred_fifty"
+        android:layout_height="@dimen/one_hundred_fifty"
+        android:layout_marginStart="@dimen/eighty"
+        android:layout_marginTop="@dimen/thirty_two"
+        android:layout_marginEnd="@dimen/eighty"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
+</androidx.constraintlayout.widget.ConstraintLayout>
