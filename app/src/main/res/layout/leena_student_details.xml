@@ -7,20 +7,16 @@
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/acsp_select_class"
+        style="@style/spinner_style"
         android:layout_width="0dp"
-        android:layout_height="@dimen/fifty_dp"
-        android:layout_marginStart="@dimen/thirty_two_dp"
-        android:layout_marginTop="@dimen/sixteen_dp"
-        android:layout_marginEnd="@dimen/thirty_dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/acsp_select_section"
+        style="@style/spinner_style2"
         android:layout_width="0dp"
-        android:layout_height="@dimen/fifteen_dp"
-        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="@+id/acsp_select_class"
         app:layout_constraintStart_toStartOf="@+id/acsp_select_class"
         app:layout_constraintTop_toBottomOf="@+id/acsp_select_class" />
@@ -29,11 +25,13 @@
         android:id="@+id/acb_continue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/seventy_dp"
+        android:layout_marginTop="@dimen/seventy"
         android:background="@drawable/btn_shape3"
-        android:text="@string/content"
+        android:text="@string/continue_"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/acsp_select_section"
         app:layout_constraintStart_toStartOf="@+id/acsp_select_section"
         app:layout_constraintTop_toBottomOf="@+id/acsp_select_section" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
