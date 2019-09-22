@@ -1,6 +1,7 @@
 package com.selwan.schools365teacher.ui.timetable.tabs_day.ui.main.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,15 +9,29 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.model.timetable.Timetable
+import com.selwan.schools365teacher.data.model.timetable.day_info
 
 class TimetableTabsdayAdapter : RecyclerView.Adapter<TimetableTabsdayAdapter.ViewHolder> {
 
+    class DayInfoWithName {
+        var name: String
+        var dayInfo: day_info
+
+        constructor(name: String, day: day_info) {
+            this.name = name
+            this.dayInfo = day
+        }
+    }
+
     var context: Context
     var timetable: Timetable
+    var tabText: String
 
-    constructor(timetable: Timetable, context: Context) : super() {
+    constructor(timetable: Timetable, context: Context, tabText: String) : super() {
         this.timetable = timetable
         this.context = context
+        this.tabText = tabText
+
     }
 
 
@@ -29,19 +44,28 @@ class TimetableTabsdayAdapter : RecyclerView.Adapter<TimetableTabsdayAdapter.Vie
     }
 
     override fun getItemCount(): Int {
-        return timetable.result_array.size
+        return allItems().size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = allItems()[position]
 
+        holder.subject.text = item.name
+        holder.room_no.text = item.dayInfo.room_no
+        holder.end.text = item.dayInfo.end_time
+        holder.start.text = item.dayInfo.start_time
 
+    }
 
-        holder.subject.text = timetable.result_array.get(position).name
-        holder.room_no.text = timetable.result_array.get(position).items.Friday.room_no
-        holder.end.text = timetable.result_array.get(position).items.Monday.end_time
-        holder.start.text = timetable.result_array.get(position).items.Monday.start_time
-
-
+    fun allItems(): List<DayInfoWithName> {
+        return timetable.result_array.mapNotNull {
+            val day = it.items.get(tabText)
+            if (day != null) {
+                DayInfoWithName(name = it.name, day = day)
+            } else {
+                null
+            }
+        }
     }
 
     class ViewHolder : RecyclerView.ViewHolder {

@@ -7,6 +7,7 @@ import com.selwan.schools365teacher.data.model.homework.Subject
 import com.selwan.schools365teacher.data.model.student_details.Classes
 import com.selwan.schools365teacher.data.model.student_details.Sections
 import com.selwan.schools365teacher.data.utils.ApiUtils
+import com.selwan.schools365teacher.ui.examination.main.ExaminationMainFragment
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
@@ -88,9 +89,10 @@ class HomeworkAddNewRepository(var compositeDisposable: CompositeDisposable) {
     ): LiveData<List<Subject>> {
         compositeDisposable.add(
             ApiUtils.apiService.getSubject(
-                class_id = HomeworkAddNewFragment.class_id!!,
-                section_id = HomeworkAddNewFragment.section_id!!
+                HomeworkAddNewFragment.class_id!!,
+                HomeworkAddNewFragment.section_id!!
             )
+                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     Consumer {

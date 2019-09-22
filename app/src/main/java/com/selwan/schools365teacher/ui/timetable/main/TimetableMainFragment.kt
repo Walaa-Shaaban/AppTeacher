@@ -24,8 +24,7 @@ class TimetableMainFragment : Fragment() {
     var sections = ArrayList<String>()
 
     companion object {
-        fun newInstance() = StudentsDetailsFragment()
-        var class_id: String? = "1"
+        var class_id: String? = null
         var section_id: String? = null
 
     }
@@ -44,14 +43,7 @@ class TimetableMainFragment : Fragment() {
         getClasses()
 
         timetable_search.setOnClickListener {
-            /*
-            intent.putExtra("class_id", class_id)
-            intent.putExtra("section_id", section_id)
-            intent.putExtra("date", date)
-             */
             val intent = Intent(this.activity, TimetableTabsdayActivity::class.java)
-            intent.putExtra("class_id", "1")
-            intent.putExtra("section_id", "1")
             startActivity(intent)
         }
     }
@@ -80,7 +72,7 @@ class TimetableMainFragment : Fragment() {
                     l: Long
                 ) {
                     adapterView.getItemAtPosition(position)
-                    StudentsDetailsFragment.class_id = it.get(position).class_id
+                    TimetableMainFragment.class_id = it.get(position).class_id
                     getSections()
 
                 }
@@ -113,7 +105,7 @@ class TimetableMainFragment : Fragment() {
                     l: Long
                 ) {
                     adapterView.getItemAtPosition(position)
-                    StudentsDetailsFragment.section_id = it.get(position).id
+                    TimetableMainFragment.section_id = it.get(position).id
 
                 }
 
@@ -126,13 +118,13 @@ class TimetableMainFragment : Fragment() {
     }
 
 
-    fun getViewModel(): AttendanceStudentMainViewModel {
+    fun getViewModel(): TimetableMainViewModel {
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return AttendanceStudentMainViewModel() as T
+                return TimetableMainViewModel() as T
             }
 
-        })[AttendanceStudentMainViewModel::class.java]
+        })[TimetableMainViewModel::class.java]
     }
 
 
