@@ -23,6 +23,7 @@
     <string name="class_timetable">Class TimeTable</string>
     <string name="class_title">Class</string>
     <string name="student_details">Student Details</string>
+    <string name="student">Student</string>
     <string name="attendance">Attendance</string>
     <string name="student_attendance">Student Attendance</string>
     <string name="date_attendance">Date Attendance</string>
@@ -44,8 +45,16 @@
     <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="news">News</string>
 
     <string name="menu_home">Home</string>
+    <string name="roll_number">Roll Number</string>
+    <string name="admission_number">Admission Number</string>
+    <string name="ret">RET</string>
+    <string name="twenty">20</string>
+    <string name="two_thousand">2032</string>
+    <string name="no">No</string>
+    <string name="class_date">Class Date</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Tools</string>

@@ -23,7 +23,7 @@
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/acsp_select_roles"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/fifty_dp"
+        android:layout_height="@dimen/fifty"
         android:layout_marginStart="@dimen/sixteen_dp"
         android:layout_marginTop="@dimen/sixteen_dp"
         android:layout_marginEnd="@dimen/sixteen_dp"
