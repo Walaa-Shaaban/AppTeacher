@@ -36,25 +36,19 @@ class NewsAdapter (context: Context, listNews: News) : RecyclerView.Adapter<News
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.title.text = listNews.items.get(position).title
         holder.desc.text = listNews.items.get(position).description
-        Glide
-            .with(context)
-            .load(listNews.items.get(position).feature_image)
-            .centerCrop()
-            .placeholder(R.mipmap.ic_launcher)
-            .into(holder.imgNews)
-
+        holder.date_new.text = listNews.items.get(position).date
 
     }
 
 
     class ViewHolder :  RecyclerView.ViewHolder{
-        var imgNews : ImageView
         var title: TextView
+        var date_new: TextView
         var desc :  TextView
 
         constructor(itemView: View) : super(itemView) {
-            imgNews = itemView.findViewById(R.id.img_new)
             title = itemView.findViewById(R.id.title)
+            date_new = itemView.findViewById(R.id.date_new)
             desc = itemView.findViewById(R.id.description)
         }
 

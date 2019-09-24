@@ -14,12 +14,7 @@ import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.ui.timetable.tabs_day.ui.main.adapter.TimetableTabsdayAdapter
 import kotlinx.android.synthetic.main.fragment_timetable_tabsday.*
 
-class PlaceholderFragment : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+class PlaceholderFragment(var tabText: String) : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +29,7 @@ class PlaceholderFragment : Fragment() {
 
         rec_timetable.layoutManager = LinearLayoutManager(this.context)
         getViewModel().getTimetable.observe(this, Observer {
-            rec_timetable.adapter = TimetableTabsdayAdapter(it, this.context!!)
+            rec_timetable.adapter = TimetableTabsdayAdapter(it, this.context!!, tabText)
         })
     }
 

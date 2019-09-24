@@ -24,10 +24,11 @@ class HomeworkAddNewFragment : Fragment() {
     var sections = ArrayList<String>()
     var subjects = ArrayList<String>()
 
+
     companion object {
         fun newInstance() = StudentsDetailsFragment()
-        var class_id: String? = null
-        var section_id: String? = null
+        var class_id: String? = "1"
+        var section_id: String? = "1"
         var subject_id: String? = null
 
     }
@@ -48,7 +49,7 @@ class HomeworkAddNewFragment : Fragment() {
 
         add_new_homework.setOnClickListener {
             getViewModel().addHomework(
-                class_id = class_id!!, section_id = section_id!!, subject_id = "1",
+                class_id = "1", section_id = "1", subject_id = "1",
                 homework_date = "13-12-2019",
                 submit_date = "14-12-2019",
                 message = msg.text.toString()
