@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_attendance_type"
+            style="@style/standard_title"
+            android:text="@string/section"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fl_class" />
+
+        <FrameLayout
+            android:id="@+id/fl_section"
+            style="@style/frame_layout_style"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_section">
+
+            <Spinner
+                android:id="@+id/sp_attendance_type"
+                style="@style/spinner_style_stroked" />
+
+        </FrameLayout>
+
+        <TextView
+            style="@style/standard_title"
+            android:text="OtherNote"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fl_class" />
+
+        <FrameLayout
+            style="@style/frame_layout_style"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_section">
+
+            <Spinner
+                android:id="@+id/sp_other_note"
+                style="@style/spinner_style_stroked" />
+
+        </FrameLayout>
+
+
+        <EditText
+            android:id="@+id/note"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/change_attendance"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:text="saveattendance"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/note"
+            app:layout_constraintStart_toStartOf="@+id/note"
+            app:layout_constraintTop_toBottomOf="@+id/note" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
