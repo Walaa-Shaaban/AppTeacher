@@ -14,11 +14,10 @@ import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.model.exams.ExamScheduleAddNew
+import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.examination.main.ExaminationMainFragment
-import com.selwan.schools365teacher.ui.homework.add_new.HomeworkAddNewFragment
 import kotlinx.android.synthetic.main.add_new_exam_fragment.*
 import kotlinx.android.synthetic.main.add_new_exam_fragment.sp_subject
-import kotlinx.android.synthetic.main.homework_add_new_fragment.*
 
 class AddNewExamFragment(var exam_id: String) : Fragment() {
 
@@ -37,26 +36,34 @@ class AddNewExamFragment(var exam_id: String) : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        getSubject()
+        if (NetworkUtils.isNetworkConnected(this.context!!)) {
+            getSubject()
 
-        btnAddExam.setOnClickListener {
-            list.add(
-                ExamScheduleAddNew(
-                    date_of_exam = et_date.text.toString(),
-                    end_from = from.text.toString(),
-                    full_marks = full_mark.text.toString(),
-                    passing_marks = passing_mark.text.toString(),
-                    room_no = room_no.text.toString(),
-                    start_to = to.text.toString(),
-                    teacher_subject_id = 1
+            btnAddExam.setOnClickListener {
+                list.add(
+                    ExamScheduleAddNew(
+                        date_of_exam = et_date.text.toString(),
+                        end_from = from.text.toString(),
+                        full_marks = full_mark.text.toString(),
+                        passing_marks = passing_mark.text.toString(),
+                        room_no = room_no.text.toString(),
+                        start_to = to.text.toString(),
+                        teacher_subject_id = 1
 
+                    )
                 )
-            )
 
-            getViewModel().addNewExamByTeacher().observe(this, Observer {
-                Snackbar.make(view!!, it.msg, Snackbar.LENGTH_LONG)
-                    .show()
-            })
+                getViewModel().addNewExamByTeacher().observe(this, Observer {
+                    Snackbar.make(view!!, it.msg, Snackbar.LENGTH_LONG)
+                        .show()
+                })
+            }
+        } else {
+            val snackbar =
+                Snackbar.make(view!!, "Connection Error ... Try again", Snackbar.LENGTH_LONG)
+            val sbView = snackbar.view
+            sbView.setBackgroundResource(R.color.redHighDelete)
+            snackbar.show()
         }
 
 

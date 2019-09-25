@@ -9,7 +9,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
+import com.selwan.schools365teacher.data.utils.NetworkUtils
 import kotlinx.android.synthetic.main.student_details_info_fragment.*
 
 class StudentDetailsInfoFragment(var student_id : String) : Fragment() {
@@ -24,9 +26,21 @@ class StudentDetailsInfoFragment(var student_id : String) : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        getViewModel().getStudentDetailsInfo.observe(this, Observer {
-            txt_stu_info.text = "${it.firstname}\n${it.father_phone}\n ${it.city}\n ${it.current_address}"
-        })
+
+        if (NetworkUtils.isNetworkConnected(this.context!!)) {
+            getViewModel().getStudentDetailsInfo.observe(this, Observer {
+                txt_stu_info.text =
+                    "${it.firstname}\n${it.father_phone}\n ${it.city}\n ${it.current_address}"
+            })
+        } else {
+            val snackbar =
+                Snackbar.make(view!!, "Connection Error ... Try again", Snackbar.LENGTH_LONG)
+            val sbView = snackbar.view
+            sbView.setBackgroundResource(R.color.redHighDelete)
+            snackbar.show()
+
+        }
+
 
     }
 

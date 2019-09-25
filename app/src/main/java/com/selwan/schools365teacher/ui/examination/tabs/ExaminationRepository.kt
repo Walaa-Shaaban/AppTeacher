@@ -4,9 +4,13 @@ import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.google.android.material.snackbar.Snackbar
+import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.model.exams.AllExamSchedule
 import com.selwan.schools365teacher.data.utils.ApiUtils
 import com.selwan.schools365teacher.ui.examination.main.ExaminationMainFragment
+import com.selwan.schools365teacher.ui.timetable.main.TimetableMainFragment
+import com.selwan.schools365teacher.ui.timetable.main.TimetableMainFragment.Companion.view
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
@@ -27,11 +31,15 @@ class ExaminationRepository(var compositeDisposable: CompositeDisposable, var co
                     allExams.value = it
 
                 }, Consumer {
-                    Toast.makeText(
-                        context,
-                        "Something Went Error ... The data couldn't be read",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    val snackbar =
+                        Snackbar.make(
+                            view!!,
+                            "Something Went Error ... The data couldn't be read",
+                            Snackbar.LENGTH_LONG
+                        )
+                    val sbView = snackbar.view
+                    sbView.setBackgroundResource(R.color.green)
+                    snackbar.show()
                 })
         )
 

@@ -4,6 +4,6 @@
     android:id="@+id/frame_homework_add_new"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.homework.add_new.HomeworkAddNewActivity">
+    tools:context=".ui.homework.add_new.add_new_continue.HomeworkAddNewActivity">
 
 </FrameLayout>

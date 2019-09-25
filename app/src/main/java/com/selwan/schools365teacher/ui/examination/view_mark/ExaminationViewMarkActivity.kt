@@ -7,7 +7,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
+import com.selwan.schools365teacher.data.utils.NetworkUtils
+import com.selwan.schools365teacher.ui.timetable.main.TimetableMainFragment.Companion.view
 import kotlinx.android.synthetic.main.activity_view_mark.*
 
 class ExaminationViewMarkActivity : AppCompatActivity() {
@@ -16,10 +19,19 @@ class ExaminationViewMarkActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_mark)
 
-        rec_view_mark.layoutManager = LinearLayoutManager(this)
-        getViewModel().getAllViewMark.observe(this, Observer {
-            rec_view_mark.adapter = AdapterViewMark(context = this, viewmark = it)
-        })
+        if (NetworkUtils.isNetworkConnected(this)) {
+            rec_view_mark.layoutManager = LinearLayoutManager(this)
+            getViewModel().getAllViewMark.observe(this, Observer {
+                rec_view_mark.adapter = AdapterViewMark(context = this, viewmark = it)
+            })
+        } else {
+            val snackbar =
+                Snackbar.make(view!!, "Connection Error ... Try again", Snackbar.LENGTH_LONG)
+            val sbView = snackbar.view
+            sbView.setBackgroundResource(R.color.redHighDelete)
+            snackbar.show()
+
+        }
 
 
     }

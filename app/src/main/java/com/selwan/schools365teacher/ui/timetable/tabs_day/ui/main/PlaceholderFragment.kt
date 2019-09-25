@@ -10,7 +10,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
+import com.selwan.schools365teacher.data.utils.NetworkUtils
+import com.selwan.schools365teacher.ui.timetable.main.TimetableMainFragment
 import com.selwan.schools365teacher.ui.timetable.tabs_day.ui.main.adapter.TimetableTabsdayAdapter
 import kotlinx.android.synthetic.main.fragment_timetable_tabsday.*
 
@@ -27,10 +30,20 @@ class PlaceholderFragment(var tabText: String) : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        rec_timetable.layoutManager = LinearLayoutManager(this.context)
-        getViewModel().getTimetable.observe(this, Observer {
-            rec_timetable.adapter = TimetableTabsdayAdapter(it, this.context!!, tabText)
-        })
+
+        if (NetworkUtils.isNetworkConnected(context!!)) {
+            rec_timetable.layoutManager = LinearLayoutManager(this.context)
+            getViewModel().getTimetable.observe(this, Observer {
+                rec_timetable.adapter = TimetableTabsdayAdapter(it, this.context!!, tabText)
+            })
+
+        } else {
+            val snackbar =
+                Snackbar.make(view!!, "Connection Error ... Try again", Snackbar.LENGTH_LONG)
+            val sbView = snackbar.view
+            sbView.setBackgroundResource(R.color.redHighDelete)
+            snackbar.show()
+        }
     }
 
     fun getViewModel(): TimetableTabsViewModel {

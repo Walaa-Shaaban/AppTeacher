@@ -14,8 +14,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
+import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.student_details.recyclerview_student_details.RecyclerStudentDetailsActivity
+import com.selwan.schools365teacher.ui.timetable.main.TimetableMainFragment
 import kotlinx.android.synthetic.main.students_details_fragment.*
 
 
@@ -41,12 +44,19 @@ class StudentsDetailsFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        getClasses()
+        if (NetworkUtils.isNetworkConnected(this.context!!)) {
+            getClasses()
+            search.setOnClickListener {
+                val intent = Intent(this.activity, RecyclerStudentDetailsActivity::class.java)
+                startActivity(intent)
+            }
+        } else {
+            val snackbar =
+                Snackbar.make(view!!, "Connection Error ... Try again", Snackbar.LENGTH_LONG)
+            val sbView = snackbar.view
+            sbView.setBackgroundResource(R.color.redHighDelete)
+            snackbar.show()
 
-
-        search.setOnClickListener {
-            val intent = Intent(this.activity, RecyclerStudentDetailsActivity::class.java)
-            startActivity(intent)
         }
 
 
@@ -68,7 +78,7 @@ class StudentsDetailsFragment : Fragment() {
 
 
 
-            sp_class.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
+            sp_class.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,
@@ -76,7 +86,7 @@ class StudentsDetailsFragment : Fragment() {
                     l: Long
                 ) {
                     adapterView.getItemAtPosition(position)
-                    class_id = it.get(position).class_id
+                    StudentsDetailsFragment.class_id = it.get(position).class_id
                     getSections()
 
                 }
@@ -84,12 +94,13 @@ class StudentsDetailsFragment : Fragment() {
                 override fun onNothingSelected(adapterView: AdapterView<*>) {
                     return
                 }
-            })
+            }
         })
     }
 
     fun getSections(){
         getViewModel().getAllSections.observe(this, Observer {
+            sections.clear()
             for (section_name in it) {
                 sections.add(section_name.section)
             }
@@ -101,7 +112,7 @@ class StudentsDetailsFragment : Fragment() {
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
             sp_section.adapter = adapter
 
-            sp_section.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
+            sp_section.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,
@@ -109,14 +120,14 @@ class StudentsDetailsFragment : Fragment() {
                     l: Long
                 ) {
                     adapterView.getItemAtPosition(position)
-                    section_id = it.get(position).id
+                    StudentsDetailsFragment.section_id = it.get(position).id
 
                 }
 
                 override fun onNothingSelected(adapterView: AdapterView<*>) {
                     return
                 }
-            })
+            }
         })
 
     }

@@ -10,8 +10,8 @@ import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.ui.attendance.AttendanceActivity
 import com.selwan.schools365teacher.ui.communication.main.CommunicationNoticBoardActivity
 import com.selwan.schools365teacher.ui.examination.main.ExaminationMainActivity
-import com.selwan.schools365teacher.ui.homework.main.HomeworkMainActivity
-import com.selwan.schools365teacher.ui.news.NewsActivity
+import com.selwan.schools365teacher.ui.homework.AllHomework.AllHomeworkActivity
+import com.selwan.schools365teacher.ui.news.news_main.NewsActivity
 import com.selwan.schools365teacher.ui.student_details.StudentDetailsActivity
 import com.selwan.schools365teacher.ui.timetable.main.TimetableMainActivity
 import kotlinx.android.synthetic.main.fragment_main_screen.*
@@ -62,7 +62,7 @@ class MainFragment : Fragment() {
 
 
         homework.setOnClickListener({
-            it.context.startActivity(Intent(this.context, HomeworkMainActivity::class.java))
+            it.context.startActivity(Intent(this.context, AllHomeworkActivity::class.java))
         })
     }
 

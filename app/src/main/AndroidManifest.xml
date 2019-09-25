@@ -3,6 +3,7 @@
     package="com.selwan.schools365teacher">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,15 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.examination.view_mark.ExaminationViewMarkActivity"></activity>
+        <activity android:name=".ui.news.news_details.NewsDetailsActivity"></activity>
+        <activity android:name=".ui.attendance.student.rec.change_attendance.AttendanceChangeActivity" />
+        <activity android:name=".ui.homework.add_new.add_new_main.HomeworkAddNewMainActivity" />
+        <activity android:name=".ui.examination.view_mark.ExaminationViewMarkActivity" />
         <activity android:name=".ui.examination.main.ExaminationMainActivity" />
         <activity android:name=".ui.examination.add_new_exam.AddNewExamActivity" />
         <activity android:name=".ui.examination.tabs.ExamTabsActivity" />
         <activity
             android:name=".ui.examination.tabs.ExaminationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.homework.add_new.HomeworkAddNewActivity" />
-        <activity android:name=".ui.homework.main.HomeworkMainActivity" />
+        <activity android:name=".ui.homework.add_new.add_new_continue.HomeworkAddNewActivity" />
+        <activity android:name=".ui.homework.AllHomework.AllHomeworkActivity" />
         <activity android:name=".ui.communication.add_new.CommunicationAddNewActivity" />
         <activity
             android:name=".ui.timetable.tabs_day.TimetableTabsdayActivity"
@@ -29,14 +33,14 @@
         <activity android:name=".ui.attendance.report.report_info.overview.AttendanaceReportInfoActivity" />
         <activity android:name=".ui.attendance.report.main.AttendanceReportMainActivity" />
         <activity android:name=".ui.attendance.date.main.AttendeneceDateMainActivity" />
-        <activity android:name=".ui.attendance.student.rec.AttendanceStudentRecActivity" />
+        <activity android:name=".ui.attendance.student.rec.AllStudentAttendance.AttendanceStudentRecActivity" />
         <activity android:name=".ui.attendance.report.rec.AttendanceReportRecActivity" />
         <activity android:name=".ui.attendance.date.rec.AttendanceDateRecActivity" />
         <activity android:name=".ui.student_details.student_details_info.StudentDetailsInfoActivity" />
         <activity android:name=".ui.student_details.recyclerview_student_details.RecyclerStudentDetailsActivity" />
         <activity android:name=".ui.fab.add_homework.AddHomeworkActivity" />
         <activity android:name=".ui.fab.add_exam.AddExamActivity" />
-        <activity android:name=".ui.news.NewsActivity" />
+        <activity android:name=".ui.news.news_main.NewsActivity" />
         <activity android:name=".ui.communication.main.CommunicationNoticBoardActivity" />
         <activity android:name=".ui.attendance.AttendanceActivity" />
         <activity android:name=".ui.timetable.main.TimetableMainActivity" />

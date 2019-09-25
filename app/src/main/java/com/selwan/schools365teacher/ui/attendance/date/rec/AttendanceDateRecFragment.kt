@@ -10,7 +10,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
+import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.attendance.date.adapter.AttendanceDateAdapter
 import kotlinx.android.synthetic.main.attendance_date_fragment.*
 
@@ -27,11 +29,20 @@ class AttendanceDateRecFragment(var class_id: String, var section_id: String, va
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        rec_date_attendance.layoutManager = LinearLayoutManager(this.context)
 
-        getViewModel().getAllStudentAttendanceByDate.observe(this, Observer {
-            rec_date_attendance.adapter = AttendanceDateAdapter(this.context!!, it)
-        })
+        if (NetworkUtils.isNetworkConnected(this.context!!)) {
+            rec_date_attendance.layoutManager = LinearLayoutManager(this.context)
+
+            getViewModel().getAllStudentAttendanceByDate.observe(this, Observer {
+                rec_date_attendance.adapter = AttendanceDateAdapter(this.context!!, it)
+            })
+        } else {
+            val snackbar =
+                Snackbar.make(view!!, "Connection Error ... Try again", Snackbar.LENGTH_LONG)
+            val sbView = snackbar.view
+            sbView.setBackgroundResource(R.color.redHighDelete)
+            snackbar.show()
+        }
 
 
     }

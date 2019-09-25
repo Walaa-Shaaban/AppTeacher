@@ -2,10 +2,14 @@ package com.selwan.schools365teacher.ui.attendance.student.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.google.android.material.snackbar.Snackbar
+import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.model.student_details.Classes
 import com.selwan.schools365teacher.data.model.student_details.Sections
 import com.selwan.schools365teacher.data.utils.ApiUtils
 import com.selwan.schools365teacher.ui.attendance.date.main.AttendanceDateMainFragment
+import com.selwan.schools365teacher.ui.timetable.main.TimetableMainFragment
+import com.selwan.schools365teacher.ui.timetable.main.TimetableMainFragment.Companion.view
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
@@ -30,6 +34,16 @@ class AttendanceStudentMainRepository {
                 .subscribe(
                     Consumer {
                         classes.value = it
+                    }, Consumer {
+                        val snackbar =
+                            Snackbar.make(
+                                view!!,
+                                "Something Went Error ... The data couldn't be read",
+                                Snackbar.LENGTH_LONG
+                            )
+                        val sbView = snackbar.view
+                        sbView.setBackgroundResource(R.color.green)
+                        snackbar.show()
                     }
                 ))
         return classes
@@ -40,12 +54,22 @@ class AttendanceStudentMainRepository {
     ): LiveData<List<Sections>> {
 
         compositeDisposable.add(
-            ApiUtils.apiService.getSections(class_id = AttendanceDateMainFragment.class_id!!)
+            ApiUtils.apiService.getSections(class_id = AttendanceStudentMainFragment.class_id!!)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     Consumer {
                         sections.value = it
+                    }, Consumer {
+                        val snackbar =
+                            Snackbar.make(
+                                view!!,
+                                "Something Went Error ... The data couldn't be read",
+                                Snackbar.LENGTH_LONG
+                            )
+                        val sbView = snackbar.view
+                        sbView.setBackgroundResource(R.color.green)
+                        snackbar.show()
                     }
                 ))
         return sections

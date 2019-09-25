@@ -12,10 +12,13 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
+import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.attendance.date.rec.AttendanceDateRecActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 import kotlinx.android.synthetic.main.attendance_student_main_fragment.*
+import kotlinx.android.synthetic.main.fragment_student_attendance.*
 import kotlinx.android.synthetic.main.students_details_fragment.sp_class
 import kotlinx.android.synthetic.main.students_details_fragment.sp_section
 
@@ -26,7 +29,7 @@ class AttendanceDateMainFragment : Fragment() {
 
     companion object {
         fun newInstance() = StudentsDetailsFragment()
-        var class_id: String? = "1"
+        var class_id: String? = null
         var section_id: String? = null
         var date : String? = null
 
@@ -37,27 +40,29 @@ class AttendanceDateMainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_student_attendance, container, false)
+        return inflater.inflate(R.layout.attendance_date_main_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        getClasses()
-        getDate()
+        if (NetworkUtils.isNetworkConnected(this.context!!)) {
+            getClasses()
 
+            attendance_search.setOnClickListener {
 
-        attendance_search.setOnClickListener {
-            /*
-            intent.putExtra("class_id", class_id)
-            intent.putExtra("section_id", section_id)
-            intent.putExtra("date", date)
-             */
-            val intent = Intent(this.activity, AttendanceDateRecActivity::class.java)
-            intent.putExtra("class_id", "1")
-            intent.putExtra("section_id", "1")
-            intent.putExtra("date", "09/8/2019")
-            startActivity(intent)
+                val intent = Intent(this.activity, AttendanceDateRecActivity::class.java)
+                intent.putExtra("class_id", class_id)
+                intent.putExtra("section_id", section_id)
+                intent.putExtra("date", "2019-09-24")
+                startActivity(intent)
+            }
+        } else {
+            val snackbar =
+                Snackbar.make(view!!, "Connection Error ... Try again", Snackbar.LENGTH_LONG)
+            val sbView = snackbar.view
+            sbView.setBackgroundResource(R.color.redHighDelete)
+            snackbar.show()
         }
 
     }
@@ -86,7 +91,7 @@ class AttendanceDateMainFragment : Fragment() {
                     l: Long
                 ) {
                     adapterView.getItemAtPosition(position)
-                    StudentsDetailsFragment.class_id = it.get(position).class_id
+                    class_id = it.get(position).class_id
                     getSections()
 
                 }
@@ -100,6 +105,7 @@ class AttendanceDateMainFragment : Fragment() {
 
     fun getSections(){
         getViewModel().getAllSections.observe(this, Observer {
+            sections.clear()
             for (section_name in it) {
                 sections.add(section_name.section)
             }
@@ -119,7 +125,7 @@ class AttendanceDateMainFragment : Fragment() {
                     l: Long
                 ) {
                     adapterView.getItemAtPosition(position)
-                    StudentsDetailsFragment.section_id = it.get(position).id
+                    section_id = it.get(position).id
 
                 }
 

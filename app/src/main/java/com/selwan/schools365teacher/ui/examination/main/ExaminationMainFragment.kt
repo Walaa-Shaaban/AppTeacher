@@ -12,7 +12,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
+import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.examination.tabs.ExamTabsActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 import kotlinx.android.synthetic.main.examination_main_fragment.*
@@ -26,7 +28,6 @@ class ExaminationMainFragment : Fragment() {
     var sections = ArrayList<String>()
 
     companion object {
-        fun newInstance() = StudentsDetailsFragment()
         var class_id: String? = null
         var section_id: String? = null
 
@@ -42,12 +43,19 @@ class ExaminationMainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        getClasses()
+        if (NetworkUtils.isNetworkConnected(this.context!!)) {
+            getClasses()
+            next.setOnClickListener {
+                val intent = Intent(this.activity, ExamTabsActivity::class.java)
+                startActivity(intent)
+            }
+        } else {
+            val snackbar =
+                Snackbar.make(view!!, "Connection Error ... Try again", Snackbar.LENGTH_LONG)
+            val sbView = snackbar.view
+            sbView.setBackgroundResource(R.color.redHighDelete)
+            snackbar.show()
 
-
-        next.setOnClickListener {
-            val intent = Intent(this.activity, ExamTabsActivity::class.java)
-            startActivity(intent)
         }
 
 
@@ -91,6 +99,7 @@ class ExaminationMainFragment : Fragment() {
 
     fun getSections() {
         getViewModel().getAllSections.observe(this, Observer {
+            sections.clear()
             for (section_name in it) {
                 sections.add(section_name.section)
             }

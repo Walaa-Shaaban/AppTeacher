@@ -7,19 +7,19 @@ import io.reactivex.disposables.CompositeDisposable
 class AttendanceStudentMainViewModel : ViewModel() {
 
     var compositeDisposable: CompositeDisposable
-    var attendenceStudentRepository: AttendenceDateMainRepository
+    var attendenceStudentMainRepository: AttendanceStudentMainRepository
 
     init {
         compositeDisposable = CompositeDisposable()
-        attendenceStudentRepository = AttendenceDateMainRepository()
+        attendenceStudentMainRepository = AttendanceStudentMainRepository()
     }
 
     val getAllClasses by lazy {
-        attendenceStudentRepository.fetchAllClasses(compositeDisposable)
+        attendenceStudentMainRepository.fetchAllClasses(compositeDisposable)
     }
 
     val getAllSections by lazy {
-        attendenceStudentRepository.fetchAllSectionUsingClassId(compositeDisposable)
+        attendenceStudentMainRepository.fetchAllSectionUsingClassId(compositeDisposable)
     }
 
     override fun onCleared() {

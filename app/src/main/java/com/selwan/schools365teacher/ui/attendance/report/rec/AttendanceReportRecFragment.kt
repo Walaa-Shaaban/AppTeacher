@@ -10,7 +10,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
+import com.selwan.schools365teacher.data.utils.NetworkUtils
 import kotlinx.android.synthetic.main.attendance_report_fragment.*
 
 class AttendanceReportRecFragment(
@@ -31,10 +33,19 @@ class AttendanceReportRecFragment(
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        rec_attendance_report.layoutManager = LinearLayoutManager(this.context)
-        getViewModel().getAllStudenAttendanceByReport.observe(this, Observer {
-            rec_attendance_report.adapter = AttendanceReportRecAdapter(this.context!!, it)
-        })
+        if (NetworkUtils.isNetworkConnected(this.context!!)) {
+            rec_attendance_report.layoutManager = LinearLayoutManager(this.context)
+            getViewModel().getAllStudenAttendanceByReport.observe(this, Observer {
+                rec_attendance_report.adapter = AttendanceReportRecAdapter(this.context!!, it)
+            })
+        } else {
+            val snackbar =
+                Snackbar.make(view!!, "Connection Error ... Try again", Snackbar.LENGTH_LONG)
+            val sbView = snackbar.view
+            sbView.setBackgroundResource(R.color.redHighDelete)
+            snackbar.show()
+        }
+
 
     }
 

@@ -129,4 +129,5 @@ interface ApiService {
         @Query("class_id") class_id: String,
         @Query("section_id") section_id: String
     ): Single<ViewMark>
+
 }

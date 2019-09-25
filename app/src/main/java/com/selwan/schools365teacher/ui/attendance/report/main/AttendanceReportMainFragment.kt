@@ -12,7 +12,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
+import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.attendance.report.rec.AttendanceReportRecActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 import kotlinx.android.synthetic.main.students_details_fragment.*
@@ -42,22 +44,24 @@ class AttendanceReportMainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        getClasses()
+        if (NetworkUtils.isNetworkConnected(this.context!!)) {
+            getClasses()
 
-        search.setOnClickListener {
+            search.setOnClickListener {
 
-            val intent = Intent(this.context, AttendanceReportRecActivity::class.java)
-            /*
-            intent.putExtra("class_id", class_id!!)
-            intent.putExtra("section_id", section_id!!)
-             intent.putExtra("section_id", year!!)
-              intent.putExtra("section_id", month!!)
-             */
-            intent.putExtra("class_id", "1")
-            intent.putExtra("section_id", "1")
-            intent.putExtra("year", "2019")
-            intent.putExtra("month", "August")
-            startActivity(intent)
+                val intent = Intent(this.context, AttendanceReportRecActivity::class.java)
+                intent.putExtra("class_id", "1")
+                intent.putExtra("section_id", "1")
+                intent.putExtra("year", "2019")
+                intent.putExtra("month", "August")
+                startActivity(intent)
+            }
+        } else {
+            val snackbar =
+                Snackbar.make(view!!, "Connection Error ... Try again", Snackbar.LENGTH_LONG)
+            val sbView = snackbar.view
+            sbView.setBackgroundResource(R.color.redHighDelete)
+            snackbar.show()
         }
 
 
@@ -101,6 +105,7 @@ class AttendanceReportMainFragment : Fragment() {
 
     fun getSections() {
         getViewModel().getAllSection.observe(this, Observer {
+            sections.clear()
             for (section_name in it) {
                 sections.add(section_name.section)
             }

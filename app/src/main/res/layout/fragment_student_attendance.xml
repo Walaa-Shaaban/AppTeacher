@@ -6,80 +6,78 @@
     android:layout_height="match_parent"
     android:layout_margin="@dimen/twenty_dp">
 
-    <!--    <androidx.appcompat.widget.AppCompatTextView-->
-    <!--        android:id="@+id/actv_class"-->
-    <!--        style="@style/standard_title"-->
-    <!--        android:text="@string/class_title"-->
-    <!--        android:textColor="#252525"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_class"
+        style="@style/standard_title"
+        android:text="@string/class_title"
+        android:textColor="#252525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!--    <FrameLayout-->
-    <!--        android:id="@+id/fl_class"-->
-    <!--        style="@style/frame_layout_style"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/actv_class">-->
+    <FrameLayout
+        android:id="@+id/fl_class"
+        style="@style/frame_layout_style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actv_class">
 
-    <!--        <androidx.appcompat.widget.AppCompatSpinner-->
-    <!--            android:id="@+id/acsp_class"-->
-    <!--            style="@style/spinner_style_stroked"-->
-    <!--            android:elevation="@dimen/five_dp"/>-->
-    <!--    </FrameLayout>-->
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/acsp_class"
+            style="@style/spinner_style_stroked"
+            android:elevation="@dimen/five_dp" />
+    </FrameLayout>
 
-    <!--    <androidx.appcompat.widget.AppCompatTextView-->
-    <!--        android:id="@+id/actv_section"-->
-    <!--        style="@style/standard_title"-->
-    <!--        android:text="@string/section"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/fl_class"-->
-    <!--        android:textColor="#252525"-->
-    <!--        />-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_section"
+        style="@style/standard_title"
+        android:text="@string/section"
+        android:textColor="#252525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fl_class" />
 
-    <!--    <FrameLayout-->
-    <!--        android:id="@+id/fl_section"-->
-    <!--        style="@style/frame_layout_style"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/actv_section">-->
+    <FrameLayout
+        android:id="@+id/fl_section"
+        style="@style/frame_layout_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actv_section">
 
-    <!--        <androidx.appcompat.widget.AppCompatSpinner-->
-    <!--            android:id="@+id/acsp_section"-->
-    <!--            style="@style/spinner_style_stroked"-->
-    <!--            android:elevation="@dimen/five_dp"/>-->
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/acsp_section"
+            style="@style/spinner_style_stroked"
+            android:elevation="@dimen/five_dp" />
 
-    <!--    </FrameLayout>-->
+    </FrameLayout>
 
-    <!--    <androidx.appcompat.widget.AppCompatTextView-->
-    <!--        android:id="@+id/actv_title_attendance_date"-->
-    <!--        style="@style/standard_title"-->
-    <!--        android:text="@string/date_attendance"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/fl_section"-->
-    <!--        android:textColor="#252525"-->
-    <!--        />-->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/attendance_date"
+        style="@style/standard_title"
+        android:hint="Attendance Date"
+        android:textColor="#252525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fl_section" />
 
-    <!--    <FrameLayout-->
-    <!--        android:id="@+id/fl_attendance"-->
-    <!--        style="@style/frame_layout_style"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/actv_title_attendance_date">-->
+    <FrameLayout
+        android:id="@+id/fl_attendance"
+        style="@style/frame_layout_style"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
 
-    <!--        <androidx.appcompat.widget.AppCompatEditText-->
-    <!--            android:id="@+id/acet_attendance_date"-->
-    <!--            style="@style/spinner_style_stroked"-->
-    <!--            android:elevation="@dimen/five_dp"/>-->
-    <!--    </FrameLayout>-->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/acet_attendance_date"
+            style="@style/spinner_style_stroked"
+            android:elevation="@dimen/five_dp" />
+    </FrameLayout>
 
 
-    <!--    <androidx.appcompat.widget.AppCompatButton-->
-    <!--        android:id="@+id/acb_attendance_search"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="@string/search"-->
-    <!--        tools:layout_editor_absoluteX="139dp"-->
-    <!--        tools:layout_editor_absoluteY="395dp"-->
-    <!--        tools:ignore="MissingConstraints"-->
-    <!--        android:background="#3A4A67"-->
-    <!--        android:textColor="#FFFFFF"/>-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/date_attendance_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#3A4A67"
+        android:text="@string/search"
+        android:textColor="#FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="395dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

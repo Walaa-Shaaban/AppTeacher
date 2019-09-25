@@ -13,8 +13,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.ui.attendance.student.rec.AttendanceStudentRecActivity
+import com.selwan.schools365teacher.data.utils.NetworkUtils
+import com.selwan.schools365teacher.ui.attendance.student.rec.AllStudentAttendance.AttendanceStudentRecActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 import kotlinx.android.synthetic.main.attendance_student_main_fragment.*
 
@@ -24,7 +26,6 @@ class AttendanceStudentMainFragment : Fragment() {
     var sections = ArrayList<String>()
 
     companion object {
-        fun newInstance() = StudentsDetailsFragment()
         var class_id: String? = null
         var section_id: String? = null
 
@@ -39,19 +40,19 @@ class AttendanceStudentMainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        if (NetworkUtils.isNetworkConnected(this.context!!)) {
+            getClasses()
 
-        getClasses()
-
-        attendance_search.setOnClickListener {
-            /*
-            intent.putExtra("class_id", class_id)
-            intent.putExtra("section_id", section_id)
-            intent.putExtra("date", date)
-             */
-            val intent = Intent(this.activity, AttendanceStudentRecActivity::class.java)
-            intent.putExtra("class_id", "1")
-            intent.putExtra("section_id", "1")
-            startActivity(intent)
+            attendance_search.setOnClickListener {
+                val intent = Intent(this.activity, AttendanceStudentRecActivity::class.java)
+                startActivity(intent)
+            }
+        } else {
+            val snackbar =
+                Snackbar.make(view!!, "Connection Error ... Try again", Snackbar.LENGTH_LONG)
+            val sbView = snackbar.view
+            sbView.setBackgroundResource(R.color.redHighDelete)
+            snackbar.show()
         }
     }
 
@@ -79,7 +80,7 @@ class AttendanceStudentMainFragment : Fragment() {
                     l: Long
                 ) {
                     adapterView.getItemAtPosition(position)
-                    StudentsDetailsFragment.class_id = it.get(position).class_id
+                    AttendanceStudentMainFragment.class_id = it.get(position).class_id
                     getSections()
 
                 }
@@ -93,6 +94,7 @@ class AttendanceStudentMainFragment : Fragment() {
 
     fun getSections() {
         getViewModel().getAllSections.observe(this, Observer {
+            sections.clear()
             for (section_name in it) {
                 sections.add(section_name.section)
             }
@@ -112,7 +114,7 @@ class AttendanceStudentMainFragment : Fragment() {
                     l: Long
                 ) {
                     adapterView.getItemAtPosition(position)
-                    StudentsDetailsFragment.section_id = it.get(position).id
+                    AttendanceStudentMainFragment.section_id = it.get(position).id
 
                 }
 

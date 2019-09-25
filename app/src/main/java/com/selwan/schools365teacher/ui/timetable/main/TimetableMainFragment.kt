@@ -1,7 +1,9 @@
 package com.selwan.schools365teacher.ui.timetable.main
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,11 +14,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.ui.attendance.student.main.AttendanceStudentMainViewModel
-import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
+import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.timetable.tabs_day.TimetableTabsdayActivity
 import kotlinx.android.synthetic.main.fragment_class_timetable.*
+
 
 class TimetableMainFragment : Fragment() {
 
@@ -26,9 +29,9 @@ class TimetableMainFragment : Fragment() {
     companion object {
         var class_id: String? = null
         var section_id: String? = null
-
+        var context: Context? = null
+        var view: View? = null
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,18 +42,28 @@ class TimetableMainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        TimetableMainFragment.context = this.context
+        TimetableMainFragment.view = view!!
 
-        getClasses()
+        if (NetworkUtils.isNetworkConnected(TimetableMainFragment.context!!)) {
+            getClasses()
+            timetable_search.setOnClickListener {
+                val intent = Intent(this.activity, TimetableTabsdayActivity::class.java)
+                startActivity(intent)
+            }
+        } else {
+            val snackbar =
+                Snackbar.make(view!!, "Connection Error ... Try again", Snackbar.LENGTH_LONG)
+            val sbView = snackbar.view
+            sbView.setBackgroundResource(R.color.redHighDelete)
+            snackbar.show()
 
-        timetable_search.setOnClickListener {
-            val intent = Intent(this.activity, TimetableTabsdayActivity::class.java)
-            startActivity(intent)
         }
     }
 
 
     fun getClasses() {
-        getViewModel().getAllClasses.observe(this, Observer {
+        getViewModel().getAllClasses!!.observe(this, Observer {
             for (class_name in it) {
                 classes.add(class_name.`class`)
             }
@@ -73,7 +86,10 @@ class TimetableMainFragment : Fragment() {
                 ) {
                     adapterView.getItemAtPosition(position)
                     TimetableMainFragment.class_id = it.get(position).class_id
-                    getSections()
+                    if (TimetableMainFragment.class_id != null) {
+                        getSections()
+                    }
+
 
                 }
 
@@ -85,7 +101,9 @@ class TimetableMainFragment : Fragment() {
     }
 
     fun getSections() {
-        getViewModel().getAllSections.observe(this, Observer {
+        getViewModel().getAllSections!!.observe(this, Observer {
+
+            sections.clear()
             for (section_name in it) {
                 sections.add(section_name.section)
             }
