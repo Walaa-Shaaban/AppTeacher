@@ -1,5 +1,6 @@
 package com.selwan.schools365teacher.ui.attendance.date.main
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,25 +8,37 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.DatePicker
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
-import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.attendance.date.rec.AttendanceDateRecActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
-import kotlinx.android.synthetic.main.attendance_student_main_fragment.*
-import kotlinx.android.synthetic.main.fragment_student_attendance.*
+import android.widget.Toast
+import com.shagi.materialdatepicker.date.DatePickerFragmentDialog
+import kotlinx.android.synthetic.main.attendance_date_main_fragment.*
+import kotlinx.android.synthetic.main.attendance_student_main_fragment.attendance_search
+import kotlinx.android.synthetic.main.students_details_fragment.*
 import kotlinx.android.synthetic.main.students_details_fragment.sp_class
 import kotlinx.android.synthetic.main.students_details_fragment.sp_section
 
+import kotlin.collections.ArrayList
+
+
 class AttendanceDateMainFragment : Fragment() {
+
+
 
     var classes = ArrayList<String>()
     var sections = ArrayList<String>()
+
+    var year: Int? = null
+    var monthOfYear: Int? = null
+    var dayOfMonth: String? = null
 
     companion object {
         fun newInstance() = StudentsDetailsFragment()
@@ -40,28 +53,49 @@ class AttendanceDateMainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.attendance_date_main_fragment, container, false)
+        return inflater.inflate(
+            com.selwan.schools365teacher.R.layout.attendance_date_main_fragment,
+            container,
+            false
+        )
     }
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        if (NetworkUtils.isNetworkConnected(this.context!!)) {
-            getClasses()
 
+
+        if (NetworkUtils.isNetworkConnected(this.context!!)) {
+
+
+            getClasses()
+            attendance_date.setOnClickListener {
+                val dialog =
+                    DatePickerFragmentDialog.newInstance({ view, year, monthOfYear, dayOfMonth ->
+                        this.year = year
+                        this.monthOfYear = monthOfYear + 1
+                        this.dayOfMonth = dayOfMonth.toString()
+                        if (dayOfMonth < 10) {
+                            this.dayOfMonth = "0${this.dayOfMonth}"
+                        }
+                        attendance_date.text = "${this.dayOfMonth}/${this.monthOfYear}/${this.year}"
+                    }, 2020, 12, 4)
+                dialog.show(fragmentManager!!, "tag")
+            }
             attendance_search.setOnClickListener {
 
                 val intent = Intent(this.activity, AttendanceDateRecActivity::class.java)
                 intent.putExtra("class_id", class_id)
                 intent.putExtra("section_id", section_id)
-                intent.putExtra("date", "2019-09-24")
+                intent.putExtra("date", "${this.dayOfMonth}/${this.monthOfYear}/${this.year}")
                 startActivity(intent)
             }
         } else {
             val snackbar =
                 Snackbar.make(view!!, "Connection Error ... Try again", Snackbar.LENGTH_LONG)
             val sbView = snackbar.view
-            sbView.setBackgroundResource(R.color.redHighDelete)
+            sbView.setBackgroundResource(com.selwan.schools365teacher.R.color.redHighDelete)
             snackbar.show()
         }
 
@@ -137,9 +171,6 @@ class AttendanceDateMainFragment : Fragment() {
 
     }
 
-    fun getDate(){
-        date = "08/26/2019"
-    }
 
 
     fun getViewModel(): AttendanceDateMainViewModel {

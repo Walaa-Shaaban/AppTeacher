@@ -17,13 +17,19 @@ import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.attendance.report.rec.AttendanceReportRecActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
+import kotlinx.android.synthetic.main.attendance_report_main_fragment.*
 import kotlinx.android.synthetic.main.students_details_fragment.*
+import kotlinx.android.synthetic.main.students_details_fragment.search
+import kotlinx.android.synthetic.main.students_details_fragment.sp_class
+import kotlinx.android.synthetic.main.students_details_fragment.sp_section
 
 class AttendanceReportMainFragment : Fragment() {
 
 
     var classes = ArrayList<String>()
     var sections = ArrayList<String>()
+    var listYears = ArrayList<Int>()
+    var listMonth = ArrayList<String>()
 
     companion object {
         fun newInstance() = StudentsDetailsFragment()
@@ -46,14 +52,15 @@ class AttendanceReportMainFragment : Fragment() {
 
         if (NetworkUtils.isNetworkConnected(this.context!!)) {
             getClasses()
-
+            getYears()
+            getMonth()
             search.setOnClickListener {
 
                 val intent = Intent(this.context, AttendanceReportRecActivity::class.java)
-                intent.putExtra("class_id", "1")
-                intent.putExtra("section_id", "1")
-                intent.putExtra("year", "2019")
-                intent.putExtra("month", "August")
+                intent.putExtra("class_id", class_id)
+                intent.putExtra("section_id", section_id)
+                intent.putExtra("year", year)
+                intent.putExtra("month", month)
                 startActivity(intent)
             }
         } else {
@@ -67,6 +74,79 @@ class AttendanceReportMainFragment : Fragment() {
 
     }
 
+    fun getMonth() {
+
+        listMonth.add("January")
+        listMonth.add("February")
+        listMonth.add("March")
+        listMonth.add("April")
+        listMonth.add("May")
+        listMonth.add("June")
+        listMonth.add("July")
+        listMonth.add("August")
+        listMonth.add("September")
+        listMonth.add("October")
+        listMonth.add("November")
+        listMonth.add("December ")
+
+        val adapter = ArrayAdapter<String>(
+            this.activity!!, // Context
+            android.R.layout.simple_spinner_item,
+            listMonth
+        )
+        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+        sp_month.adapter = adapter
+        sp_month.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                adapterView: AdapterView<*>,
+                view: View,
+                position: Int,
+                l: Long
+            ) {
+                adapterView.getItemAtPosition(position)
+                month = listMonth.get(position)
+
+
+            }
+
+            override fun onNothingSelected(adapterView: AdapterView<*>) {
+                return
+            }
+        }
+
+
+    }
+
+    fun getYears() {
+        for (item in 2020 downTo 1990) {
+            listYears.add(item)
+        }
+
+        val adapter = ArrayAdapter<Int>(
+            this.activity!!, // Context
+            android.R.layout.simple_spinner_item,
+            listYears
+        )
+        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+        sp_year.adapter = adapter
+        sp_year.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                adapterView: AdapterView<*>,
+                view: View,
+                position: Int,
+                l: Long
+            ) {
+                adapterView.getItemAtPosition(position)
+                year = listYears.get(position).toString()
+
+
+            }
+
+            override fun onNothingSelected(adapterView: AdapterView<*>) {
+                return
+            }
+        }
+    }
 
     fun getClasses() {
         getViewModel().getAllClasses.observe(this, Observer {
@@ -91,7 +171,7 @@ class AttendanceReportMainFragment : Fragment() {
                     l: Long
                 ) {
                     adapterView.getItemAtPosition(position)
-                    StudentsDetailsFragment.class_id = it.get(position).class_id
+                    class_id = it.get(position).class_id
                     getSections()
 
                 }
@@ -125,7 +205,7 @@ class AttendanceReportMainFragment : Fragment() {
                     l: Long
                 ) {
                     adapterView.getItemAtPosition(position)
-                    StudentsDetailsFragment.section_id = it.get(position).id
+                    section_id = it.get(position).id
 
                 }
 
@@ -134,11 +214,6 @@ class AttendanceReportMainFragment : Fragment() {
                 }
             }
         })
-
-    }
-
-    //get Year $ month
-    fun getYearAndMonthFromCalender() {
 
     }
 

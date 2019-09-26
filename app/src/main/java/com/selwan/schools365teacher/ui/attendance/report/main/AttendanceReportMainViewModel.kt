@@ -19,12 +19,6 @@ class AttendanceReportMainViewModel : ViewModel() {
     val getAllSection by lazy {
         attendanceReportMainRepository.fetchAllSectionUsingClassId(compositeDisposable)
     }
-    val getAllMonth by lazy {
-        attendanceReportMainRepository.fetchAllMonth()
-    }
-    val getAllYear by lazy {
-        attendanceReportMainRepository.fetchAllYear()
-    }
 
     override fun onCleared() {
         super.onCleared()

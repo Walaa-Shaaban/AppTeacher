@@ -40,7 +40,7 @@ class AttendanceReportMainRepository(compositeDisposable: CompositeDisposable) {
     ): LiveData<List<Sections>> {
 
         compositeDisposable.add(
-            ApiUtils.apiService.getSections(class_id = StudentsDetailsFragment.class_id!!)
+            ApiUtils.apiService.getSections(class_id = AttendanceReportMainFragment.class_id!!)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
@@ -51,13 +51,4 @@ class AttendanceReportMainRepository(compositeDisposable: CompositeDisposable) {
         return sections
     }
 
-    //getAllMonth and save in array list for read this list in spinner
-    fun fetchAllMonth() {
-
-    }
-
-    //getAllYear and save in arrayList
-    fun fetchAllYear() {
-
-    }
 }

@@ -51,6 +51,7 @@ class AttendanceChangeFragment(var attendance_id: String, var student_session: S
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         if (NetworkUtils.isNetworkConnected(this.context!!)) {
             getAllAttendanceType()
             getAllOtherNote()
@@ -74,10 +75,8 @@ class AttendanceChangeFragment(var attendance_id: String, var student_session: S
             sbView.setBackgroundResource(R.color.redHighDelete)
             snackbar.show()
         }
-
-//
-
     }
+
 
 
     fun getViewModel(): AttendanceChangeViewModel {
@@ -106,7 +105,6 @@ class AttendanceChangeFragment(var attendance_id: String, var student_session: S
                 android.R.layout.simple_spinner_item,
                 attendance_other_note
             )
-
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
             sp_other_note.adapter = adapter
             sp_other_note.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -118,7 +116,7 @@ class AttendanceChangeFragment(var attendance_id: String, var student_session: S
                 ) {
                     adapterView.getItemAtPosition(position)
                     attendance_other_note_type = it.otherNotes.get(position).type
-                    attendance_note_id = it.otherNotes.get(position).id
+                    AttendanceChangeFragment.attendance_note_id = it.otherNotes.get(position).id
 
 
                 }
@@ -133,6 +131,7 @@ class AttendanceChangeFragment(var attendance_id: String, var student_session: S
 
     fun getAllAttendanceType() {
         getViewModel().getAttendanceType.observe(this, androidx.lifecycle.Observer {
+            attendanceTypeList.clear()
             for (item in it.attendencetypeslist) {
                 attendanceTypeList.add(item.type)
             }
