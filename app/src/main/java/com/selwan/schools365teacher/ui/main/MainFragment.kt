@@ -12,6 +12,7 @@ import com.selwan.schools365teacher.ui.communication.main.CommunicationNoticBoar
 import com.selwan.schools365teacher.ui.examination.main.ExaminationMainActivity
 import com.selwan.schools365teacher.ui.homework.AllHomework.AllHomeworkActivity
 import com.selwan.schools365teacher.ui.news.news_main.NewsActivity
+import com.selwan.schools365teacher.ui.notification.main.NotificationActivity
 import com.selwan.schools365teacher.ui.student_details.StudentDetailsActivity
 import com.selwan.schools365teacher.ui.timetable.main.TimetableMainActivity
 import kotlinx.android.synthetic.main.fragment_main_screen.*
@@ -57,6 +58,10 @@ class MainFragment : Fragment() {
         }
         our_news.setOnClickListener {
             it.context.startActivity(Intent(this.context, NewsActivity::class.java))
+        }
+
+        Notification.setOnClickListener {
+            it.context.startActivity(Intent(this.context, NotificationActivity::class.java))
         }
 
 

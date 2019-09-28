@@ -386,6 +386,18 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="613dp" />
 
+
+    <TextView
+        android:id="@+id/Notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notification"
+        android:textColor="@color/foshi"
+        android:textSize="20dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-34dp"
+        tools:layout_editor_absoluteY="661dp" />
+
     <androidx.appcompat.widget.ActionMenuView
         android:layout_width="70dp"
         android:layout_height="70dp"

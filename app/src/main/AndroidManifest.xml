@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.news.news_details.NewsDetailsActivity"></activity>
+        <activity android:name=".ui.notification.main.NotifucationAtivity"></activity>
+        <activity android:name=".ui.notification.main.NotificationActivity" />
+        <activity android:name=".ui.news.news_details.NewsDetailsActivity" />
         <activity android:name=".ui.attendance.student.rec.change_attendance.AttendanceChangeActivity" />
         <activity android:name=".ui.homework.add_new.add_new_main.HomeworkAddNewMainActivity" />
         <activity android:name=".ui.examination.view_mark.ExaminationViewMarkActivity" />
@@ -38,8 +40,7 @@
         <activity android:name=".ui.attendance.date.rec.AttendanceDateRecActivity" />
         <activity android:name=".ui.student_details.student_details_info.StudentDetailsInfoActivity" />
         <activity android:name=".ui.student_details.recyclerview_student_details.RecyclerStudentDetailsActivity" />
-        <activity android:name=".ui.fab.add_homework.AddHomeworkActivity" />
-        <activity android:name=".ui.fab.add_exam.AddExamActivity" />
+
         <activity android:name=".ui.news.news_main.NewsActivity" />
         <activity android:name=".ui.communication.main.CommunicationNoticBoardActivity" />
         <activity android:name=".ui.attendance.AttendanceActivity" />
@@ -52,6 +53,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.student_details.StudentDetailsActivity" />
+
+        <service android:name=".ui.notification.main.NotificationRepository">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
     </application>
+
 
 </manifest>

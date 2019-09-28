@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "818437583839",
+    "firebase_url": "https://testnotificationteacher.firebaseio.com",
+    "project_id": "testnotificationteacher",
+    "storage_bucket": "testnotificationteacher.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818437583839:android:919fb78731d78ce8440a6a",
+        "android_client_info": {
+          "package_name": "com.selwan.schools365teacher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818437583839-6f717mrgg7v0kq1d3lese398u52of7kt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.selwan.schools365teacher",
+            "certificate_hash": "47d4745788928bac647a961bddef81c26ad141ef"
+          }
+        },
+        {
+          "client_id": "818437583839-43riqa50ads370i8dmuednntcupre9ft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQwfyQXvaC6rJkHKtiR5xKUTKVZyVfq2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818437583839-43riqa50ads370i8dmuednntcupre9ft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818437583839:android:214b86e158cc6552440a6a",
+        "android_client_info": {
+          "package_name": "com.walaa.testpushnotification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818437583839-a3q543rpv1fs8nfc0l3csa8v91511sgv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.walaa.testpushnotification",
+            "certificate_hash": "47d4745788928bac647a961bddef81c26ad141ef"
+          }
+        },
+        {
+          "client_id": "818437583839-43riqa50ads370i8dmuednntcupre9ft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQwfyQXvaC6rJkHKtiR5xKUTKVZyVfq2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818437583839-43riqa50ads370i8dmuednntcupre9ft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
