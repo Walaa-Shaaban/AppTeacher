@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "818437583839-gfugmosc8gp9na0f8qjdvlj46ji8ef4p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.selwan.schools365teacher",
+            "certificate_hash": "a197199cd21057b79a49804ee1f42220bbc4536c"
+          }
+        },
+        {
           "client_id": "818437583839-6f717mrgg7v0kq1d3lese398u52of7kt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

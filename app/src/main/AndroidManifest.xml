@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,7 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.notification.main.NotifucationAtivity"></activity>
         <activity android:name=".ui.notification.main.NotificationActivity" />
         <activity android:name=".ui.news.news_details.NewsDetailsActivity" />
         <activity android:name=".ui.attendance.student.rec.change_attendance.AttendanceChangeActivity" />
@@ -54,7 +52,7 @@
         </activity>
         <activity android:name=".ui.student_details.StudentDetailsActivity" />
 
-        <service android:name=".ui.notification.main.NotificationRepository">
+        <service android:name="com.selwan.schools365teacher.ui.notification.service.NotificationService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />

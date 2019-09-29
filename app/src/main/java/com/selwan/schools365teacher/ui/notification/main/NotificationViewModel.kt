@@ -1,17 +1,17 @@
 package com.selwan.schools365teacher.ui.notification.main
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 
-class NotificationViewModel : ViewModel() {
+class NotificationViewModel(application: Application) : AndroidViewModel(application) {
 
     var notificationRepository: NotificationRepository
 
     init {
-        notificationRepository = NotificationRepository()
+        notificationRepository = NotificationRepository(application)
 
     }
 
-    val getNotificationInfo by lazy {
-        notificationRepository.notification_data
-    }
+    val getAllNotification by lazy { notificationRepository.getAllNotification }
+
 }

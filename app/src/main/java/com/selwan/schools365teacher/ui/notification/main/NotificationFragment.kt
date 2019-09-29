@@ -7,14 +7,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.selwan.schools365teacher.R
+import com.selwan.schools365teacher.ui.notification.adapter.NotificationAdapter
 import kotlinx.android.synthetic.main.notification_fragment.*
+import java.lang.StringBuilder
 
 class NotificationFragment : Fragment() {
 
 
     private lateinit var viewModel: NotificationViewModel
+
+    companion object;
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,10 +30,15 @@ class NotificationFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+
         viewModel = ViewModelProviders.of(this).get(NotificationViewModel::class.java)
-        viewModel.getNotificationInfo.observe(this, Observer {
-            txt.text = "${it["title"]}---  ${it["contact"]}"
+        viewModel.getAllNotification.observe(this, Observer {
+            rec_notification.layoutManager = LinearLayoutManager(this.context)
+            rec_notification.adapter = NotificationAdapter(this.context!!, it)
         })
+
     }
+
 
 }

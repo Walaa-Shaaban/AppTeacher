@@ -6,7 +6,6 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.gms.google-services'
-
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -52,7 +51,6 @@ dependencies {
 
     //databinding
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0'
-
     kapt "com.android.databinding:compiler:3.0.1"
 
     //for lifecycle and LiveData and ViewModel
@@ -103,8 +101,12 @@ dependencies {
     }
 
     //Firebase
-    implementation 'com.google.firebase:firebase-messaging:19.0.0'
+    implementation 'com.google.firebase:firebase-messaging:20.0.0'
     implementation 'com.google.firebase:firebase-core:17.2.0'
-}
 
-apply plugin: 'com.google.gms.google-services'
+    
+    // Room components
+    implementation 'androidx.room:room-runtime:2.0.0'
+    kapt 'androidx.room:room-compiler:2.0.0'
+
+}

@@ -7,6 +7,7 @@ import com.selwan.schools365teacher.ui.news.news_details.NewsDetailsFragment
 
 class NotificationActivity : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notification)
@@ -17,4 +18,5 @@ class NotificationActivity : AppCompatActivity() {
         )
             .commitAllowingStateLoss()
     }
+
 }

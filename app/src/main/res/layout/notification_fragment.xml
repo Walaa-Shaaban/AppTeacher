@@ -5,10 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.notification.main.NotificationFragment">
 
-    <TextView
-        android:id="@+id/txt"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_notification"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>
