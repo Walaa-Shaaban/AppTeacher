@@ -99,12 +99,14 @@ dependencies {
     implementation('com.shagi:material-datepicker:1.3') {
         exclude group: 'com.android.support'
     }
+    implementation 'com.riontech:calendar:1.0'
+
 
     //Firebase
     implementation 'com.google.firebase:firebase-messaging:20.0.0'
     implementation 'com.google.firebase:firebase-core:17.2.0'
 
-    
+
     // Room components
     implementation 'androidx.room:room-runtime:2.0.0'
     kapt 'androidx.room:room-compiler:2.0.0'

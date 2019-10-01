@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.ui.attendance.AttendanceActivity
-import com.selwan.schools365teacher.ui.communication.main.CommunicationNoticBoardActivity
+import com.selwan.schools365teacher.ui.event.main.EventMainActivity
 import com.selwan.schools365teacher.ui.examination.main.ExaminationMainActivity
 import com.selwan.schools365teacher.ui.homework.AllHomework.AllHomeworkActivity
 import com.selwan.schools365teacher.ui.news.news_main.NewsActivity
@@ -48,14 +48,7 @@ class MainFragment : Fragment() {
         exam.setOnClickListener {
             it.context.startActivity(Intent(this.context, ExaminationMainActivity::class.java))
         }
-        communication.setOnClickListener {
-            it.context.startActivity(
-                Intent(
-                    this.context,
-                    CommunicationNoticBoardActivity::class.java
-                )
-            )
-        }
+
         our_news.setOnClickListener {
             it.context.startActivity(Intent(this.context, NewsActivity::class.java))
         }
@@ -64,7 +57,9 @@ class MainFragment : Fragment() {
             it.context.startActivity(Intent(this.context, NotificationActivity::class.java))
         }
 
-
+        event.setOnClickListener {
+            it.context.startActivity(Intent(this.context, EventMainActivity::class.java))
+        }
 
         homework.setOnClickListener({
             it.context.startActivity(Intent(this.context, AllHomeworkActivity::class.java))

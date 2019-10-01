@@ -1,7 +1,10 @@
 package com.selwan.schools365teacher.data.remote
 
+import android.icu.text.CaseMap
 import com.selwan.schools365teacher.data.model.attendance.*
 import com.selwan.schools365teacher.data.model.communication.NoticBoard
+import com.selwan.schools365teacher.data.model.event.AllEvent
+import com.selwan.schools365teacher.data.model.event.SaveEvent
 import com.selwan.schools365teacher.data.model.exams.AllExamSchedule
 import com.selwan.schools365teacher.data.model.exams.ExamScheduleAddNew
 import com.selwan.schools365teacher.data.model.exams.ResultAddNewExam
@@ -108,6 +111,9 @@ interface ApiService {
     fun getNews()
             : Single<News>
 
+    @GET("WebserviceTeacher/getEvents")
+    fun getEvents(): Single<AllEvent>
+
     @GET("WebserviceTeacher/getExamSchedule")
     fun getAllExams(
         @Query("class_id") class_id: String,
@@ -129,5 +135,15 @@ interface ApiService {
         @Query("class_id") class_id: String,
         @Query("section_id") section_id: String
     ): Single<ViewMark>
+
+    @FormUrlEncoded
+    @POST("WebserviceTeacher/saveEvent")
+    fun addNewEvent(
+        @Field("title") title: String,
+        @Field("description") description: String,
+        @Field("event_type") event_type: String,
+        @Field("start_date") start_date: String,
+        @Field("end_date") endTime: String
+    ): Single<SaveEvent>
 
 }

@@ -375,28 +375,48 @@
 
     </androidx.cardview.widget.CardView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
     <TextView
         android:id="@+id/homework"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Homework"
         android:textColor="@color/foshi"
         android:textSize="20dp"
+        android:layout_marginLeft="20dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="613dp" />
 
+        <TextView
+            android:id="@+id/event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Event"
+            android:textColor="@color/green"
+            android:textSize="20dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-34dp"
+            tools:layout_editor_absoluteY="661dp" />
 
     <TextView
         android:id="@+id/Notification"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Notification"
         android:textColor="@color/foshi"
         android:textSize="20dp"
+        android:layout_marginLeft="20dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-34dp"
         tools:layout_editor_absoluteY="661dp" />
+
+    </LinearLayout>
 
     <androidx.appcompat.widget.ActionMenuView
         android:layout_width="70dp"
