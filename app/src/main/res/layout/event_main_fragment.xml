@@ -1,46 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/eventmain"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#fff">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
+        <com.events.calendar.views.EventsCalendar
+            android:id="@+id/eventsCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:overScrollMode="never"
+            app:datesTextSize="18sp"
+            app:eventDotColor="#ff0000"
+            app:isBoldTextOnSelectionEnabled="true"
+            app:monthTitleColor="#000"
+            app:monthTitleTextSize="24sp"
+            app:primaryTextColor="#000"
+            app:rangeSelectionColor="#ffe600"
+            app:rangeSelectionEndColor="#c1ae01"
+            app:rangeSelectionStartColor="#c1ae01"
+            app:secondaryTextColor="#FFF"
+            app:selectedTextColor="#000000"
+            app:selectionColor="#ffe600"
+            app:weekHeaderColor="#00BCD4"
+            app:weekHeaderTextSize="14sp" />
+
+        <TextView
+            android:id="@+id/selected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:paddingStart="15dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/add_event"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteX="-60dp"
-            tools:layout_editor_absoluteY="16dp">
+            android:text="Add Event"
+            android:textSize="25sp" />
 
 
-            <!--        <com.skyhope.eventcalenderlibrary.CalenderEvent-->
-            <!--            android:id="@+id/calender_event"-->
-            <!--            app:week_name_color="@color/orange"-->
-            <!--            app:selected_day_text_color="#FFF"-->
-            <!--            app:calender_background="#5F5D5D"-->
-            <!--            android:layout_width="match_parent"-->
-            <!--            android:layout_height="wrap_content" />-->
+    </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rec_event"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:ignore="MissingConstraints" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/add_new_event"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                tools:ignore="MissingConstraints" />
-
-
-        </LinearLayout>
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

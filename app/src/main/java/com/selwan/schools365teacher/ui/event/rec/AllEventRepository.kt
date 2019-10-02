@@ -1,24 +1,25 @@
-package com.selwan.schools365teacher.ui.event.main
+package com.selwan.schools365teacher.ui.event.rec
 
-import android.util.Log
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.model.event.AllEvent
-import com.selwan.schools365teacher.data.model.news.News
+import com.selwan.schools365teacher.data.model.event.Event
 import com.selwan.schools365teacher.data.utils.ApiUtils
 import com.selwan.schools365teacher.ui.timetable.main.TimetableMainFragment
-import com.selwan.schools365teacher.ui.timetable.main.TimetableMainFragment.Companion.view
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
 
-class EventMainRepository(var compositeDisposable: CompositeDisposable) {
+class AllEventRepository(var compositeDisposable: CompositeDisposable, var date_start: String) {
 
-    var allEvent = MutableLiveData<AllEvent>()
-    fun fetchAllEvent(): LiveData<AllEvent> {
+    var allEventInDate = MutableLiveData<MutableList<Event>>()
+    val list = mutableListOf<Event>()
+
+    fun fetchAllEvent(): LiveData<MutableList<Event>> {
 
         compositeDisposable.add(
             ApiUtils.apiService.getEvents()
@@ -26,12 +27,17 @@ class EventMainRepository(var compositeDisposable: CompositeDisposable) {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     Consumer {
-                        allEvent.value = it
-                        Log.e("%%", it.events.get(1).startDate)
+                        for (item in it.events) {
+                            if (item.startDate.equals(date_start)) {
+                                list.add(item)
+                            }
+                        }
+                        allEventInDate.value = list
+
                     }, Consumer {
                         val snackbar =
                             Snackbar.make(
-                                view!!,
+                                TimetableMainFragment.view!!,
                                 "Something Went Error ... The data couldn't be read",
                                 Snackbar.LENGTH_LONG
                             )
@@ -40,7 +46,7 @@ class EventMainRepository(var compositeDisposable: CompositeDisposable) {
                         snackbar.show()
                     }
                 ))
-        return allEvent
+        return allEventInDate
     }
 
 

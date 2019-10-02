@@ -1,7 +1,6 @@
-package com.selwan.schools365teacher.ui.event.main.adapter
+package com.selwan.schools365teacher.ui.event.rec.adapter
 
 import android.content.Context
-import android.icu.text.SimpleDateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,13 +9,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.model.event.AllEvent
+import com.selwan.schools365teacher.data.model.event.Event
 
 
-class EventAdapter(context: Context, listEvent: AllEvent, var date: String) :
+class EventAdapter(context: Context, listEvent: List<Event>) :
     RecyclerView.Adapter<EventAdapter.ViewHolder>() {
 
     var context: Context
-    var listEvent: AllEvent
+    var listEvent: List<Event>
 
     init {
         this.context = context
@@ -30,16 +30,14 @@ class EventAdapter(context: Context, listEvent: AllEvent, var date: String) :
     }
 
     override fun getItemCount(): Int {
-        return listEvent.events.size
+        return listEvent.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
+        holder.title.text = listEvent.get(position).eventTitle
+        holder.date_event.text = listEvent.get(position).startDate
 
-        if (listEvent.events.get(position).startDate.equals("2019-09-06 00:00:00")) {
-            holder.title.text = listEvent.events.get(position).eventTitle
-            holder.date_event.text = listEvent.events.get(position).startDate
-        }
 
 
     }
