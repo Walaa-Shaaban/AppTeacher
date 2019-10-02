@@ -108,4 +108,85 @@
     <string name="message">Message</string>
     <string name="content">Content</string>
     <string name="select_date">Select Date</string>
+
+
+    <string name="welcom">welcome To My World</string>
+    <string name="login">Login</string>
+    <string name="example">Example@gmail.com</string>
+    <string name="present">Present</string>
+    <string name="none">None</string>
+    <string name="halfday">Half day</string>
+    <string name="absent">Absent</string>
+    <string name="late">Late</string>
+    <string name="attendancetoday">Attendance To Day</string>
+    <string name="attendancbydate">Attendanc By Date</string>
+    <string name="attendancereport">Attendance Report</string>
+    <string name="holiday">Holiday</string>
+    <string name="countinu">Continue</string>
+    <string name="siences">Siences</string>
+    <string name="room">Room</string>
+    <string name="viewmarks">View Marks</string>
+    <string name="teacher"> Teacher</string>
+    <string name="changepassword"> Change Password</string>
+    <string name="saveattendance">Save Attendance </string>
+    <string name="marks">Marks As Holiday  </string>
+    <string name="gradeone">Grade 2  </string>
+    <string name="hair">Hair Cleanliness </string>
+    <string name="gradetwo">Grade 1/A </string>
+    <string name="motherocc">Mother Occupation </string>
+    <string name="fathername">Father Name </string>
+    <string name="guardianname">Guardian Name</string>
+    <string name="guardianacc">Guardian Occupation </string>
+    <string name="fatherphone">Father Phone </string>
+
+    <string name="guardianphone">Guardian Phone </string>
+    <string name="mothername">Mother Name </string>
+    <string name="motherename">Guardian Relation  </string>
+    <string name="guardianrelation">Guardian Email</string>
+    <string name="guardianemail">Mother Phone </string>
+    <string name="fatherocc">Father Occupation</string>
+
+
+    <string name="studentname">Student Name </string>
+    <string-array name="guardian">
+        <item>@string/motherocc</item>
+        <item>@string/fathername</item>
+        <item>@string/guardianname</item>
+        <item>@string/guardianacc</item>
+        <item>@string/fatherphone</item>
+        <item>@string/guardianphone</item>
+        <item>@string/motherename</item>
+        <item>@string/guardianrelation</item>
+        <item>@string/guardianemail</item>
+        <item>@string/fatherocc</item>
+
+    </string-array>
+    <string name="father_details">Father and Guardian Details </string>
+
+    <string name="sendmassege">Send Massege</string>
+    <string name="addhomework">Add Homework </string>
+    <string name="grade">Grade </string>
+    <string name="marktwo">A</string>
+
+
+    <!-- Font awesome -->
+
+
+    <string name="font_awesome_student_graduate" translatable="false"></string>
+    <string name="font_awesome_class_timetable" translatable="false"></string>
+    <string name="font_awesome_news" translatable="false"></string>
+    <string name="font_awesome_megaphone" translatable="false"></string>
+    <string name="font_awesome_exam" translatable="false"></string>
+    <string name="font_awesome_student_attendance" translatable="false"></string>
+    <string name="font_awesome_attendance_by_date" translatable="false"></string>
+    <string name="font_awesome_analytics" translatable="false"></string>
+    <string name="font_awesome_test_paper" translatable="false"></string>
+    <string name="font_awesome_notice_board" translatable="false"></string>
+    <string name="font_awesome_send_message" translatable="false"></string>
+    <string name="font_awesome_edit_message" translatable="false"></string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="aiman_alwiah">AIMAN ALWIAH</string>
+    <string name="mohammad">mohammad</string>
 </resources>

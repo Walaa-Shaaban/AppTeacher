@@ -76,4 +76,69 @@
     <string name="message">Message</string>
     <string name="content">Content</string>
     <string name="select_date">Select Date</string>
+
+    <string name="marks">Marks As Holiday  </string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+
+    <string name="app_name">معلم</string>
+    <string name="welcom">welcom To My World</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="example">Example@gmail.com</string>
+    <string name="present">موجود</string>
+    <string name="none">لا يوجد</string>
+    <string name="halfday">نصف يوم </string>
+    <string name="absent">غائب</string>
+    <string name="late">متأخر</string>
+    <string name="attendancetoday">الحضور اليومي</string>
+    <string name="attendancbydate">الحضور حسب التاريخ</string>
+    <string name="attendancereport"> تقرير الحضور</string>
+    <string name="holiday">عطله</string>
+    <string name="countinu">مستمر</string>
+    <string name="siences">علوم</string>
+    <string name="room">غرفه</string>
+    <string name="viewmarks">عرض العلامات</string>
+    <string name="teacher"> معلم </string>
+    <string name="email">teacher@gmail.com</string>
+    <string name="changepassword"> تغيير كلمة المرور</string>
+    <string name="saveattendance">حفظ الحضور </string>
+    <string name="gradeone">العلامه 2  </string>
+    <string name="hair">نظافة الشعر </string>
+    <string name="gradetwo">العلامه 1/A </string>
+    <string name="motherocc">Mother occupation </string>
+    <string name="fathername">father name </string>
+    <string name="guardianname">guardian name</string>
+    <string name="guardianacc">guardian occupation </string>
+    <string name="fatherphone">father phone </string>
+    <string name="guardianphone">guardian phone </string>
+    <string name="mothername">mother name </string>
+    <string name="motherename">Guardian relation  </string>
+    <string name="guardianrelation">guardian email</string>
+    <string name="guardianemail">mother phone </string>
+    <string name="fatherocc">father occupation</string>
+    <string name="studentname">أسم الطالب </string>
+    <string name="father_details">Father and Guardian Details </string>
+    <string-array name="guardian">
+        <item>@string/motherocc</item>
+        <item>@string/fathername</item>
+        <item>@string/guardianname</item>
+        <item>@string/guardianacc</item>
+        <item>@string/fatherphone</item>
+        <item>@string/guardianphone</item>
+        <item>@string/motherename</item>
+        <item>@string/guardianrelation</item>
+        <item>@string/guardianemail</item>
+        <item>@string/fatherocc</item>
+
+    </string-array>
+    <string name="aiman_alwiah">AIMAN ALWIAH</string>
+
+    <string name="marktwo">A</string>
+
+    <string name="sendmassege">ارسال مسج</string>
+    <string name="addhomework">اضافة واجب منزلي </string>
+    <string name="grade">علامه </string>
+    <string name="mohammad">mohammad</string>
 </resources>

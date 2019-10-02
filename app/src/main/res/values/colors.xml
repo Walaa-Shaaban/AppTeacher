@@ -16,6 +16,15 @@
     <color name="green">#02B308</color>
     <color name="blue_noisy_dark">#3A4A67</color>
 
+    <color name="colorblack">#000</color>
+    <color name="colorpurple">#7500C3</color>
+    <color name="colororange">#eb4d4b</color>
+    <color name="coloryallow">#F89B16</color>
+    <color name="colorwhite">#fff</color>
+    <color name="colorgreen">#2ed573</color>
+    <color name="colorblue">#3742fa</color>
+    <color name="colorbluelight">#1e90ff</color>
+
 
     <color name="transparent">#00004a6b</color>
 

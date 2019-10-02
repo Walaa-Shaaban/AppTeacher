@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/acb_select_date"
         android:layout_width="0dp"

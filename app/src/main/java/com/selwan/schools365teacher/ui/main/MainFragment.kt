@@ -15,7 +15,7 @@ import com.selwan.schools365teacher.ui.news.news_main.NewsActivity
 import com.selwan.schools365teacher.ui.notification.main.NotificationActivity
 import com.selwan.schools365teacher.ui.student_details.StudentDetailsActivity
 import com.selwan.schools365teacher.ui.timetable.main.TimetableMainActivity
-import kotlinx.android.synthetic.main.fragment_main_screen.*
+import kotlinx.android.synthetic.main.khalid_fragment_main_screen.*
 
 
 class MainFragment : Fragment() {
@@ -30,7 +30,7 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_main_screen, container, false)
+        return inflater.inflate(R.layout.khalid_fragment_main_screen, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
