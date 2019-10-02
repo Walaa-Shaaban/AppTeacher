@@ -99,7 +99,7 @@ dependencies {
     implementation('com.shagi:material-datepicker:1.3') {
         exclude group: 'com.android.support'
     }
-    implementation 'com.riontech:calendar:1.0'
+    implementation 'com.github.tizisdeepan:eventscalendar:1.6.1'
 
 
     //Firebase

@@ -12,7 +12,7 @@ interface TeacherDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertNotification(notificationResponse: NotificationResponse)
 
-    @Query("SELECT * FROM NotificationResponse ORDER BY id DESC")
+    @Query("SELECT * FROM NotificationResponse ORDER BY id DESC ")
     fun getAllNotification(): LiveData<List<NotificationResponse>>
 
     @Delete

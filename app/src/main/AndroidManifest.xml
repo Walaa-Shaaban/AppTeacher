@@ -12,9 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.event.add_new.AddEventActivity"></activity>
+        <activity android:name=".ui.event.rec.AllEventActivity"></activity>
+        <activity android:name=".ui.event.add_new.AddEventActivity" />
         <activity android:name=".ui.event.main.EventMainActivity" />
-        <activity android:name=".ui.event.add_new.AddEvent1" />
         <activity android:name=".ui.notification.main.NotificationActivity" />
         <activity android:name=".ui.news.news_details.NewsDetailsActivity" />
         <activity android:name=".ui.attendance.student.rec.change_attendance.AttendanceChangeActivity" />
@@ -28,7 +28,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.homework.add_new.add_new_continue.HomeworkAddNewActivity" />
         <activity android:name=".ui.homework.AllHomework.AllHomeworkActivity" />
-
         <activity
             android:name=".ui.timetable.tabs_day.TimetableTabsdayActivity"
             android:label="@string/title_activity_timetable_tabsday"
