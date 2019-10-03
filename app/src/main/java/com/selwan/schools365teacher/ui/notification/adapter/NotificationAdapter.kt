@@ -22,7 +22,7 @@ class NotificationAdapter : RecyclerView.Adapter<NotificationAdapter.Notificatio
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotificationViewHolder {
         val inflater =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_notification, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.notification_item, parent, false)
         return NotificationViewHolder(inflater)
 
     }
@@ -46,8 +46,8 @@ class NotificationAdapter : RecyclerView.Adapter<NotificationAdapter.Notificatio
         var body_notification: TextView
 
         constructor(itemView: View) : super(itemView) {
-            title_notification = itemView.findViewById(R.id.title_notification)
-            body_notification = itemView.findViewById(R.id.body_notification)
+            title_notification = itemView.findViewById(R.id.actv_title)
+            body_notification = itemView.findViewById(R.id.actv_message)
         }
 
 
