@@ -1,22 +1,23 @@
 package com.selwan.schools365teacher.ui.news.news_details
 
-import androidx.lifecycle.ViewModelProviders
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.bumptech.glide.Glide
-
 import com.selwan.schools365teacher.R
-import kotlinx.android.synthetic.main.news_details_fragment.*
+import com.selwan.schools365teacher.data.utils.ApiUtils
+import kotlinx.android.synthetic.main.news_details.*
 
 class NewsDetailsFragment(
     var title: String,
-    var img_url: String,
     var desc: String,
-    var date: String
+    var date: String,
+    var image: String
 ) : Fragment() {
 
 
@@ -26,23 +27,25 @@ class NewsDetailsFragment(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.news_details_fragment, container, false)
+        return inflater.inflate(R.layout.news_details, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        title_new_details.text = title
-        desc_new_details.text = desc
-        date_new_details.text = date
+        (activity as AppCompatActivity).setSupportActionBar(toolbar_news_details as Toolbar?)
+        (activity as AppCompatActivity).supportActionBar?.title = "Our News"
+
+        actv_label_news2.text = title
+        aptv_news2.text = desc
+        actv_news_date2.text = date
 
         Glide
-            .with(this)
-            .load(img_url)
+            .with(this.context!!)
+            .load("${ApiUtils.IMG_PATH}${image}")
             .centerCrop()
-            .placeholder(R.mipmap.ic_launcher)
-            .into(img_new_details)
-
+            .placeholder(R.drawable.ic_launcher_background)
+            .into(aciv_pic)
 
     }
 

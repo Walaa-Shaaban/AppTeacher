@@ -12,6 +12,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val fm = supportFragmentManager
-        fm.beginTransaction().replace(R.id.frame, MainFragment()).commitAllowingStateLoss()
+        fm.beginTransaction().replace(R.id.frame_activity, MainFragment()).commitAllowingStateLoss()
     }
 }

@@ -2,12 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#B6ACAC"
+    android:layout_height="match_parent"
+    android:background="#E7DEDE"
     tools:context=".ui.news.news_main.NewsFragment">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar">
+
+    </include>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_news"
+        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

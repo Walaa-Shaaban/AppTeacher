@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--done-->
+
+    <include layout="@layout/layout_gard" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/appCompatCheckBox5"
+        style="@style/checkbox_style"
+        android:layout_height="wrap_content"
+        android:text="@string/present_title"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_10" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/appCompatCheckBox6"
+        style="@style/checkbox_style"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/late_title"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatCheckBox5" />
+
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/appCompatCheckBox7"
+        style="@style/checkbox_style"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/abscence"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatCheckBox6" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        style="@style/checkbox_style"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/half_day"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatCheckBox7" />
+
+    <!--    <androidx.appcompat.widget.AppCompatTextView-->
+    <!--        style="@style/textview_default"-->
+    <!--        android:text="@string/note"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_55"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_50" />-->
+
+    <!--    <androidx.appcompat.widget.AppCompatEditText-->
+    <!--        style="@style/edittext_default"-->
+    <!--        android:lines="5"-->
+    <!--        android:text="@string/text"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_75"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_60" />-->
+
+    <!--    <androidx.appcompat.widget.AppCompatButton-->
+    <!--        android:id="@+id/acb_cancel"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@color/gray"-->
+    <!--        android:text="@string/cancel"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_85"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_40"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_80" />-->
+
+    <!--    <androidx.appcompat.widget.AppCompatButton-->
+    <!--        android:id="@+id/acb_save"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@color/blue_noisy_dark"-->
+    <!--        android:text="@string/save"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_85"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_60"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_80" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

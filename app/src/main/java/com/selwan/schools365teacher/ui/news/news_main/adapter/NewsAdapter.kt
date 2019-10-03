@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.model.news.News
@@ -24,7 +25,7 @@ class NewsAdapter (context: Context, listNews: News) : RecyclerView.Adapter<News
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_news, parent, false)
+            .inflate(R.layout.news_item_our_news, parent, false)
         return NewsAdapter.ViewHolder(inflater)
     }
 
@@ -51,13 +52,13 @@ class NewsAdapter (context: Context, listNews: News) : RecyclerView.Adapter<News
         var title: TextView
         var date_new: TextView
         var desc :  TextView
-        var linear: LinearLayout
+        var linear: ConstraintLayout
 
         constructor(itemView: View) : super(itemView) {
-            title = itemView.findViewById(R.id.title)
-            date_new = itemView.findViewById(R.id.date_new)
+            title = itemView.findViewById(R.id.actv_label_news)
+            date_new = itemView.findViewById(R.id.actv_news_date)
             linear = itemView.findViewById(R.id.linear_new)
-            desc = itemView.findViewById(R.id.description)
+            desc = itemView.findViewById(R.id.aptv_news)
         }
 
     }
