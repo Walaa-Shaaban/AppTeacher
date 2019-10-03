@@ -3,8 +3,6 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-
-
     <color name="redHigh">#F74D7B</color>
     <color name="redHighDelete">#FF0000</color>
     <color name="white">#fff</color>
@@ -15,7 +13,6 @@
     <color name="orange">#FF921D</color>
     <color name="green">#02B308</color>
     <color name="blue_noisy_dark">#3A4A67</color>
-
     <color name="colorblack">#000</color>
     <color name="colorpurple">#7500C3</color>
     <color name="colororange">#eb4d4b</color>
@@ -24,16 +21,9 @@
     <color name="colorgreen">#2ed573</color>
     <color name="colorblue">#3742fa</color>
     <color name="colorbluelight">#1e90ff</color>
-
-
     <color name="transparent">#00004a6b</color>
-
-
     <color name="gray">#F3F3F3</color>
     <color name="textHeading">#000000</color>
-
-
-
     <color name="roboto_calendar_background">#FFFFFF</color>
     <color name="roboto_calendar_day_of_the_week_font">#161d20</color>
     <color name="roboto_calendar_selected_day_font">#FFFFFF</color>
@@ -55,6 +45,4 @@
     <color name="white_">#FFFFFF</color>
     <color name="lightBlue">#9E9E9E</color>
     <color name="gray_">#1e90ff</color>
-
-
 </resources>

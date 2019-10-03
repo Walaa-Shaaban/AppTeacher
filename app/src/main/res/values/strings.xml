@@ -15,15 +15,13 @@
     <string name="font_awesome_send_message" translatable="false">&#xf1d8;</string>
     <string name="font_awesome_edit_message" translatable="false">&#xf303;</string>
     <string name="font_awesome_delete_message" translatable="false">&#xf2ed;</string>
-
-
     <string name="hostelRoomNo">Room No</string>
     <string name="name">Name </string>
-
     <string name="class_timetable">Class TimeTable</string>
     <string name="class_title">Class</string>
     <string name="student_details">Student Details</string>
     <string name="student">Student</string>
+    <string name="email" translatable="false">teacher@gmail.com</string>
     <string name="attendance">Attendance</string>
     <string name="student_attendance">Student Attendance</string>
     <string name="date_attendance">Date Attendance</string>
@@ -46,7 +44,6 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="news">News</string>
-
     <string name="menu_home">Home</string>
     <string name="roll_number">Roll Number</string>
     <string name="admission_number">Admission Number</string>
@@ -60,7 +57,6 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
-
     <string name="private_title">Private</string>
     <string name="public_title">Public</string>
     <string name="all_teacher_title">All Teacher</string>
@@ -81,10 +77,7 @@
     <string name="late_title">Late</string>
     <string name="abscence">Absene</string>
     <string name="title">Title</string>
-
-
     <string name="half_day">Half Day</string>
-
     <!--  by Walaa-->
     <string name="pref_file" translatable="false">pref_file</string>
     <string name="pref_class_section" translatable="false">class_section</string>
@@ -138,15 +131,12 @@
     <string name="guardianname">Guardian Name</string>
     <string name="guardianacc">Guardian Occupation </string>
     <string name="fatherphone">Father Phone </string>
-
     <string name="guardianphone">Guardian Phone </string>
     <string name="mothername">Mother Name </string>
     <string name="motherename">Guardian Relation  </string>
     <string name="guardianrelation">Guardian Email</string>
     <string name="guardianemail">Mother Phone </string>
     <string name="fatherocc">Father Occupation</string>
-
-
     <string name="studentname">Student Name </string>
     <string-array name="guardian">
         <item>@string/motherocc</item>
@@ -159,31 +149,13 @@
         <item>@string/guardianrelation</item>
         <item>@string/guardianemail</item>
         <item>@string/fatherocc</item>
-
     </string-array>
     <string name="father_details">Father and Guardian Details </string>
-
     <string name="sendmassege">Send Massege</string>
     <string name="addhomework">Add Homework </string>
     <string name="grade">Grade </string>
     <string name="marktwo">A</string>
-
-
     <!-- Font awesome -->
-
-
-    <string name="font_awesome_student_graduate" translatable="false"></string>
-    <string name="font_awesome_class_timetable" translatable="false"></string>
-    <string name="font_awesome_news" translatable="false"></string>
-    <string name="font_awesome_megaphone" translatable="false"></string>
-    <string name="font_awesome_exam" translatable="false"></string>
-    <string name="font_awesome_student_attendance" translatable="false"></string>
-    <string name="font_awesome_attendance_by_date" translatable="false"></string>
-    <string name="font_awesome_analytics" translatable="false"></string>
-    <string name="font_awesome_test_paper" translatable="false"></string>
-    <string name="font_awesome_notice_board" translatable="false"></string>
-    <string name="font_awesome_send_message" translatable="false"></string>
-    <string name="font_awesome_edit_message" translatable="false"></string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
