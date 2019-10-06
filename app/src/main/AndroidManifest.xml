@@ -12,7 +12,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.event.rec.AllEventActivity"></activity>
+        <activity android:name=".ui.test.TestActivity">
+
+        </activity>
+        <activity
+            android:name=".ui.main.MainNavigationActivity"
+            android:label="@string/title_activity_main_navigation"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.event.rec.AllEventActivity" />
         <activity android:name=".ui.event.add_new.AddEventActivity" />
         <activity android:name=".ui.event.main.EventMainActivity" />
         <activity android:name=".ui.notification.main.NotificationActivity" />
@@ -30,8 +43,7 @@
         <activity android:name=".ui.homework.AllHomework.AllHomeworkActivity" />
         <activity
             android:name=".ui.timetable.tabs_day.TimetableTabsdayActivity"
-            android:label="@string/title_activity_timetable_tabsday"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_timetable_tabsday" />
         <activity android:name=".ui.attendance.student.main.AttendanceStudentMainActivity" />
         <activity android:name=".ui.attendance.report.report_info.overview.AttendanaceReportInfoActivity" />
         <activity android:name=".ui.attendance.report.main.AttendanceReportMainActivity" />
@@ -44,13 +56,7 @@
         <activity android:name=".ui.news.news_main.NewsActivity" />
         <activity android:name=".ui.attendance.AttendanceActivity" />
         <activity android:name=".ui.timetable.main.TimetableMainActivity" />
-        <activity android:name=".ui.main.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.main.MainActivity"></activity>
         <activity android:name=".ui.student_details.StudentDetailsActivity" />
 
         <service android:name=".ui.notification.service.NotificationService">

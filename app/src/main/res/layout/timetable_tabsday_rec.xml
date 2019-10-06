@@ -8,8 +8,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_timetable"
+        android:layout_marginTop="100dp"
+        android:background="#FFF"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,55 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/twenty_dp">
+    android:orientation="vertical">
+    <!-- done-->
+    <include
+        android:id="@+id/toolbar_notification"
+        layout="@layout/toolbar">
 
-    <TextView
-        android:id="@+id/tv_class"
-        style="@style/standard_title"
-        android:text="@string/class_title"
+    </include>
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/acsp_select_class_exam"
+        android:layout_marginTop="60dp"
+        style="@style/spinner_style"
+        android:layout_width="0dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <FrameLayout
-        android:id="@+id/fl_class"
-        style="@style/frame_layout_style"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_class">
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/acsp_select_section_exam"
+        style="@style/spinner_style2"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toEndOf="@+id/acsp_select_class_exam"
+        app:layout_constraintStart_toStartOf="@+id/acsp_select_class_exam"
+        app:layout_constraintTop_toBottomOf="@+id/acsp_select_class_exam" />
 
-        <Spinner
-            android:id="@+id/sp_class"
-            style="@style/spinner_style_stroked" />
-    </FrameLayout>
-
-    <TextView
-        android:id="@+id/tv_section"
-        style="@style/standard_title"
-        android:text="@string/section"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fl_class" />
-
-    <FrameLayout
-        android:id="@+id/fl_section"
-        style="@style/frame_layout_style"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_section">
-
-        <Spinner
-            android:id="@+id/sp_section"
-            style="@style/spinner_style_stroked" />
-
-    </FrameLayout>
-
-    <Button
-        android:id="@+id/next"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/acb_continue_exam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Continue"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="474dp" />
+        android:layout_marginTop="@dimen/seventy"
+        android:background="@drawable/btn_shape"
+        android:text="@string/continue_"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/acsp_select_section_exam"
+        app:layout_constraintStart_toStartOf="@+id/acsp_select_section_exam"
+        app:layout_constraintTop_toBottomOf="@+id/acsp_select_section_exam" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

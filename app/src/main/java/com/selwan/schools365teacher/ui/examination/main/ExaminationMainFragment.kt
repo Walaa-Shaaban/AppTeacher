@@ -18,6 +18,7 @@ import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.examination.tabs.ExamTabsActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 import kotlinx.android.synthetic.main.examination_main_fragment.*
+import kotlinx.android.synthetic.main.homework_add_new_main_fragment.*
 import kotlinx.android.synthetic.main.students_details_fragment.sp_class
 import kotlinx.android.synthetic.main.students_details_fragment.sp_section
 
@@ -45,7 +46,7 @@ class ExaminationMainFragment : Fragment() {
 
         if (NetworkUtils.isNetworkConnected(this.context!!)) {
             getClasses()
-            next.setOnClickListener {
+            acb_continue_exam.setOnClickListener {
                 val intent = Intent(this.activity, ExamTabsActivity::class.java)
                 startActivity(intent)
             }
@@ -73,11 +74,11 @@ class ExaminationMainFragment : Fragment() {
                 classes
             )
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-            sp_class.adapter = adapter
+            acsp_select_class_exam.adapter = adapter
 
 
 
-            sp_class.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            acsp_select_class_exam.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,
@@ -109,9 +110,9 @@ class ExaminationMainFragment : Fragment() {
                 sections
             )
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-            sp_section.adapter = adapter
+            acsp_select_section_exam.adapter = adapter
 
-            sp_section.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            acsp_select_section_exam.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,

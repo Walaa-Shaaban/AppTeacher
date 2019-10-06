@@ -29,6 +29,8 @@ class AllHomeworkFragment : Fragment() {
         return inflater.inflate(R.layout.homework_main_fragment, container, false)
     }
 
+
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 

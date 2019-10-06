@@ -13,9 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.utils.NetworkUtils
-import com.selwan.schools365teacher.ui.timetable.main.TimetableMainFragment
 import com.selwan.schools365teacher.ui.timetable.tabs_day.ui.main.adapter.TimetableTabsdayAdapter
-import kotlinx.android.synthetic.main.fragment_timetable_tabsday.*
+import kotlinx.android.synthetic.main.timetable_tabsday_rec.*
 
 class PlaceholderFragment(var tabText: String) : Fragment() {
 
@@ -23,7 +22,7 @@ class PlaceholderFragment(var tabText: String) : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_timetable_tabsday, container, false)
+        return inflater.inflate(R.layout.timetable_tabsday_rec, container, false)
 
     }
 

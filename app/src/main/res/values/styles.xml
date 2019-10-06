@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -55,6 +55,7 @@
         <item name="android:fontFamily">@font/first_file</item>
         <item name="android:gravity">center_vertical|center_horizontal</item>
     </style>
+
     <style name="font_awesome_textview_style_rectangle_cardview" parent="font_awesome_textview_style">
         <item name="android:layout_marginBottom">@dimen/ten_dp</item>
         <item name="android:layout_marginTop">@dimen/ten_dp</item>
@@ -177,8 +178,44 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+
+    <style name="MenuButtonsSmall">
+        <item name="fab_size">normal</item>
+        <item name="fab_colorNormal">#3975c4</item>
+        <item name="fab_colorPressed">#3975c4</item>
+        <item name="fab_colorRipple">#3975c4</item>
+    </style>
+
+
+    <style name="MenuButtonsSmall.Red">
+        <item name="fab_size">normal</item>
+        <item name="fab_colorNormal">#e7171d</item>
+        <item name="fab_colorPressed">#e7171d</item>
+        <item name="fab_colorRipple">#e7171d</item>
+    </style>
+
+    <style name="MenuButtonsSmall.Green">
+        <item name="fab_colorNormal">#0acf12</item>
+        <item name="fab_colorPressed">#0acf12</item>
+        <item name="fab_colorRipple">#0acf12</item>
+    </style>
+
+    <style name="MenuButtonsSmall.orange">
+        <item name="fab_colorNormal">#ed850d</item>
+        <item name="fab_colorPressed">#ed850d</item>
+        <item name="fab_colorRipple">#ed850d</item>
+    </style>
+
+
+   
     <style name="recyc">
         <item name="android:background">@drawable/shaperecycle</item>
+    </style>
+    <!--    Calendar-->
+    <style name="NumberPickerStyle">
+        <item name="android:textSize">22dp</item>
+        <item name="android:textColorPrimary">@color/colorAccent</item>
+        <item name="android:colorControlNormal" tools:targetApi="lollipop">@color/colorAccent</item>
     </style>
 
 </resources>

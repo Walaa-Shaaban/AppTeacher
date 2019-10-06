@@ -11,8 +11,9 @@
     <color name="blueSea">#1EDAD4</color>
     <color name="black">#000</color>
     <color name="orange">#FF921D</color>
+    <color name="blue_dark">#0B0B2B</color>
+    <color name="blue_dark_2">#59A7BF</color>
     <color name="green">#02B308</color>
-    <color name="kohli">#040C3C</color>
     <color name="blue_noisy_dark">#3A4A67</color>
     <color name="colorblack">#000</color>
     <color name="colorpurple">#7500C3</color>
@@ -46,5 +47,11 @@
     <color name="white_">#FFFFFF</color>
     <color name="lightBlue">#9E9E9E</color>
     <color name="gray_">#1e90ff</color>
+
+    <color name="color1">#2850A3</color>
+    <color name="color2">#568DAF</color>
+    <color name="color3">#ED9421</color>
+    <color name="color4">#392F5A</color>
+    <color name="color5">#CFDBD5</color>
 
 </resources>

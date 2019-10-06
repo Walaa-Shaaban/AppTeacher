@@ -3,49 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="1dp">
+    android:background="@color/gray"
+    android:padding="5dp">
+
 
     <TextView
-        android:id="@+id/textView36"
-        android:layout_width="wrap_content"
+        android:id="@+id/time_start"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="10:00"
-        android:textColor="@color/colorblack"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/color1"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline70"
         app:layout_constraintEnd_toStartOf="@+id/guideline74"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline73"
-        app:layout_constraintTop_toTopOf="@+id/guideline69" />
+        app:layout_constraintTop_toTopOf="@+id/guideline69"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView37"
-        android:layout_width="wrap_content"
+        android:id="@+id/subject"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="11:11"
-        android:textColor="@color/colorblack"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline70"
-        app:layout_constraintEnd_toStartOf="@+id/guideline75"
-        app:layout_constraintStart_toEndOf="@+id/textView36"
-        app:layout_constraintTop_toTopOf="@+id/guideline69" />
-
-    z
-
-    <TextView
-        android:id="@+id/textView38"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:text="@string/siences"
-        android:textColor="@color/colorpurple"
-        android:textSize="20sp"
+
+        android:textAlignment="textStart"
+        android:textColor="@color/color3"
+        android:textSize="14sp"
+        android:layout_marginLeft="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline74"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="@+id/guideline73"
         app:layout_constraintTop_toTopOf="@+id/guideline71"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline69"
@@ -66,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline73"

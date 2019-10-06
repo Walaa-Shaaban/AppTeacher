@@ -12,7 +12,7 @@ class TimetableMainActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_timetable)
+        setContentView(R.layout.timetable_activity)
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.frame_timetable_main, TimetableMainFragment())

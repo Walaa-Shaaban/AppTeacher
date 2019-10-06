@@ -27,12 +27,14 @@ class AllHomeworkRepository(var compositeDisposable: CompositeDisposable) {
                         homeworks.value = it
                     }, Consumer {
                         val snackbar =
-                            Snackbar.make(
-                                view!!,
-                                "Something Went Error ... The data couldn't be read",
-                                Snackbar.LENGTH_LONG
-                            )
-                        val sbView = snackbar.view
+                            view?.let { it1 ->
+                                Snackbar.make(
+                                    it1,
+                                    "Something Went Error ... The data couldn't be read",
+                                    Snackbar.LENGTH_LONG
+                                )
+                            }
+                        val sbView = snackbar!!.view
                         sbView.setBackgroundResource(R.color.green)
                         snackbar.show()
                     }

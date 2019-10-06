@@ -1,13 +1,145 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/calendar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <include layout="@layout/layout_gard" />
 
-</RelativeLayout>
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/acet_event_title"
+        style="@style/edittext_default"
+        android:hint="@string/event_title"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_15"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_10" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/acet_description"
+        style="@style/edittext_default"
+        android:hint="@string/description"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_25"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_20" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/acet_date"
+        style="@style/edittext_default"
+        android:hint="@string/event_date"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_35"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_30" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_event_color"
+        style="@style/textview_default"
+        android:text="@string/event_color"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_45"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_40" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/five_dp"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_55"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_50"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_50">
+
+
+        <View
+            style="@style/view_color"
+            android:backgroundTint="@color/circle_blue_color" />
+
+        <View
+            style="@style/view_color"
+            android:backgroundTint="@color/circle_red_color" />
+
+        <View
+            style="@style/view_color"
+            android:backgroundTint="@color/circle_green_color" />
+
+        <View
+            style="@style/view_color"
+            android:backgroundTint="@color/circle_brown_color" />
+
+        <View
+            style="@style/view_color"
+            android:backgroundTint="@color/circle_orange_color" />
+
+        <View
+            style="@style/view_color"
+            android:backgroundTint="@color/circle_pink_color" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/textview_default"
+        android:text="@string/event_type"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_65"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_60" />
+
+    <RadioGroup
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_75"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_70">
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/private_title" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/public_title" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/all_teacher_title" />
+    </RadioGroup>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:id="@+id/acb_cancel"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_85"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_40"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_80" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="0dp"
+        android:id="@+id/acb_save"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_noisy_dark"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_85"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_60"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_80" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

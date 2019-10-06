@@ -19,6 +19,7 @@ import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.timetable.tabs_day.TimetableTabsdayActivity
 import kotlinx.android.synthetic.main.fragment_class_timetable.*
+import kotlinx.android.synthetic.main.timetable_fragment.*
 
 
 class TimetableMainFragment : Fragment() {
@@ -37,7 +38,7 @@ class TimetableMainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_class_timetable, container, false)
+        return inflater.inflate(R.layout.timetable_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -47,7 +48,7 @@ class TimetableMainFragment : Fragment() {
 
         if (NetworkUtils.isNetworkConnected(TimetableMainFragment.context!!)) {
             getClasses()
-            timetable_search.setOnClickListener {
+            acb_continue.setOnClickListener {
                 val intent = Intent(this.activity, TimetableTabsdayActivity::class.java)
                 startActivity(intent)
             }
@@ -73,11 +74,11 @@ class TimetableMainFragment : Fragment() {
                 classes
             )
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-            sp_class.adapter = adapter
+            acsp_select_class.adapter = adapter
 
 
 
-            sp_class.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            acsp_select_class.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,
@@ -113,9 +114,9 @@ class TimetableMainFragment : Fragment() {
                 sections
             )
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-            sp_section.adapter = adapter
+            acsp_select_section.adapter = adapter
 
-            sp_section.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            acsp_select_section.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,

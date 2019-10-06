@@ -38,7 +38,7 @@ class TimetableTabsdayAdapter : RecyclerView.Adapter<TimetableTabsdayAdapter.Vie
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val inflater = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_timetable, parent, false)
+            .inflate(R.layout.timetaple_item, parent, false)
         return ViewHolder(inflater)
 
     }
@@ -51,9 +51,7 @@ class TimetableTabsdayAdapter : RecyclerView.Adapter<TimetableTabsdayAdapter.Vie
         val item = allItems()[position]
 
         holder.subject.text = item.name
-        holder.room_no.text = item.dayInfo.room_no
-        holder.end.text = item.dayInfo.end_time
-        holder.start.text = item.dayInfo.start_time
+        holder.start.text =  "${item.dayInfo.start_time} - ${item.dayInfo.end_time}"
 
     }
 
@@ -71,15 +69,11 @@ class TimetableTabsdayAdapter : RecyclerView.Adapter<TimetableTabsdayAdapter.Vie
     class ViewHolder : RecyclerView.ViewHolder {
 
         var subject: TextView
-        var room_no: TextView
         var start: TextView
-        var end: TextView
 
         constructor(itemView: View) : super(itemView) {
             subject = itemView.findViewById(R.id.subject)
-            room_no = itemView.findViewById(R.id.room_no)
-            start = itemView.findViewById(R.id.start_time)
-            end = itemView.findViewById(R.id.end_time)
+            start = itemView.findViewById(R.id.time_start)
         }
 
 

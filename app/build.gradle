@@ -100,6 +100,7 @@ dependencies {
         exclude group: 'com.android.support'
     }
     implementation 'com.github.tizisdeepan:eventscalendar:1.6.1'
+    implementation 'com.github.drawers:SpinnerDatePicker:2.0.1'
 
 
     //Firebase
@@ -110,5 +111,8 @@ dependencies {
     // Room components
     implementation 'androidx.room:room-runtime:2.0.0'
     kapt 'androidx.room:room-compiler:2.0.0'
+
+    //FAB
+    implementation 'com.github.clans:fab:1.6.4'
 
 }

@@ -10,11 +10,10 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.utils.NetworkUtils
-import com.selwan.schools365teacher.ui.timetable.main.TimetableMainFragment
 import com.selwan.schools365teacher.ui.timetable.main.TimetableMainFragment.Companion.view
 import com.selwan.schools365teacher.ui.timetable.tabs_day.ui.main.SectionsPagerAdapter
 import com.selwan.schools365teacher.ui.timetable.tabs_day.ui.main.TimetableTabsViewModel
-import kotlinx.android.synthetic.main.activity_timetable_tabsday.*
+import kotlinx.android.synthetic.main.timetable_tabsday_activity.*
 
 
 class TimetableTabsdayActivity : AppCompatActivity() {
@@ -26,7 +25,7 @@ class TimetableTabsdayActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_timetable_tabsday)
+        setContentView(R.layout.timetable_tabsday_activity)
 
         if (NetworkUtils.isNetworkConnected(this)) {
             getViewModel().getTimetable.observe(this, Observer {

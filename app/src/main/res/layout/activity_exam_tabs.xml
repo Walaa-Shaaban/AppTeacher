@@ -1,43 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".ui.timetable.tabs_day.TimetableTabsdayActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_exam"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+    <include
+        android:id="@+id/toolbar_notification"
+        layout="@layout/toolbar">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SlidingTabsUsingViewPager"
-            android:textSize="20dp" />
-
-
-    </androidx.appcompat.widget.Toolbar>
+    </include>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs_exam"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:background="@color/color2"
+        app:tabTextColor="#FFF"
+        app:tabGravity="center"
+        app:tabMode="scrollable" />
 
-    </com.google.android.material.tabs.TabLayout>
+
+
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/pager_exam"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    </androidx.viewpager.widget.ViewPager>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-</LinearLayout>

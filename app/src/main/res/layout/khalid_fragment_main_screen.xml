@@ -418,12 +418,7 @@
 
     </LinearLayout>
 
-    <androidx.appcompat.widget.ActionMenuView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:backgroundTint="@color/redHigh"
-        android:background="@drawable/oval_solid"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -47,7 +47,7 @@ class AllHomeworkAdapter(context: Context, homeworkList: HomeworkList) :
 
         constructor(itemView: View) : super(itemView) {
             homeworkName = itemView.findViewById(R.id.homework_name)
-            homeworkClass = itemView.findViewById(R.id.homework_class)
+            homeworkClass = itemView.findViewById(R.id.homework_date)
             homeworkSection = itemView.findViewById(R.id.homework_section)
 
         }

@@ -1,86 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.homework.add_new.add_new_continue.HomeworkAddNewFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-
-
-            <TextView
-                android:id="@+id/tv_subject"
-                style="@style/standard_title"
-                android:text="subject"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fl_class" />
-
-            <FrameLayout
-                android:id="@+id/fl_subject"
-                style="@style/frame_layout_style"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_section">
-
-                <Spinner
-                    android:id="@+id/sp_subject"
-                    style="@style/spinner_style_stroked" />
-
-            </FrameLayout>
-
-            <TextView
-                style="@style/standard_title"
-                android:text="Homework Date"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fl_class" />
-
-            <EditText
-                android:id="@+id/homework_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                style="@style/standard_title"
-                android:text="Submit Date"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fl_class" />
-
-            <EditText
-                android:id="@+id/submit_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                style="@style/standard_title"
-                android:text="Message"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fl_class" />
-
-            <EditText
-                android:id="@+id/msg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+    <include
+        android:id="@+id/toolbar_notification"
+        layout="@layout/toolbar">
+    </include>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
-            <Button
-                android:id="@+id/add_new_homework"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/green"
-                android:text="Add New Homework"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="157dp"
-                tools:layout_editor_absoluteY="474dp" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/acb_select_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:text="Homework Date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/acsp_select_roles" />
 
-        </LinearLayout>
-    </ScrollView>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/acb_select_submit_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="16dp"
+        android:text="Submit Date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/acsp_select_roles" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/acsp_select_roles"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fifty"
+        android:layout_marginTop="60dp"
+        android:autofillHints="Subject"
+        app:layout_constraintEnd_toEndOf="@+id/acb_select_date"
+        app:layout_constraintStart_toStartOf="@+id/acb_select_date"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/acet_title"
+        style="@style/edittext_default"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/title"
+        app:layout_constraintEnd_toEndOf="@+id/acb_select_date"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/acb_select_date"
+        app:layout_constraintTop_toBottomOf="@+id/acb_select_date" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/acet_message"
+        style="@style/edittext_default"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/twenty_four"
+        android:ems="10"
+        android:inputType="textMultiLine|textPersonName"
+        android:lines="7"
+        android:text="@string/content"
+        app:layout_constraintEnd_toEndOf="@+id/acet_title"
+        app:layout_constraintStart_toStartOf="@+id/acet_title"
+        app:layout_constraintTop_toBottomOf="@+id/acet_title" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/acb_send_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="123dp"
+        android:background="@drawable/btn_shape2"
+        android:text="@string/send_message"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/acet_message"
+        app:layout_constraintStart_toStartOf="@+id/acet_message"
+        app:layout_constraintTop_toBottomOf="@+id/acet_message" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
