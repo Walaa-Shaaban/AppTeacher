@@ -6,54 +6,64 @@
 
     <include layout="@layout/layout_gard" />
 
+
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/acet_event_title"
         style="@style/edittext_default"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:hint="@string/event_title"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_15"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_10" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/acet_description"
         style="@style/edittext_default"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:hint="@string/description"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_25"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_20" />
+        app:layout_constraintTop_toBottomOf="@+id/acet_event_title" />
 
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/acet_date"
         style="@style/edittext_default"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:hint="@string/event_date"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_35"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_30" />
+        app:layout_constraintTop_toBottomOf="@+id/acet_description" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/actv_event_color"
         style="@style/textview_default"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="@string/event_color"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_45"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_40" />
+        app:layout_constraintTop_toBottomOf="@+id/acet_date" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/five_dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="4dp"
         android:orientation="horizontal"
         android:weightSum="6"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_55"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_50"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_50">
+        app:layout_constraintTop_toBottomOf="@+id/actv_event_color">
 
 
         <View
@@ -82,22 +92,27 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView2"
         style="@style/textview_default"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="@string/event_type"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_65"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_60" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         android:weightSum="3"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_75"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_70">
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2">
 
         <RadioButton
             android:layout_width="match_parent"
@@ -119,27 +134,29 @@
     </RadioGroup>
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/gray"
-            android:id="@+id/acb_cancel"
-            android:text="@string/cancel"
-            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_85"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_40"
-            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_80" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/acb_cancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/gray"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_85"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_40"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="0dp"
-            android:id="@+id/acb_save"
-            android:layout_height="wrap_content"
-            android:background="@color/blue_noisy_dark"
-            android:text="@string/save"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_85"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
-            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_60"
-            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_80" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/acb_save"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/blue_noisy_dark"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_85"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_90"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_60"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
