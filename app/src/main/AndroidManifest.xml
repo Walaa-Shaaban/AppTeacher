@@ -17,6 +17,7 @@
         </activity>
         <activity
             android:name=".ui.main.MainNavigationActivity"
+            android:label="@string/title_activity_main_navigation"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
