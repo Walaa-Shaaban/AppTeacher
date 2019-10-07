@@ -5,8 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.student_details.recyclerview_student_details.RecyclerStudentDetailsActivity">
 
+    <include layout="@layout/toolbar"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_student_details"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

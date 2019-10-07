@@ -27,21 +27,19 @@ class AttendanceChangeRepository(var compositeDisposable: CompositeDisposable) {
             )
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                    Consumer {
-                        attendanceTypeList.value = it
-                    }, Consumer {
-                        val snackbar =
-                            Snackbar.make(
-                                view!!,
-                                "Something Went Error ... The data couldn't be read",
-                                Snackbar.LENGTH_LONG
-                            )
-                        val sbView = snackbar.view
-                        sbView.setBackgroundResource(R.color.green)
-                        snackbar.show()
-                    }
-                )
+                .subscribe(Consumer {
+                    attendanceTypeList.value = it
+                }, Consumer {
+                    val snackbar =
+                        Snackbar.make(
+                            view!!,
+                            "Something Went Error ... The data couldn't be read",
+                            Snackbar.LENGTH_LONG
+                        )
+                    val sbView = snackbar.view
+                    sbView.setBackgroundResource(R.color.green)
+                    snackbar.show()
+                })
         )
         return attendanceTypeList
     }

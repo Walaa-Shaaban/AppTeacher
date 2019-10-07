@@ -1,5 +1,6 @@
 package com.selwan.schools365teacher.ui.attendance.date.main
 
+
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
@@ -8,21 +9,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.DatePicker
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
+import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.attendance.date.rec.AttendanceDateRecActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
-import android.widget.Toast
-import com.shagi.materialdatepicker.date.DatePickerFragmentDialog
 import kotlinx.android.synthetic.main.attendance_date_main_fragment.*
-import kotlinx.android.synthetic.main.attendance_student_main_fragment.attendance_search
-import kotlinx.android.synthetic.main.students_details_fragment.*
+import kotlinx.android.synthetic.main.homework_add_new_fragment.*
 
 import kotlin.collections.ArrayList
 
@@ -33,10 +31,9 @@ class AttendanceDateMainFragment : Fragment() {
 
     var classes = ArrayList<String>()
     var sections = ArrayList<String>()
+    var getDate : String ?= null
 
     var year: Int? = null
-    var monthOfYear: Int? = null
-    var dayOfMonth: String? = null
 
     companion object {
         fun newInstance() = StudentsDetailsFragment()
@@ -68,25 +65,28 @@ class AttendanceDateMainFragment : Fragment() {
 
 
             getClasses()
-            attendance_date.setOnClickListener {
-                val dialog =
-                    DatePickerFragmentDialog.newInstance({ view, year, monthOfYear, dayOfMonth ->
-                        this.year = year
-                        this.monthOfYear = monthOfYear + 1
-                        this.dayOfMonth = dayOfMonth.toString()
-                        if (dayOfMonth < 10) {
-                            this.dayOfMonth = "0${this.dayOfMonth}"
+            actv_Date_att.setOnClickListener {
+                DatePickerDialog(this.context!!, R.style.DialogTheme,
+                    DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                        var month = monthOfYear
+                        month = month + 1
+                        var day = dayOfMonth
+                        if (day < 10){
+                            getDate = "0${day}/${month}/${year}"
+                        }else{
+                            getDate= "${day}/${month}/${year}"
                         }
-                        attendance_date.text = "${this.dayOfMonth}/${this.monthOfYear}/${this.year}"
-                    }, 2020, 12, 4)
-                dialog.show(fragmentManager!!, "tag")
+                        actv_Date_att.text = getDate
+
+                    }, 2019, 9, 6
+                ).show()
             }
-            attendance_search.setOnClickListener {
+            acb_continue_att.setOnClickListener {
 
                 val intent = Intent(this.activity, AttendanceDateRecActivity::class.java)
                 intent.putExtra("class_id", class_id)
                 intent.putExtra("section_id", section_id)
-                intent.putExtra("date", "${this.dayOfMonth}/${this.monthOfYear}/${this.year}")
+                intent.putExtra("date", getDate)
                 startActivity(intent)
             }
         } else {
@@ -110,12 +110,13 @@ class AttendanceDateMainFragment : Fragment() {
                 android.R.layout.simple_spinner_item,
                 classes
             )
+
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-            sp_class.adapter = adapter
+            acsp_select_class_att.adapter = adapter
 
 
 
-            sp_class.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            acsp_select_class_att.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,
@@ -147,9 +148,9 @@ class AttendanceDateMainFragment : Fragment() {
                 sections
             )
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-            sp_section.adapter = adapter
+            acsp_select_section_att.adapter = adapter
 
-            sp_section.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            acsp_select_section_att.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,

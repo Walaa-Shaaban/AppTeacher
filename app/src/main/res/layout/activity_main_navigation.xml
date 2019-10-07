@@ -9,20 +9,20 @@
     tools:openDrawer="start">
 
     <include
-        layout="@layout/app_bar_master"
+        layout="@layout/app_bar_main_navigation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+    </include>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/blue_noisy_dark"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_master"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:menu="@menu/activity_master_drawer" />
+        app:headerLayout="@layout/nav_header_main_navigation"
+        app:menu="@menu/activity_main_navigation_drawer" />
+
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

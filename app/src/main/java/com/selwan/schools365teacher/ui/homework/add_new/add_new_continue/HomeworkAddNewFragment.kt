@@ -66,7 +66,7 @@ class HomeworkAddNewFragment : Fragment() {
                     var month = monthOfYear
                     month = month + 1
 
-                    acb_select_date.text = "$year-$month-$dayOfMonth"
+                    acb_select_date.text = "$dayOfMonth-$month-$dayOfMonth"
                 }, 2019, 9, 6
             ).show()
 

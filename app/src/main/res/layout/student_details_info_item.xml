@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- done -->
+
+
+    <androidx.cardview.widget.CardView
+        style="@style/CustomCardView"
+        android:layout_width="0dp"
+        android:layout_height="259dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_v_35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.35" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_v_77"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.77" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_h_25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.25" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aciv_pic"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/eight_dp"
+                android:layout_marginTop="@dimen/eight_dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@+id/gl_h_25"
+                app:layout_constraintEnd_toEndOf="@+id/gl_v_35"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/st" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ten_dp"
+                android:layout_marginTop="@dimen/eight_dp"
+                android:text="@string/name"
+                app:layout_constraintStart_toEndOf="@+id/aciv_pic"
+                app:layout_constraintTop_toTopOf="@+id/aciv_pic" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textstudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ten_dp"
+                android:text="@string/student"
+                app:layout_constraintBottom_toBottomOf="@+id/aciv_pic"
+                app:layout_constraintEnd_toEndOf="@+id/textView2"
+                app:layout_constraintStart_toEndOf="@+id/aciv_pic" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_label_roll"
+                style="@style/standard_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/eight_dp"
+                android:layout_marginTop="@dimen/thirty_two_dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@string/roll_number"
+                app:layout_constraintEnd_toEndOf="@+id/gl_v_35"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aciv_pic" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_label_admission"
+                style="@style/standard_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/eight_dp"
+                android:layout_marginTop="@dimen/eight_dp"
+                android:text="@string/admission_number"
+                app:layout_constraintEnd_toEndOf="@+id/gl_v_35"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/actv_label_roll" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_label_ret"
+                style="@style/standard_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/eight_dp"
+                android:layout_marginTop="@dimen/eight_dp"
+                android:text="ret"
+                app:layout_constraintEnd_toEndOf="@+id/gl_v_35"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/actv_label_admission" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_roll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/twenty"
+                app:layout_constraintStart_toStartOf="@+id/gl_v_77"
+                app:layout_constraintTop_toTopOf="@+id/actv_label_roll" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_admission"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/eight_dp"
+                android:text="@string/two_thousand"
+                app:layout_constraintStart_toStartOf="@+id/gl_v_77"
+                app:layout_constraintTop_toBottomOf="@+id/actv_roll" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_ret"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/eight_dp"
+                android:text="@string/no"
+                app:layout_constraintStart_toStartOf="@+id/gl_v_77"
+                app:layout_constraintTop_toBottomOf="@+id/actv_admission" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/textView32"
+        android:id="@+id/student_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
@@ -14,15 +14,15 @@
         android:textColor="@color/colorblack"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textView33"
+        app:layout_constraintBottom_toBottomOf="@+id/student_attendance_type"
         app:layout_constraintEnd_toStartOf="@+id/guideline67"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView33"
+        app:layout_constraintTop_toTopOf="@+id/student_attendance_type"
         app:layout_constraintVertical_bias="0.611" />
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/student_attendance_type"
         style="@style/bottonst"
         android:layout_width="wrap_content"
         android:layout_height="0dp"

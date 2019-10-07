@@ -51,7 +51,7 @@ class AttendanceReportMainFragment : Fragment() {
             getClasses()
             getYears()
             getMonth()
-            search.setOnClickListener {
+            acb_continue_att.setOnClickListener {
 
                 val intent = Intent(this.context, AttendanceReportRecActivity::class.java)
                 intent.putExtra("class_id", class_id)

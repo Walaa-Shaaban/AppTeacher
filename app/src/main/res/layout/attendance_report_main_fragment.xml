@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="@dimen/twenty_dp">
+    android:layout_height="match_parent">
 
+    <include layout="@layout/toolbar"/>
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -13,6 +13,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
             android:orientation="vertical">
 
 
@@ -30,9 +31,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_class">
 
-                <Spinner
+                <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/sp_class"
-                    style="@style/spinner_style_stroked" />
+                    style="@style/spinner_style2"
+                    android:layout_width="0dp"
+                    app:layout_constraintEnd_toEndOf="@+id/acsp_select_class_att"
+                    app:layout_constraintStart_toStartOf="@+id/acsp_select_class_att"
+                    app:layout_constraintTop_toBottomOf="@+id/acsp_select_class_att" />
             </FrameLayout>
 
             <TextView
@@ -43,15 +48,18 @@
                 app:layout_constraintTop_toBottomOf="@+id/fl_class" />
 
             <FrameLayout
-                android:id="@+id/fl_section"
                 style="@style/frame_layout_style"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_section">
+                app:layout_constraintTop_toBottomOf="@+id/tv_class">
 
-                <Spinner
+                <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/sp_section"
-                    style="@style/spinner_style_stroked" />
-
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
             </FrameLayout>
 
             <TextView
@@ -62,13 +70,17 @@
 
             <FrameLayout
                 style="@style/frame_layout_style"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_section">
+                app:layout_constraintTop_toBottomOf="@+id/tv_class">
 
-                <Spinner
+                <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/sp_year"
-                    style="@style/spinner_style_stroked" />
-
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
             </FrameLayout>
 
             <TextView
@@ -79,23 +91,30 @@
 
             <FrameLayout
                 style="@style/frame_layout_style"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_section">
+                app:layout_constraintTop_toBottomOf="@+id/tv_class">
 
-                <Spinner
+                <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/sp_month"
-                    style="@style/spinner_style_stroked" />
-
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
             </FrameLayout>
 
-            <Button
-                android:id="@+id/search"
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/acb_continue_att"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="search"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="157dp"
-                tools:layout_editor_absoluteY="474dp" />
+                android:layout_margin="70dp"
+                android:background="@drawable/btn_shape"
+                android:text="@string/continue_"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/acsp_select_section_att"
+                app:layout_constraintStart_toStartOf="@+id/acsp_select_section_att"
+                app:layout_constraintTop_toBottomOf="@+id/actv_Date_att" />
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

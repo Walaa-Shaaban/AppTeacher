@@ -58,7 +58,7 @@ class AttendanceChangeFragment(var attendance_id: String, var student_session: S
             val stu_session = StudentSession(
                 attendence_id = attendance_id.toInt(),
                 remark = note.text.toString(),
-                attendence_type_id = attendance_type_id!!.toInt(),
+                attendence_type_id = 1,
                 attendences_other_notes = attendance_note_id!!.toInt(),
                 student_session_id = student_session.toInt()
             )

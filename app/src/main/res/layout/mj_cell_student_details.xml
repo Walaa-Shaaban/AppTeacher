@@ -16,7 +16,7 @@
 
 
     <TextView
-        android:id="@+id/textView32"
+        android:id="@+id/student_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight=".1"
