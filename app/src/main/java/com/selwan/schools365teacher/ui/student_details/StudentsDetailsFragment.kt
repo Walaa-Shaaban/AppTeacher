@@ -46,7 +46,7 @@ class StudentsDetailsFragment : Fragment() {
 
         if (NetworkUtils.isNetworkConnected(this.context!!)) {
             getClasses()
-            search.setOnClickListener {
+            acb_continue.setOnClickListener {
                 val intent = Intent(this.activity, RecyclerStudentDetailsActivity::class.java)
                 startActivity(intent)
             }
@@ -74,11 +74,11 @@ class StudentsDetailsFragment : Fragment() {
                 classes
             )
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-            sp_class.adapter = adapter
+            acsp_select_class.adapter = adapter
 
 
 
-            sp_class.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            acsp_select_class.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,
@@ -110,9 +110,9 @@ class StudentsDetailsFragment : Fragment() {
                 sections
             )
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-            sp_section.adapter = adapter
+            acsp_select_section.adapter = adapter
 
-            sp_section.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            acsp_select_section.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,

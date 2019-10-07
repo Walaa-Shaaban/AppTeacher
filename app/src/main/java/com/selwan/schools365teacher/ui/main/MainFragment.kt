@@ -45,25 +45,25 @@ class MainFragment : Fragment() {
         attendance.setOnClickListener {
             it.context.startActivity(Intent(this.context, AttendanceActivity::class.java))
         }
-        exam.setOnClickListener {
-            it.context.startActivity(Intent(this.context, ExaminationMainActivity::class.java))
-        }
+//        exam.setOnClickListener {
+//            it.context.startActivity(Intent(this.context, ExaminationMainActivity::class.java))
+//        }
 
         our_news.setOnClickListener {
             it.context.startActivity(Intent(this.context, NewsActivity::class.java))
         }
 
-        Notification.setOnClickListener {
+        notification.setOnClickListener {
             it.context.startActivity(Intent(this.context, NotificationActivity::class.java))
         }
 
-        event.setOnClickListener {
+        actv_event.setOnClickListener {
             it.context.startActivity(Intent(this.context, EventMainActivity::class.java))
         }
 
-        homework.setOnClickListener({
+        our_homework.setOnClickListener{
             it.context.startActivity(Intent(this.context, AllHomeworkActivity::class.java))
-        })
+        }
     }
 
     }

@@ -23,8 +23,6 @@ import com.shagi.materialdatepicker.date.DatePickerFragmentDialog
 import kotlinx.android.synthetic.main.attendance_date_main_fragment.*
 import kotlinx.android.synthetic.main.attendance_student_main_fragment.attendance_search
 import kotlinx.android.synthetic.main.students_details_fragment.*
-import kotlinx.android.synthetic.main.students_details_fragment.sp_class
-import kotlinx.android.synthetic.main.students_details_fragment.sp_section
 
 import kotlin.collections.ArrayList
 

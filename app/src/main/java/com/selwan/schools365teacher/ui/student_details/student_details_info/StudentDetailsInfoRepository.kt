@@ -16,15 +16,15 @@ import io.reactivex.schedulers.Schedulers
 class StudentDetailsInfoRepository {
 
     var compositeDisposable: CompositeDisposable
-    var studentDetails : MutableLiveData<StudentDetails>
+    var studentDetails : MutableLiveData<List<StudentDetails>>
 
     init{
         compositeDisposable = CompositeDisposable()
-        studentDetails = MutableLiveData<StudentDetails>()
+        studentDetails = MutableLiveData<List<StudentDetails>>()
     }
 
     //StudentsDetailsFragment.class_id!!, StudentsDetailsFragment.section_id!!
-    fun fetchStudentDetails( student_id: String):MutableLiveData<StudentDetails>{
+    fun fetchStudentDetails( student_id: String):MutableLiveData<List<StudentDetails>>{
 
         compositeDisposable.add(
             ApiUtils.apiService.getAllStudentInSection("1", "1")
@@ -32,11 +32,8 @@ class StudentDetailsInfoRepository {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     Consumer {
-                        for (student in it ){
-                            if (student.id == student_id){
-                                studentDetails.value = student
-                            }
-                        }
+
+                                studentDetails.value = it
                     }, Consumer {
                         val snackbar =
                             Snackbar.make(

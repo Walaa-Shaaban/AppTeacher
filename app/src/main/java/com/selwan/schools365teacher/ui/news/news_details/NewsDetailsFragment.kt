@@ -6,11 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import com.bumptech.glide.Glide
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.data.utils.ApiUtils
 import kotlinx.android.synthetic.main.news_details.*
 
 class NewsDetailsFragment(
@@ -33,19 +29,12 @@ class NewsDetailsFragment(
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        (activity as AppCompatActivity).setSupportActionBar(toolbar_news_details as Toolbar?)
-        (activity as AppCompatActivity).supportActionBar?.title = "Our News"
 
         actv_label_news2.text = title
         aptv_news2.text = desc
         actv_news_date2.text = date
 
-        Glide
-            .with(this.context!!)
-            .load("${ApiUtils.IMG_PATH}${image}")
-            .centerCrop()
-            .placeholder(R.drawable.ic_launcher_background)
-            .into(aciv_pic)
+
 
     }
 

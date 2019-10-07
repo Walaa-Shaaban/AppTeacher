@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -11,7 +12,8 @@
     </include>
 <ScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginTop="60dp">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,6 +28,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:text="Homework Date"
+        android:background="@color/blue_dark"
+        android:textColor="#fff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,6 +43,8 @@
         android:layout_marginTop="76dp"
         android:layout_marginEnd="16dp"
         android:text="Submit Date"
+        android:background="@color/blue_dark"
+        android:textColor="#fff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,21 +54,24 @@
         android:id="@+id/acsp_select_roles"
         android:layout_width="0dp"
         android:layout_height="@dimen/fifty"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="5dp"
         android:autofillHints="Subject"
+        android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="@+id/acb_select_date"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/acb_select_date"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/acet_title"
         style="@style/edittext_default"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="100dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/title"
+
         app:layout_constraintEnd_toEndOf="@+id/acb_select_date"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/acb_select_date"
@@ -86,13 +95,28 @@
         android:id="@+id/acb_send_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="123dp"
+        android:layout_marginTop="70dp"
         android:background="@drawable/btn_shape2"
         android:text="@string/send_message"
         android:textColor="#FFFFFF"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/acet_message"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/acet_message"
         app:layout_constraintTop_toBottomOf="@+id/acet_message" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/subject"
+        android:textColor="#000"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

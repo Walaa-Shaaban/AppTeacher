@@ -20,21 +20,19 @@ import com.selwan.schools365teacher.ui.homework.add_new.add_new_main.HomeworkAdd
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 
 import kotlinx.android.synthetic.main.homework_add_new_fragment.*
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.text.TextUtils
 import java.util.*
 import kotlin.collections.ArrayList
+import android.app.DatePickerDialog
 
 
-class HomeworkAddNewFragment : Fragment(){
+
+class HomeworkAddNewFragment : Fragment() {
+
 
 
     var date_homework: String ?= null
     var date_submit : String ?= null
-    private var mDateSetListenerHomework: android.app.DatePickerDialog.OnDateSetListener? = null
-    private var mDateSetListenerSubmit: android.app.DatePickerDialog.OnDateSetListener? = null
-
 
     var classes = ArrayList<String>()
     var sections = ArrayList<String>()
@@ -61,59 +59,32 @@ class HomeworkAddNewFragment : Fragment(){
 
 
 
-        acb_select_date.setOnClickListener{
-            val cal = Calendar.getInstance()
-            val year = cal.get(Calendar.YEAR)
-            val month = cal.get(Calendar.MONTH)
-            val day = cal.get(Calendar.DAY_OF_MONTH)
+        acb_select_date.setOnClickListener {
 
-            val dialog = android.app.DatePickerDialog(
-                this.context!!,
-                android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                mDateSetListenerHomework,
-                year, month, day
-            )
+            DatePickerDialog(this.context!!, com.selwan.schools365teacher.R.style.DialogTheme,
+                DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                    var month = monthOfYear
+                    month = month + 1
 
-            dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-           dialog.show()
-            mDateSetListenerHomework =
-                android.app.DatePickerDialog.OnDateSetListener { datePicker, year, month, day ->
-                var month = month
-                month = month + 1
-
-                acb_select_date.text = "$year-$month-$day"
+                    acb_select_date.text = "$year-$month-$dayOfMonth"
+                }, 2019, 9, 6
+            ).show()
 
 
-            }
-
-
+        }
 
 
         acb_select_submit_date.setOnClickListener {
-            val cal = Calendar.getInstance()
-            val year = cal.get(Calendar.YEAR)
-            val month = cal.get(Calendar.MONTH)
-            val day = cal.get(Calendar.DAY_OF_MONTH)
+            DatePickerDialog(this.context!!, com.selwan.schools365teacher.R.style.DialogTheme,
+                DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                    var month = monthOfYear
+                    month = month + 1
 
-            val dialog = android.app.DatePickerDialog(
-                this.context!!,
-                android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                mDateSetListenerSubmit,
-                year, month, day
-            )
+                    acb_select_submit_date.text = "$year-$month-$dayOfMonth"
+                }, 2015, 2, 26
+            ).show()
 
-            dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            dialog.show()
-            mDateSetListenerSubmit=
-                android.app.DatePickerDialog.OnDateSetListener { datePicker, year, month, day ->
-                var month = month
-                month = month + 1
-
-                acb_select_submit_date.text = "$year-$month-$day"
-            }
-
-        }}
-
+        }
 
 
 
@@ -205,6 +176,9 @@ class HomeworkAddNewFragment : Fragment(){
         })
 
     }
+
+
+
 
     fun getViewModel(): HomeworkAddNewViewModel {
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory {

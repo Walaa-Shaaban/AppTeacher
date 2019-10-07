@@ -6,11 +6,11 @@ import com.selwan.schools365teacher.data.model.student_details.StudentDetails
 
 class StudentDetailsInfoViewModel(student_id: String) : ViewModel() {
 
-    var studentDetails : MutableLiveData<StudentDetails>
+    var studentDetails : MutableLiveData<List<StudentDetails>>
     var studentDetailsInfoRepository: StudentDetailsInfoRepository
 
     init {
-        studentDetails = MutableLiveData<StudentDetails>()
+        studentDetails = MutableLiveData<List<StudentDetails>>()
         studentDetailsInfoRepository = StudentDetailsInfoRepository()
     }
 

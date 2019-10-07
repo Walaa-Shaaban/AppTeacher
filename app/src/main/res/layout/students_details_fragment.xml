@@ -1,55 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/twenty_dp">
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_class"
-        style="@style/standard_title"
-        android:text="@string/class_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--done -->
 
-    <FrameLayout
-        android:id="@+id/fl_class"
-        style="@style/frame_layout_style"
+<include layout="@layout/toolbar"/>
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/acsp_select_class"
+        style="@style/spinner_style"
+        android:layout_width="0dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_class">
+        app:layout_constraintTop_toBottomOf="@+id/actv_label_class" />
 
-        <Spinner
-            android:id="@+id/sp_class"
-            style="@style/spinner_style_stroked" />
-    </FrameLayout>
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/acsp_select_section"
+        style="@style/spinner_style2"
+        android:layout_width="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/acsp_select_class"
+        app:layout_constraintStart_toStartOf="@+id/acsp_select_class"
+        app:layout_constraintTop_toBottomOf="@+id/actv_label_section" />
 
-    <TextView
-        android:id="@+id/tv_section"
-        style="@style/standard_title"
-        android:text="@string/section"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fl_class" />
-
-    <FrameLayout
-        android:id="@+id/fl_section"
-        style="@style/frame_layout_style"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_section">
-
-        <Spinner
-            android:id="@+id/sp_section"
-            style="@style/spinner_style_stroked" />
-
-    </FrameLayout>
-
-    <Button
-        android:id="@+id/search"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/acb_continue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="search"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="474dp" />
+        android:layout_marginTop="32dp"
+        android:background="@drawable/btn_shape3"
+        android:text="@string/continue_"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/acsp_select_section"
+        app:layout_constraintStart_toStartOf="@+id/acsp_select_section"
+        app:layout_constraintTop_toBottomOf="@+id/acsp_select_section" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_label_class"
+        style="@style/textview_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/class_title"
+        android:textSize="@dimen/sixteen"
+        app:layout_constraintStart_toStartOf="@+id/acsp_select_class"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_label_section"
+        style="@style/textview_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/eight_dp"
+        android:text="@string/section"
+        android:textSize="@dimen/sixteen"
+        app:layout_constraintStart_toStartOf="@+id/acsp_select_class"
+        app:layout_constraintTop_toBottomOf="@+id/acsp_select_class" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

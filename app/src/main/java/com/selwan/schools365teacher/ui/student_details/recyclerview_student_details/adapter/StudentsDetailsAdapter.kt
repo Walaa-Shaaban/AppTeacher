@@ -47,7 +47,7 @@ class StudentsDetailsAdapter : RecyclerView.Adapter<StudentsDetailsAdapter.ViewH
             .with(context)
             .load("${ApiUtils.IMG_PATH}${studentResponse.image}")
             .centerCrop()
-            .placeholder(R.drawable.ic_launcher_background)
+            .placeholder(R.drawable.st)
             .into(holder.studentImg)
 
         holder.itemView.setOnClickListener {

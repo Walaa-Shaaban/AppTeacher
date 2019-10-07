@@ -5,9 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <!--done  -->
+    <include
+        android:id="@+id/toolbar_notification"
+        layout="@layout/toolbar">
 
+    </include>
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/acsp_select_class"
+        android:layout_marginTop="50dp"
         style="@style/spinner_style"
         android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"

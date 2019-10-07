@@ -19,8 +19,6 @@ import com.selwan.schools365teacher.ui.examination.tabs.ExamTabsActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 import kotlinx.android.synthetic.main.examination_main_fragment.*
 import kotlinx.android.synthetic.main.homework_add_new_main_fragment.*
-import kotlinx.android.synthetic.main.students_details_fragment.sp_class
-import kotlinx.android.synthetic.main.students_details_fragment.sp_section
 
 class ExaminationMainFragment : Fragment() {
 

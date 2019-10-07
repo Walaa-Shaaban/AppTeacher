@@ -9,6 +9,10 @@
     <string name="save">حفظ</string>
     <string name="news">أخبار</string>
 
+    <string name="notification">الاشعارات</string>
+    <string name="homework">الواجب البيتي </string>
+    <string name="event">الاحداث</string>
+
     <string name="private_title">خاص</string>
     <string name="public_title">عام</string>
     <string name="continue_">متابعة</string>
@@ -140,4 +144,6 @@
     <string name="addhomework">اضافة واجب منزلي </string>
     <string name="grade">علامه </string>
     <string name="mohammad">mohammad</string>
+    <string name="subject">Subject</string>
+    <string name="note_of_att">Note</string>
 </resources>

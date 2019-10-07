@@ -19,9 +19,6 @@ import com.selwan.schools365teacher.ui.attendance.report.rec.AttendanceReportRec
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 import kotlinx.android.synthetic.main.attendance_report_main_fragment.*
 import kotlinx.android.synthetic.main.students_details_fragment.*
-import kotlinx.android.synthetic.main.students_details_fragment.search
-import kotlinx.android.synthetic.main.students_details_fragment.sp_class
-import kotlinx.android.synthetic.main.students_details_fragment.sp_section
 
 class AttendanceReportMainFragment : Fragment() {
 

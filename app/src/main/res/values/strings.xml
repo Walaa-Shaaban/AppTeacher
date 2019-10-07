@@ -161,7 +161,13 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="aiman_alwiah">AIMAN ALWIAH</string>
     <string name="mohammad">mohammad</string>
-    <string name="title_activity_main_navigation">MainNavigationActivity</string>
+    <string name="star" translatable="false">&#xf089;</string>
+
+<string name="notification">Notification</string>
+<string name="homework">Homework</string>
+<string name="event">Event</string>
+    <string name="subject">Subject</string>
+    <string name="note_of_att">Note</string>
 
 
 </resources>

@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.utils.NetworkUtils
@@ -29,8 +30,9 @@ class StudentDetailsInfoFragment(var student_id : String) : Fragment() {
 
         if (NetworkUtils.isNetworkConnected(this.context!!)) {
             getViewModel().getStudentDetailsInfo.observe(this, Observer {
-                txt_stu_info.text =
-                    "${it.firstname}\n${it.father_phone}\n ${it.city}\n ${it.current_address}"
+                rec_info_details_student.layoutManager = LinearLayoutManager(this.context)
+                rec_info_details_student.adapter = StudentDetailsInfoAdapter(it, this.context!!)
+
             })
         } else {
             val snackbar =
