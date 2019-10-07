@@ -168,6 +168,11 @@
 <string name="event">Event</string>
     <string name="subject">Subject</string>
     <string name="note_of_att">Note</string>
+    <string name="year">Year</string>
+    <string name="month">Month</string>
+    <string name="number">1</string>
+    <string name="Cross_perc">Cross Perc.</string>
+    <string name="student_name">Student Name</string>
 
 
 </resources>

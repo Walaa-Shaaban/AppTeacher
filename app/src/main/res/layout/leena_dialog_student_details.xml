@@ -15,29 +15,53 @@
         android:layout_marginTop="50dp"
         style="@style/spinner_style"
         android:layout_width="0dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/actv_label_class" />
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/acsp_select_section"
         style="@style/spinner_style2"
         android:layout_width="0dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/acsp_select_class"
         app:layout_constraintStart_toStartOf="@+id/acsp_select_class"
-        app:layout_constraintTop_toBottomOf="@+id/acsp_select_class" />
+        app:layout_constraintTop_toBottomOf="@+id/actv_label_section" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/acb_continue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/seventy"
+        android:layout_marginTop="32dp"
         android:background="@drawable/btn_shape3"
         android:text="@string/continue_"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/acsp_select_section"
         app:layout_constraintStart_toStartOf="@+id/acsp_select_section"
         app:layout_constraintTop_toBottomOf="@+id/acsp_select_section" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_label_class"
+        style="@style/textview_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/thirty_two_dp"
+        android:text="@string/class_title"
+        android:textSize="@dimen/sixteen_sp"
+        app:layout_constraintStart_toStartOf="@+id/acsp_select_class"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_label_section"
+        style="@style/textview_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/eight_dp"
+        android:text="@string/section"
+        android:textSize="@dimen/sixteen_sp"
+        app:layout_constraintStart_toStartOf="@+id/acsp_select_class"
+        app:layout_constraintTop_toBottomOf="@+id/acsp_select_class" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
