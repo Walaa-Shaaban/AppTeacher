@@ -1,35 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.timetable.tabs_day.TimetableTabsdayActivity">
+    android:orientation="vertical">
 
-    <include
-        android:id="@+id/toolbar_notification"
-        layout="@layout/toolbar">
-
-    </include>
-
+   <include layout="@layout/toolbar"/>
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs_exam"
-        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color2"
+        android:background="@color/blue_dark_2"
+        android:minHeight="?attr/actionBarSize"
         app:tabTextColor="#FFF"
         app:tabGravity="center"
-        app:tabMode="scrollable" />
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:tabMode="scrollable">
 
-
-
+    </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/pager_exam"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:layout_height="fill_parent">
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.viewpager.widget.ViewPager>
 
+</LinearLayout>

@@ -20,7 +20,6 @@ import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.attendance.date.rec.AttendanceDateRecActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 import kotlinx.android.synthetic.main.attendance_date_main_fragment.*
-import kotlinx.android.synthetic.main.homework_add_new_fragment.*
 
 import kotlin.collections.ArrayList
 
@@ -112,11 +111,11 @@ class AttendanceDateMainFragment : Fragment() {
             )
 
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-            acsp_select_class_att.adapter = adapter
+            att_acsp_select_class.adapter = adapter
 
 
 
-            acsp_select_class_att.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            att_acsp_select_class.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,
@@ -148,9 +147,9 @@ class AttendanceDateMainFragment : Fragment() {
                 sections
             )
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-            acsp_select_section_att.adapter = adapter
+            att_acsp_select_section.adapter = adapter
 
-            acsp_select_section_att.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            att_acsp_select_section.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,

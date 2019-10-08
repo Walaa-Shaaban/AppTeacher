@@ -33,11 +33,10 @@
         <activity android:name=".ui.homework.add_new.add_new_main.HomeworkAddNewMainActivity" />
         <activity android:name=".ui.examination.view_mark.ExaminationViewMarkActivity" />
         <activity android:name=".ui.examination.main.ExaminationMainActivity" />
-        <activity android:name=".ui.examination.add_new_exam.AddNewExamActivity" />
         <activity android:name=".ui.examination.tabs.ExamTabsActivity" />
         <activity
             android:name=".ui.examination.tabs.ExaminationActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity android:name=".ui.homework.add_new.add_new_continue.HomeworkAddNewActivity" />
         <activity android:name=".ui.homework.AllHomework.AllHomeworkActivity" />
         <activity

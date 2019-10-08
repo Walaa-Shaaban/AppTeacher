@@ -35,8 +35,8 @@ class AttendanceReportRecAdapter(context: Context, listStudentByReport: Attendan
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.studentName.text = studentAttendence.student_array.get(position).firstname
-        holder.attendancePercentage.text = studentAttendence.student_array.get(position).lastname
+        holder.studentName.text = "${studentAttendence.student_array.get(position).firstname} ${studentAttendence.student_array.get(position).lastname}"
+//        holder.attendancePercentage.text = studentAttendence.student_array.get(position).
         holder.itemView.setOnClickListener{
             var intent  = Intent(this.context, AttendanaceReportInfoActivity ::class.java)
             intent.putExtra("student_id",studentAttendence.student_array.get(position).student_session_id)
@@ -52,8 +52,8 @@ class AttendanceReportRecAdapter(context: Context, listStudentByReport: Attendan
         var studentName: TextView
 
         constructor(itemView: View) : super(itemView) {
-            studentName = itemView.findViewById(R.id.student_name)
-            attendancePercentage = itemView.findViewById(R.id.student_percentage)
+            studentName = itemView.findViewById(R.id.actv_name)
+            attendancePercentage = itemView.findViewById(R.id.actv_gross)
         }
 
     }

@@ -18,8 +18,6 @@ import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.attendance.report.rec.AttendanceReportRecActivity
 import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 import kotlinx.android.synthetic.main.attendance_report_main_fragment.*
-import kotlinx.android.synthetic.main.students_details_fragment.*
-
 class AttendanceReportMainFragment : Fragment() {
 
 
@@ -51,7 +49,7 @@ class AttendanceReportMainFragment : Fragment() {
             getClasses()
             getYears()
             getMonth()
-            acb_continue_att.setOnClickListener {
+            att_acb_continue.setOnClickListener {
 
                 val intent = Intent(this.context, AttendanceReportRecActivity::class.java)
                 intent.putExtra("class_id", class_id)
@@ -92,8 +90,8 @@ class AttendanceReportMainFragment : Fragment() {
             listMonth
         )
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-        sp_month.adapter = adapter
-        sp_month.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        acsp_select_month.adapter = adapter
+        acsp_select_month.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 adapterView: AdapterView<*>,
                 view: View,
@@ -125,8 +123,8 @@ class AttendanceReportMainFragment : Fragment() {
             listYears
         )
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-        sp_year.adapter = adapter
-        sp_year.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        acsp_select_year.adapter = adapter
+        acsp_select_year.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 adapterView: AdapterView<*>,
                 view: View,
@@ -156,11 +154,11 @@ class AttendanceReportMainFragment : Fragment() {
                 classes
             )
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-            sp_class.adapter = adapter
+            att_acsp_select_class.adapter = adapter
 
 
 
-            sp_class.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            att_acsp_select_class.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,
@@ -192,9 +190,9 @@ class AttendanceReportMainFragment : Fragment() {
                 sections
             )
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-            sp_section.adapter = adapter
+            att_acsp_select_section.adapter = adapter
 
-            sp_section.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            att_acsp_select_section.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,

@@ -17,6 +17,7 @@
     <string name="font_awesome_delete_message" translatable="false">&#xf2ed;</string>
     <string name="hostelRoomNo">Room No</string>
     <string name="name">Name </string>
+    <string name="Cross_perc">Cross Perc.</string>
     <string name="class_timetable">Class TimeTable</string>
     <string name="class_title">Class</string>
     <string name="student_details">Student Details</string>
@@ -168,6 +169,8 @@
 <string name="event">Event</string>
     <string name="subject">Subject</string>
     <string name="note_of_att">Note</string>
+    <string name="student_name">Student Name</string>
+    <string name="number">Number</string>
 
 
 </resources>

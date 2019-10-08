@@ -8,7 +8,7 @@
     <include layout="@layout/toolbar"/>
     <androidx.appcompat.widget.AppCompatSpinner
         android:layout_marginTop="60dp"
-        android:id="@+id/acsp_select_class_att"
+        android:id="@+id/att_acsp_select_class"
         style="@style/spinner_style"
         android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,12 +16,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/acsp_select_section_att"
+        android:id="@+id/att_acsp_select_section"
         style="@style/spinner_style2"
         android:layout_width="0dp"
-        app:layout_constraintEnd_toEndOf="@+id/acsp_select_class_att"
-        app:layout_constraintStart_toStartOf="@+id/acsp_select_class_att"
-        app:layout_constraintTop_toBottomOf="@+id/acsp_select_class_att" />
+        app:layout_constraintEnd_toEndOf="@+id/att_acsp_select_class"
+        app:layout_constraintStart_toStartOf="@+id/att_acsp_select_class"
+        app:layout_constraintTop_toBottomOf="@+id/att_acsp_select_class" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/acb_continue_att"
@@ -31,8 +31,8 @@
         android:background="@drawable/btn_shape"
         android:text="@string/continue_"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/acsp_select_section_att"
-        app:layout_constraintStart_toStartOf="@+id/acsp_select_section_att"
+        app:layout_constraintEnd_toEndOf="@+id/att_acsp_select_section"
+        app:layout_constraintStart_toStartOf="@+id/att_acsp_select_section"
         app:layout_constraintTop_toBottomOf="@+id/actv_Date_att" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -42,9 +42,9 @@
         android:layout_marginTop="50dp"
         android:gravity="center"
         android:text="@string/class_date"
-        app:layout_constraintEnd_toEndOf="@+id/acsp_select_section_att"
-        app:layout_constraintStart_toStartOf="@+id/acsp_select_section_att"
-        app:layout_constraintTop_toBottomOf="@+id/acsp_select_section_att" />
+        app:layout_constraintEnd_toEndOf="@+id/att_acsp_select_section"
+        app:layout_constraintStart_toStartOf="@+id/att_acsp_select_section"
+        app:layout_constraintTop_toBottomOf="@+id/att_acsp_select_section" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

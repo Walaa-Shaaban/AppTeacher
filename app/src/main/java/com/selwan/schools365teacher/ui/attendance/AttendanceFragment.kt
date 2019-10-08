@@ -26,15 +26,15 @@ class AttendanceFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        student_attendance.setOnClickListener({
+        student_attendance.setOnClickListener{
             startActivity(Intent(this.context, AttendanceStudentMainActivity::class.java))
-        })
-        date_attendance.setOnClickListener({
+        }
+        date_attendance.setOnClickListener{
             startActivity(Intent(this.context, AttendeneceDateMainActivity::class.java))
-        })
-        report_attendance.setOnClickListener({
+        }
+        report_attendance.setOnClickListener{
             startActivity(Intent(this.context, AttendanceReportMainActivity::class.java))
-        })
+        }
 
     }
 }

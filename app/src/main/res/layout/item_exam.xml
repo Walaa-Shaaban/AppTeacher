@@ -1,29 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:id="@+id/linear_exam_adapter"
-    android:background="#fff"
-    android:layout_height="wrap_content">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linear"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/txt_exam_title"
-        android:textColor="@color/orange"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt_exam_date"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt_exam_room"/>
+        android:layout_width="78dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/siences"
+        android:textColor="@color/colorblack"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline21"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/view_mark"
+    <TextView
+
+        android:id="@+id/txt_exam_date_from"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="21/3/2019"
+        android:textColor="#F89B16"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_exam_date_to"
+        app:layout_constraintStart_toEndOf="@+id/txt_exam_date_to"
+        app:layout_constraintTop_toTopOf="@+id/txt_exam_date_to"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txt_exam_date_to"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="21/4/2019"
+        android:textColor="#F89B16"
+        app:layout_constraintStart_toStartOf="@+id/txt_exam_title"
+        app:layout_constraintTop_toBottomOf="@+id/txt_exam_title"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txt_exam_room"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/orange"
-        android:text="View Mark" />
+        android:layout_marginTop="36dp"
+        android:text="@string/room"
+        android:textColor="#9E9E9E"
+        app:layout_constraintStart_toStartOf="@+id/txt_exam_date_to"
+        app:layout_constraintTop_toBottomOf="@+id/txt_exam_date_to"
+        tools:ignore="MissingConstraints" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/btn_view_mark"
+        style="@style/bottonst"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/shape_bot_orange"
+        android:padding="3dp"
+        android:text="@string/viewmarks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_exam_room"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.06" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

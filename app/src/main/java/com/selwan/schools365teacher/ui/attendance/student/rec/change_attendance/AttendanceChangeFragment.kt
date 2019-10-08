@@ -15,14 +15,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.data.model.attendance.Attendencetypeslist
 import com.selwan.schools365teacher.data.model.attendance.StudentSession
 import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.attendance.student.main.AttendanceStudentMainFragment
-import com.selwan.schools365teacher.ui.attendance.student.rec.AllStudentAttendance.AttendanceStudentRecViewModel
-import com.selwan.schools365teacher.ui.examination.main.ExaminationMainFragment
 import kotlinx.android.synthetic.main.attendance_change_fragment.*
-import kotlinx.android.synthetic.main.students_details_fragment.*
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -55,18 +51,29 @@ class AttendanceChangeFragment(var attendance_id: String, var student_session: S
         if (NetworkUtils.isNetworkConnected(this.context!!)) {
             getAllAttendanceType()
             getAllOtherNote()
-            val stu_session = StudentSession(
-                attendence_id = attendance_id.toInt(),
-                remark = note.text.toString(),
-                attendence_type_id = 1,
-                attendences_other_notes = attendance_note_id!!.toInt(),
-                student_session_id = student_session.toInt()
-            )
-            list_student_session.add(stu_session)
-            change_attendance.setOnClickListener {
-                getViewModel().saveChangeAttendance.observe(this, androidx.lifecycle.Observer {
-                    Toast.makeText(this.context, it.msg, Toast.LENGTH_SHORT).show()
-                })
+
+
+            save_attendance.setOnClickListener {
+                if(attendance_type_id != null && attendance_note_id != null) {
+Log.e("????", "${attendance_id.toInt()} - ${note.text.toString()} - ${attendance_type_id!!.toInt()} -${attendance_note_id!!.toInt()} - ${student_session.toInt()}")
+                    val stu_session = StudentSession(
+                        attendence_id = attendance_id.toInt(),
+                        remark = note.text.toString(),
+                        attendence_type_id = attendance_type_id!!.toInt(),
+                        attendences_other_notes = attendance_note_id!!.toInt(),
+                        student_session_id = student_session.toInt()
+                    )
+                    list_student_session.add(stu_session)
+                    getViewModel().saveChangeAttendance.observe(this, androidx.lifecycle.Observer {
+                        Toast.makeText(this.context, it.msg, Toast.LENGTH_SHORT).show()
+                    })
+                }else{
+                    val snackbar =
+                        Snackbar.make(view!!, "found field empty...", Snackbar.LENGTH_LONG)
+                    val sbView = snackbar.view
+                    sbView.setBackgroundResource(R.color.redHighDelete)
+                    snackbar.show()
+                }
             }
         } else {
             val snackbar =
@@ -106,8 +113,8 @@ class AttendanceChangeFragment(var attendance_id: String, var student_session: S
                 attendance_other_note
             )
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-            sp_other_note.adapter = adapter
-            sp_other_note.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            spinner_note.adapter = adapter
+            spinner_note.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,
@@ -142,8 +149,8 @@ class AttendanceChangeFragment(var attendance_id: String, var student_session: S
             )
 
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-            sp_attendance_type.adapter = adapter
-            sp_attendance_type.onItemSelectedListener =
+            spinner_attendance.adapter = adapter
+            spinner_attendance.onItemSelectedListener =
                 object : AdapterView.OnItemSelectedListener {
                     override fun onItemSelected(
                         adapterView: AdapterView<*>,
@@ -166,7 +173,7 @@ class AttendanceChangeFragment(var attendance_id: String, var student_session: S
     }
 
     fun getToday(): String {
-        return SimpleDateFormat("dd/M/yyyy").format(Date())
+        return SimpleDateFormat("m/d/y").format(Date())
 
     }
 

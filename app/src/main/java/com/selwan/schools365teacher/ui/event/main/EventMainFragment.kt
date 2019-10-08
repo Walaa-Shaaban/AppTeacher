@@ -70,7 +70,6 @@ class EventMainFragment : Fragment()
             snackbar.show()
         }
 
-        selected.text = getDateString(selectedDate?.timeInMillis)
     }
 
     var listOfEvents = ArrayList<String>()
@@ -103,7 +102,7 @@ class EventMainFragment : Fragment()
         var date: String? = null
         var allEvent: AllEvent? = null
 
-        selected.text = getDateString(eventsCalendar.getCurrentSelectedDate()?.timeInMillis)
+//        selected.text = getDateString(eventsCalendar.getCurrentSelectedDate()?.timeInMillis)
 
         val today = Calendar.getInstance()
         val end = Calendar.getInstance()
@@ -131,10 +130,10 @@ class EventMainFragment : Fragment()
         c[Calendar.DAY_OF_MONTH] = 1
         eventsCalendar.addEvent(c)
 
-        selected.setOnClickListener {
-            val dates = eventsCalendar.getDatesFromSelectedRange()
-            Log.e("SELECTED SIZE", dates.size.toString())
-        }
+//        selected.setOnClickListener {
+//            val dates = eventsCalendar.getDatesFromSelectedRange()
+//            Log.e("SELECTED SIZE", dates.size.toString())
+//        }
 
 
         val dc = Calendar.getInstance()

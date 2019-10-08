@@ -27,11 +27,6 @@ class AttendanceChangeViewModel(
     }
 
     val saveChangeAttendance by lazy {
-
-        Log.e(
-            "###",
-            "${class_id}, ${section_id}, ${date}, ${isHoliday}, ${studentSession.get(0).attendence_type_id}"
-        )
         attendanceChangeRepository.saveNewAttendance(
             class_id,
             section_id,

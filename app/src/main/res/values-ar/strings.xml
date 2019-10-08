@@ -146,4 +146,6 @@
     <string name="mohammad">mohammad</string>
     <string name="subject">Subject</string>
     <string name="note_of_att">Note</string>
+    <string name="student_name">Student Name</string>
+    <string name="number">Number</string>
 </resources>

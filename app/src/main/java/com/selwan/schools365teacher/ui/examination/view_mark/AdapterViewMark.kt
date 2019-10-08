@@ -48,7 +48,7 @@ class AdapterViewMark(context: Context, viewmark: ViewMark) :
 
 
         constructor(itemView: View) : super(itemView) {
-            name = itemView.findViewById(R.id.txt_name_mark)
+            name = itemView.findViewById(R.id.txt_name_student)
             mark_total_ = itemView.findViewById(R.id.txtmark)
 
         }

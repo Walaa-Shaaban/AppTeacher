@@ -66,7 +66,7 @@ class HomeworkAddNewFragment : Fragment() {
                     var month = monthOfYear
                     month = month + 1
 
-                    acb_select_date.text = "$dayOfMonth-$month-$dayOfMonth"
+                    acb_select_date.text = "$dayOfMonth-$month-$year"
                 }, 2019, 9, 6
             ).show()
 
@@ -80,8 +80,8 @@ class HomeworkAddNewFragment : Fragment() {
                     var month = monthOfYear
                     month = month + 1
 
-                    acb_select_submit_date.text = "$year-$month-$dayOfMonth"
-                }, 2015, 2, 26
+                    acb_select_submit_date.text = "$dayOfMonth-$month-$year"
+                }, 2019, 9, 26
             ).show()
 
         }
@@ -95,9 +95,9 @@ class HomeworkAddNewFragment : Fragment() {
 
 
 
-                if (TextUtils.isEmpty(subject_id) || TextUtils.isEmpty(
-                        acb_select_date.text
-                    ) || TextUtils.isEmpty(acb_select_submit_date.text) || TextUtils.isEmpty(acet_message.text)
+                if (TextUtils.isEmpty(subject_id) || acb_select_date.text.equals("Homework Date")
+                    || acb_select_submit_date.text.equals("Submit Date") || acet_message.text!!.equals("Content")
+                    ||acet_title.equals("Title")
                 ) {
 
                     val snackbar =

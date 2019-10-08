@@ -23,10 +23,10 @@
     <TextView
         android:id="@+id/student_attendance_type"
         style="@style/bottonst"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="116dp"
+        android:layout_height="56dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/green_shape_bott"
+        android:background="@drawable/shape_pink"
         android:padding="15dp"
         android:text="@string/present"
         android:textColor="@color/colorwhite"

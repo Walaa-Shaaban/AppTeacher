@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="10:00"
         android:layout_marginLeft="15dp"
-        android:textColor="@color/color1"
+        android:textColor="#000"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline70"
         app:layout_constraintEnd_toStartOf="@+id/guideline74"
@@ -23,13 +23,13 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/subject"
+        android:id="@+id/txt_exam_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/siences"
 
         android:textAlignment="textStart"
-        android:textColor="@color/color3"
+        android:textColor="#9C27B0"
         android:textSize="14sp"
         android:layout_marginLeft="15dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -30,22 +30,20 @@ class AttendanceReportInfoFragment(var student_id: String) : Fragment() {
         if (NetworkUtils.isNetworkConnected(this.context!!)) {
             getViewModel().studentReportInfo.observe(this, Observer {
 
-                var str: StringBuilder = java.lang.StringBuilder()
+
+
                 for (monthAttendance in it.monthAttendance) {
 
-                    //add data in xml ...
+                    //add data in xml .
                     if (monthAttendance.containsKey(student_id)) {
-                        str.append("\n absent")
-                        str.append(monthAttendance.getValue(student_id).absent)
-                        str.append("\n Half day")
-                        str.append(monthAttendance.getValue(student_id).half_day)
-                        str.append("\n late")
-                        str.append(monthAttendance.getValue(student_id).late)
-                        str.append("\n Present")
-                        str.append(monthAttendance.getValue(student_id).present)
+                        actv_present_value.text = monthAttendance.getValue(student_id).present
+                        actv_half_value.text = monthAttendance.getValue(student_id).half_day
+                        actv_late_value.text = monthAttendance.getValue(student_id).late
+                        actv_absent_value.text = monthAttendance.getValue(student_id).absent
+                        actv_holiday_value.text =  monthAttendance.getValue(student_id).holiday
+
                     }
                 }
-                txt_report_info.text = str
             })
         } else {
             val snackbar =

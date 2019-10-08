@@ -14,22 +14,22 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.view.MotionEvent
+import android.view.View
 import android.widget.ImageView
 import androidx.core.view.GravityCompat
 import com.selwan.schools365teacher.R
-import com.selwan.schools365teacher.data.model.homework.AddNewHomework
-import com.selwan.schools365teacher.ui.event.add_new.AddEventActivity
 import com.selwan.schools365teacher.ui.event.add_new.AddEventFragment
-import com.selwan.schools365teacher.ui.examination.add_new_exam.AddNewExamFragment
+import com.selwan.schools365teacher.ui.event.main.EventMainFragment
 import com.selwan.schools365teacher.ui.examination.main.ExaminationMainFragment
 import com.selwan.schools365teacher.ui.homework.add_new.add_new_main.HomeworkAddNewMainFragment
 import kotlinx.android.synthetic.main.activity_main_navigation.*
+import kotlinx.android.synthetic.main.activity_test.*
 import kotlinx.android.synthetic.main.app_bar_main_navigation.*
-import kotlinx.android.synthetic.main.homework_main_fragment.*
+import kotlinx.android.synthetic.main.app_bar_main_navigation.menu_filter
 
 class MainNavigationActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +39,15 @@ class MainNavigationActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val menu: ImageView = findViewById(R.id.menu_toolbar)
 
+        menu_filter.setOnTouchListener(object : View.OnTouchListener{
+            override fun onTouch(p0: View?, p1: MotionEvent?): Boolean {
+                if(menu_filter.isOpened){
+                    menu_filter.close(true)
+                }
+                return true
+            }
+
+        })
 
 
         supportFragmentManager.beginTransaction()
@@ -54,7 +63,7 @@ class MainNavigationActivity : AppCompatActivity() {
 
         add_event.setOnClickListener {
             supportFragmentManager
-                .beginTransaction().replace(R.id.main_new_fragment, AddEventFragment())
+                .beginTransaction().replace(R.id.main_new_fragment, EventMainFragment())
                 .commitAllowingStateLoss()
             menu_filter.hideMenu(true)
         }
@@ -66,6 +75,8 @@ class MainNavigationActivity : AppCompatActivity() {
             menu_filter.hideMenu(true)
 
         }
+
+
 
 
 
@@ -99,4 +110,5 @@ class MainNavigationActivity : AppCompatActivity() {
         }
     }
 
-    }
+
+}

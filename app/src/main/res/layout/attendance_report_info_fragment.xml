@@ -1,15 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/toolbar"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:scrollbars="vertical">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/txt_report_info"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_name"
+        style="@style/textview_default"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/student_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_present"
+        style="@style/textview_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/present"
+        app:layout_constraintStart_toStartOf="@+id/actv_name"
+        app:layout_constraintTop_toBottomOf="@+id/actv_name" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_half"
+        style="@style/textview_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="@string/half_day"
+        app:layout_constraintEnd_toEndOf="@+id/actv_present"
+        app:layout_constraintStart_toStartOf="@+id/actv_present"
+        app:layout_constraintTop_toBottomOf="@+id/actv_present" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_late"
+        style="@style/textview_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/late"
+        app:layout_constraintEnd_toEndOf="@+id/actv_half"
+        app:layout_constraintStart_toStartOf="@+id/actv_half"
+        app:layout_constraintTop_toBottomOf="@+id/actv_half" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_absent"
+        style="@style/textview_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="@string/absent"
+        app:layout_constraintEnd_toEndOf="@+id/actv_late"
+        app:layout_constraintStart_toStartOf="@+id/actv_late"
+        app:layout_constraintTop_toBottomOf="@+id/actv_late" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_holiday"
+        style="@style/textview_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:text="@string/holiday"
+        app:layout_constraintEnd_toEndOf="@+id/actv_absent"
+        app:layout_constraintStart_toStartOf="@+id/actv_absent"
+        app:layout_constraintTop_toBottomOf="@+id/actv_absent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_name_value"
+        style="@style/textview_default"
+        android:layout_width="@dimen/thirty_two_dp"
+        android:layout_height="@dimen/thirty_two_dp"
+        android:layout_marginEnd="21dp"
+        android:gravity="center"
+        android:text="@string/number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/actv_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_present_value"
+        style="@style/textview_default"
+        android:layout_width="@dimen/thirty_two_dp"
+        android:layout_height="@dimen/thirty_two_dp"
+        android:text="@string/number"
+        app:layout_constraintEnd_toEndOf="@+id/actv_name_value"
+        app:layout_constraintTop_toTopOf="@+id/actv_present" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_half_value"
+        style="@style/textview_default"
+        android:layout_width="@dimen/thirty_two_dp"
+        android:layout_height="@dimen/thirty_two_dp"
+        android:text="@string/number"
+        app:layout_constraintEnd_toEndOf="@+id/actv_present_value"
+        app:layout_constraintTop_toTopOf="@+id/actv_half" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_late_value"
+        style="@style/textview_default"
+        android:layout_width="@dimen/thirty_two_dp"
+        android:layout_height="@dimen/thirty_two_dp"
+        android:text="@string/number"
+        app:layout_constraintEnd_toEndOf="@+id/actv_half_value"
+        app:layout_constraintTop_toTopOf="@+id/actv_late" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_absent_value"
+        style="@style/textview_default"
+        android:layout_width="@dimen/thirty_two_dp"
+        android:layout_height="@dimen/thirty_two_dp"
+        android:text="@string/number"
+        app:layout_constraintEnd_toEndOf="@+id/actv_late_value"
+        app:layout_constraintTop_toTopOf="@+id/actv_absent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/actv_holiday_value"
+        style="@style/textview_default"
+        android:layout_width="@dimen/thirty_two_dp"
+        android:layout_height="@dimen/thirty_two_dp"
+        android:text="@string/number"
+        app:layout_constraintEnd_toEndOf="@+id/actv_absent_value"
+        app:layout_constraintTop_toTopOf="@+id/actv_holiday" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,6 @@ package com.selwan.schools365teacher.ui.timetable.main
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +17,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.selwan.schools365teacher.R
 import com.selwan.schools365teacher.data.utils.NetworkUtils
 import com.selwan.schools365teacher.ui.timetable.tabs_day.TimetableTabsdayActivity
-import kotlinx.android.synthetic.main.fragment_class_timetable.*
 import kotlinx.android.synthetic.main.timetable_fragment.*
 
 
@@ -48,7 +46,7 @@ class TimetableMainFragment : Fragment() {
 
         if (NetworkUtils.isNetworkConnected(TimetableMainFragment.context!!)) {
             getClasses()
-            acb_continue.setOnClickListener {
+            att_acb_continue.setOnClickListener {
                 val intent = Intent(this.activity, TimetableTabsdayActivity::class.java)
                 startActivity(intent)
             }
@@ -114,9 +112,9 @@ class TimetableMainFragment : Fragment() {
                 sections
             )
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-            acsp_select_section.adapter = adapter
+            att_acsp_select_section.adapter = adapter
 
-            acsp_select_section.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            att_acsp_select_section.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     adapterView: AdapterView<*>,
                     view: View,

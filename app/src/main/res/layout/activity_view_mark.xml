@@ -5,8 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.examination.view_mark.ExaminationViewMarkActivity">
 
+    <include layout="@layout/toolbar"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_view_mark"
+        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

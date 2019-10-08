@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/seventy"
-        android:background="@drawable/btn_shape"
+        android:background="@drawable/shape_bot_orange"
         android:text="@string/continue_"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/acsp_select_section_exam"

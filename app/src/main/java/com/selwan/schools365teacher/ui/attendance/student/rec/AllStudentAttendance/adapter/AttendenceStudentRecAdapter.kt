@@ -79,7 +79,7 @@ class AttendenceStudentRecAdapter(context: Context, studentAttends: StudentAtten
 
         constructor(itemView: View) : super(itemView) {
             studentName = itemView.findViewById(R.id.student_name)
-            student_attendence_id = itemView.findViewById(R.id.student_attendence_type)
+            student_attendence_id = itemView.findViewById(R.id.student_attendance_type)
         }
 
     }

@@ -172,6 +172,7 @@
 
 
     <style name="bottonst">
+
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">#ffff</item>
         <item name="android:textStyle">normal</item>

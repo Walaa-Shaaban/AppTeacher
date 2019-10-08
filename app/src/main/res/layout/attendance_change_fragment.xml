@@ -1,72 +1,128 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<include layout="@layout/toolbar"/>
 
-    <LinearLayout
+    <Spinner
+        android:id="@+id/spinner_attendance"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:padding="80dp"
 
+        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline15"
+        app:layout_constraintVertical_bias="0.891" />
 
-        <TextView
-            android:id="@+id/tv_attendance_type"
-            style="@style/standard_title"
-            android:text="@string/section"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fl_class" />
+    <TextView
+        android:id="@+id/save_attendance"
+        style="@style/bottonst"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shape_bot_blue"
+        android:padding="12dp"
+        android:text="@string/saveattendance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/note"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/note"
+        app:layout_constraintTop_toBottomOf="@+id/note"
+        app:layout_constraintVertical_bias="0.219" />
 
-        <FrameLayout
-            android:id="@+id/fl_section"
-            style="@style/frame_layout_style"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_section">
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/note"
+        android:layout_width="363dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="15dp"
+        android:text="TextView"
 
-            <Spinner
-                android:id="@+id/sp_attendance_type"
-                style="@style/spinner_style_stroked" />
+        app:layout_constraintEnd_toEndOf="@+id/spinner_attendance"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/spinner_attendance"
+        app:layout_constraintTop_toTopOf="@+id/guideline18" />
 
-        </FrameLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
 
-        <TextView
-            style="@style/standard_title"
-            android:text="OtherNote"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fl_class" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32" />
 
-        <FrameLayout
-            style="@style/frame_layout_style"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_section">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.41997263" />
 
-            <Spinner
-                android:id="@+id/sp_other_note"
-                style="@style/spinner_style_stroked" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12" />
 
-        </FrameLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".8" />
 
+    <Spinner
 
-        <EditText
-            android:id="@+id/note"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            tools:ignore="MissingConstraints" />
+        android:id="@+id/spinner_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/note"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline17"
+        app:layout_constraintVertical_bias="0.016" />
 
-        <TextView
-            android:id="@+id/change_attendance"
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:layout_marginStart="18dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/attendance"
+        android:textColor="#3742fa"
+        app:layout_constraintBottom_toTopOf="@+id/guideline15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.536" />
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:text="saveattendance"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/note"
-            app:layout_constraintStart_toStartOf="@+id/note"
-            app:layout_constraintTop_toBottomOf="@+id/note" />
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginBottom="16dp"
 
-    </LinearLayout>
-
+        android:text="@string/note_of_att"
+        android:textColor="#3742fa"
+        app:layout_constraintBottom_toTopOf="@+id/guideline17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_attendance"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

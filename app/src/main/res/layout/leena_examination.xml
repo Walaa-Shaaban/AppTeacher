@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/acsp_select_section"
+        android:id="@+id/att_acsp_select_section"
         android:layout_width="0dp"
         android:layout_height="@dimen/fifty"
         android:layout_marginTop="50dp"
@@ -26,14 +26,14 @@
         app:layout_constraintTop_toBottomOf="@+id/acsp_select_class" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/acb_continue"
+        android:id="@+id/att_acb_continue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/seventy"
         android:background="@drawable/btn_shape3"
         android:text="@string/continue_"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/acsp_select_section"
-        app:layout_constraintStart_toStartOf="@+id/acsp_select_section"
-        app:layout_constraintTop_toBottomOf="@+id/acsp_select_section" />
+        app:layout_constraintEnd_toEndOf="@+id/att_acsp_select_section"
+        app:layout_constraintStart_toStartOf="@+id/att_acsp_select_section"
+        app:layout_constraintTop_toBottomOf="@+id/att_acsp_select_section" />
 </androidx.constraintlayout.widget.ConstraintLayout>

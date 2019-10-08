@@ -1,34 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DBDBD6"
+    android:background="#FFF"
     tools:context=".ui.examination.tabs.ExaminationFragment">
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="60dp"
         android:id="@+id/rec_exam"
+        android:background="#FFF"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-37dp"
-        tools:layout_editor_absoluteY="36dp" />
-
-    <com.github.clans.fab.FloatingActionButton
-        android:id="@+id/fab_add_new"
-        app:fab_colorNormal="@color/blue_dark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="16dp"
-        android:layout_marginEnd="360dp"
-        android:src="@drawable/ic_add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

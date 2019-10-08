@@ -24,7 +24,7 @@
 -->
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinner_attendance"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="15dp"
@@ -38,7 +38,7 @@
         app:layout_constraintVertical_bias="0.891" />
 
     <TextView
-        android:id="@+id/textView40"
+        android:id="@+id/save_attendance"
         style="@style/bottonst"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -48,12 +48,12 @@
         android:padding="12dp"
         android:text="@string/saveattendance"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView39"
-        app:layout_constraintStart_toStartOf="@+id/textView39"
-        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+        app:layout_constraintEnd_toEndOf="@+id/note"
+        app:layout_constraintStart_toStartOf="@+id/note"
+        app:layout_constraintTop_toBottomOf="@+id/note" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/textView39"
+        android:id="@+id/note"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="15dp"
@@ -61,9 +61,9 @@
         android:layout_marginEnd="15dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/guideline36"
-        app:layout_constraintEnd_toEndOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_attendance"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/spinner"
+        app:layout_constraintStart_toStartOf="@+id/spinner_attendance"
         app:layout_constraintTop_toTopOf="@+id/guideline18" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -103,12 +103,12 @@
 
     <Spinner
 
-        android:id="@+id/spinner2"
+        android:id="@+id/spinner_note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView39"
+        app:layout_constraintBottom_toTopOf="@+id/note"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

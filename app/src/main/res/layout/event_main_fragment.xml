@@ -1,56 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff">
+<include
+    layout="@layout/toolbar"/>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="564dp">
 
         <com.events.calendar.views.EventsCalendar
             android:id="@+id/eventsCalendar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="#fff"
             android:overScrollMode="never"
             app:datesTextSize="18sp"
-            app:eventDotColor="#ff0000"
+            app:eventDotColor="@color/redHighDelete"
             app:isBoldTextOnSelectionEnabled="true"
             app:monthTitleColor="#000"
             app:monthTitleTextSize="24sp"
             app:primaryTextColor="#000"
-            app:rangeSelectionColor="#ffe600"
-            app:rangeSelectionEndColor="#c1ae01"
-            app:rangeSelectionStartColor="#c1ae01"
+            app:rangeSelectionColor="@color/orange"
+            app:rangeSelectionEndColor="@color/orange"
+            app:rangeSelectionStartColor="@color/orange"
             app:secondaryTextColor="#FFF"
             app:selectedTextColor="#000000"
-            app:selectionColor="#ffe600"
+            app:selectionColor="@color/orange"
             app:weekHeaderColor="#00BCD4"
-            app:weekHeaderTextSize="14sp" />
+            app:weekHeaderTextSize="14sp"
+            tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:id="@+id/selected"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:paddingStart="15dp"
-            android:paddingTop="5dp"
-            android:paddingEnd="15dp"
-            android:paddingBottom="10dp"
-            android:textColor="#ffffff"
-            android:textSize="16sp" />
-
-        <TextView
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_event"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Add Event"
-            android:textSize="25sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/ic_add"
+
+            app:backgroundTint="@color/orange"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.91"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

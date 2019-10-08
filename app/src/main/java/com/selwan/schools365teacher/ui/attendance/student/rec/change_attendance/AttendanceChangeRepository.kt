@@ -56,7 +56,7 @@ class AttendanceChangeRepository(var compositeDisposable: CompositeDisposable) {
             ApiUtils.apiService.attendanceSave(
                 class_id = class_id,
                 section_id = section_id,
-                date = "2019-09-24",
+                date = date,
                 holiday = isHoliday,
                 studentSession = studentSession
             )

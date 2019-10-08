@@ -1,7 +1,6 @@
 package com.selwan.schools365teacher.ui.timetable.tabs_day.ui.main.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -72,7 +71,7 @@ class TimetableTabsdayAdapter : RecyclerView.Adapter<TimetableTabsdayAdapter.Vie
         var start: TextView
 
         constructor(itemView: View) : super(itemView) {
-            subject = itemView.findViewById(R.id.subject)
+            subject = itemView.findViewById(R.id.txt_exam_title)
             start = itemView.findViewById(R.id.time_start)
         }
 

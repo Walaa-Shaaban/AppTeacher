@@ -1,25 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:weightSum="3">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <TextView
-        android:layout_width="0dp"
+        android:id="@+id/student_name"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-       android:id="@+id/student_name"
-        android:textSize="30dp"
-        android:layout_weight="2"/>
+        android:layout_marginStart="0dp"
+        android:text="@string/aiman_alwiah"
+        android:textColor="@color/colorblack"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/student_attendance_type"
+        app:layout_constraintEnd_toStartOf="@+id/guideline67"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/student_attendance_type"
+        app:layout_constraintVertical_bias="0.611" />
 
-    <Button
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/student_attendance_type"
+        style="@style/bottonst"
+        android:layout_width="116dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_pink"
+        android:padding="15dp"
+        android:text="@string/present"
+        android:textColor="@color/colorwhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline68"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline67"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/student_attendence_type"
-        android:layout_margin="10dp"
-        android:background="@drawable/button_corner"
-        android:text="Attendance"
-        android:textSize="12dp"
-        android:layout_weight="1"/>
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".38" />
 
-
-</LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline68"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".64" />
+</androidx.constraintlayout.widget.ConstraintLayout>
