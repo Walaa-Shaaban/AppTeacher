@@ -50,7 +50,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/gl_v_35"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_nav_menu_person" />
+                app:srcCompat="@drawable/st" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"

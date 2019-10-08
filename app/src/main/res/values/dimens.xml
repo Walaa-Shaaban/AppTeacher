@@ -58,6 +58,8 @@
     <dimen name="twenty_four_sp">24sp</dimen>
     <dimen name="ninety_dp">90dp</dimen>
     <dimen name="one_hundred_seventy">170dp</dimen>
+    <dimen name="two_hundred_fourty_four">244dp</dimen>
+    <dimen name="sixteen_sp">16sp</dimen>
 
 
 </resources>
