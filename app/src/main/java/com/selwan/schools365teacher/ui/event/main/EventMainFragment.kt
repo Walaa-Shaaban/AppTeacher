@@ -93,7 +93,6 @@ class EventMainFragment : Fragment()
             for (item in it.events) {
                 listOfEvents.add(item.startDate)
             }
-
         })
 
         add_event.setOnClickListener {
@@ -105,39 +104,39 @@ class EventMainFragment : Fragment()
 //        selected.text = getDateString(eventsCalendar.getCurrentSelectedDate()?.timeInMillis)
 
         val today = Calendar.getInstance()
-        val end = Calendar.getInstance()
-        end.add(Calendar.YEAR, 2)
+        val maxMonth: Calendar = Calendar.getInstance()
+        maxMonth.add(Calendar.YEAR, 2021)
+
         eventsCalendar.setSelectionMode(eventsCalendar.SINGLE_SELECTION)
             .setToday(today)
-            .setMonthRange(today, end)
+            .setMonthRange(today, maxMonth)
             .setWeekStartDay(Calendar.SUNDAY, false)
             .setIsBoldTextOnSelectionEnabled(true)
             .setCallback(this)
             .build()
 
         val c = Calendar.getInstance()
-        c.add(Calendar.DAY_OF_MONTH, 2)
+        c.add(Calendar.DAY_OF_MONTH, 15)
+//        c.add(Calendar.MONTH, 10)
+//        c.add(Calendar.YEAR, 2019)
+
+        eventsCalendar.addEvent(c)
 
 
-        eventsCalendar.addEvent(c)
-        c.add(Calendar.DAY_OF_MONTH, 3)
-        eventsCalendar.addEvent(c)
-        c.add(Calendar.DAY_OF_MONTH, 4)
-        eventsCalendar.addEvent(c)
-        c.add(Calendar.DAY_OF_MONTH, 7)
-        eventsCalendar.addEvent(c)
-        c.add(Calendar.MONTH, 1)
-        c[Calendar.DAY_OF_MONTH] = 1
-        eventsCalendar.addEvent(c)
+//        eventsCalendar.addEvent(c)
+//        c.add(Calendar.DAY_OF_MONTH, 3)
+//        eventsCalendar.addEvent(c)
+//        c.add(Calendar.DAY_OF_MONTH, 4)
+//        eventsCalendar.addEvent(c)
+//        c.add(Calendar.DAY_OF_MONTH, 7)
+//        eventsCalendar.addEvent(c)
 
 //        selected.setOnClickListener {
 //            val dates = eventsCalendar.getDatesFromSelectedRange()
 //            Log.e("SELECTED SIZE", dates.size.toString())
 //        }
-
-
-        val dc = Calendar.getInstance()
-        dc.add(Calendar.DAY_OF_MONTH, 2)
+//        val dc = Calendar.getInstance()
+//        dc.add(Calendar.DAY_OF_MONTH, 2)
     }
 
     private fun getDateString(time: Long?): String {

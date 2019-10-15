@@ -23,6 +23,8 @@ import com.selwan.schools365teacher.ui.event.add_new.AddEventFragment
 import com.selwan.schools365teacher.ui.event.main.EventMainFragment
 import com.selwan.schools365teacher.ui.examination.main.ExaminationMainFragment
 import com.selwan.schools365teacher.ui.homework.add_new.add_new_main.HomeworkAddNewMainFragment
+import com.selwan.schools365teacher.ui.login.LoginActivity
+import com.selwan.schools365teacher.ui.student_details.StudentsDetailsFragment
 import kotlinx.android.synthetic.main.activity_main_navigation.*
 import kotlinx.android.synthetic.main.activity_test.*
 import kotlinx.android.synthetic.main.app_bar_main_navigation.*
@@ -91,10 +93,9 @@ class MainNavigationActivity : AppCompatActivity() {
 
         nav_view.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.nav_home -> {
-                    startActivity(Intent(this, MainNavigationActivity::class.java))
+                R.id.nav_home -> startActivity(Intent(this, MainNavigationActivity::class.java))
 
-                }
+                R.id.nav_login -> startActivity(Intent(this, LoginActivity::class.java))
 
                 R.id.nav_setting -> {
 

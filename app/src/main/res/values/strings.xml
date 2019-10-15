@@ -164,13 +164,14 @@
     <string name="mohammad">mohammad</string>
     <string name="star" translatable="false">&#xf089;</string>
 
-<string name="notification">Notification</string>
-<string name="homework">Homework</string>
-<string name="event">Event</string>
+    <string name="notification">Notification</string>
+    <string name="homework">Homework</string>
+    <string name="event">Event</string>
     <string name="subject">Subject</string>
     <string name="note_of_att">Note</string>
     <string name="student_name">Student Name</string>
     <string name="number">Number</string>
+    <string name="pref">pref</string>
 
 
 </resources>

@@ -1,6 +1,6 @@
 package com.selwan.schools365teacher.data.remote
 
-import android.icu.text.CaseMap
+import android.provider.ContactsContract
 import com.selwan.schools365teacher.data.model.attendance.*
 import com.selwan.schools365teacher.data.model.communication.NoticBoard
 import com.selwan.schools365teacher.data.model.event.AllEvent
@@ -12,12 +12,15 @@ import com.selwan.schools365teacher.data.model.exams.ViewMark
 import com.selwan.schools365teacher.data.model.homework.AddNewHomework
 import com.selwan.schools365teacher.data.model.homework.HomeworkList
 import com.selwan.schools365teacher.data.model.homework.Subject
+import com.selwan.schools365teacher.data.model.login.AccessLogin
+import com.selwan.schools365teacher.data.model.login.loginAccessPost
 import com.selwan.schools365teacher.data.model.news.News
 import com.selwan.schools365teacher.data.model.student_details.Classes
 import com.selwan.schools365teacher.data.model.student_details.Sections
 import com.selwan.schools365teacher.data.model.student_details.StudentDetails
 import com.selwan.schools365teacher.data.model.timetable.Timetable
 import io.reactivex.Single
+import okhttp3.RequestBody
 import retrofit2.http.*
 
 interface ApiService {
@@ -145,5 +148,13 @@ interface ApiService {
         @Field("start_date") start_date: String,
         @Field("end_date") endTime: String
     ): Single<SaveEvent>
+
+
+    @POST("WebserviceTeacher/login")
+    fun loginTeacher(
+        @Body body: RequestBody
+    ): Single<AccessLogin>
+
+
 
 }
